@@ -38,5 +38,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/tracker.db docs/
           git diff --cached --quiet || git commit -m "Daily run $(date -u +%Y-%m-%d)"
-          git push
+          git pull --rebase origin main && git push
 
