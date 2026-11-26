@@ -4,52 +4,52 @@
    "step": "prices",
    "status": "ok",
    "detail": "11 ok",
-   "started_at": "2026-11-26T06:23:39+00:00"
+   "started_at": "2026-11-26T06:25:24+00:00"
   },
   {
    "step": "sec",
    "status": "error",
    "detail": "0 ok, 10 failed (see Actions log)",
-   "started_at": "2026-11-26T06:23:41+00:00"
+   "started_at": "2026-11-26T06:25:26+00:00"
   },
   {
    "step": "reddit",
    "status": "error",
    "detail": "0 ok, 10 failed (see Actions log)",
-   "started_at": "2026-11-26T06:23:42+00:00"
+   "started_at": "2026-11-26T06:25:26+00:00"
   },
   {
    "step": "finra_short_volume",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-26T06:23:42+00:00"
+   "started_at": "2026-11-26T06:25:26+00:00"
   },
   {
    "step": "short_interest",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-26T06:23:45+00:00"
+   "started_at": "2026-11-26T06:25:28+00:00"
   },
   {
    "step": "google_trends",
    "status": "ok",
    "detail": "10 ok",
-   "started_at": "2026-11-26T06:24:10+00:00"
+   "started_at": "2026-11-26T06:25:51+00:00"
   },
   {
    "step": "resolve",
    "status": "ok",
    "detail": "0",
-   "started_at": "2026-11-26T06:24:10+00:00"
+   "started_at": "2026-11-26T06:25:51+00:00"
   },
   {
    "step": "predict",
    "status": "ok",
    "detail": "0",
-   "started_at": "2026-11-26T06:24:10+00:00"
+   "started_at": "2026-11-26T06:25:51+00:00"
   }
  ],
- "generated_at": "2026-11-26T06:24:10+00:00",
+ "generated_at": "2026-11-26T06:25:53+00:00",
  "watchlist": [
   "SNDL",
   "BBAI",
@@ -922,7 +922,7 @@
  "recent": [],
  "pumps": [],
  "backtest": {
-  "created_at": "2026-11-26T06:20:16+00:00",
+  "created_at": "2026-11-26T06:25:53+00:00",
   "tickers": [
    "SNDL",
    "BBAI",
@@ -942,6 +942,7 @@
     "n": 6568,
     "hit_rate": 0.5175091352009744,
     "always_up": 0.45006090133982946,
+    "always_down": 0.5499390986601705,
     "follow_market": 0.4817295980511571,
     "strategy_avg_return": 0.0006249138127377373,
     "buy_hold_avg_return": 0.0006644958523843582,
@@ -1055,6 +1056,7 @@
     "n": 6717,
     "hit_rate": 0.5243412237606074,
     "always_up": 0.42846508858121185,
+    "always_down": 0.5715349114187881,
     "follow_market": 0.48280482358195626,
     "strategy_avg_return": -0.0002703482745409222,
     "buy_hold_avg_return": 0.0025632552091801853,
@@ -1178,6 +1180,54 @@
  },
  "runs": [
   {
+   "started_at": "2026-11-26T06:25:51+00:00",
+   "step": "predict",
+   "status": "ok",
+   "detail": "0"
+  },
+  {
+   "started_at": "2026-11-26T06:25:51+00:00",
+   "step": "resolve",
+   "status": "ok",
+   "detail": "0"
+  },
+  {
+   "started_at": "2026-11-26T06:25:51+00:00",
+   "step": "google_trends",
+   "status": "ok",
+   "detail": "10 ok"
+  },
+  {
+   "started_at": "2026-11-26T06:25:28+00:00",
+   "step": "short_interest",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "started_at": "2026-11-26T06:25:26+00:00",
+   "step": "finra_short_volume",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "started_at": "2026-11-26T06:25:26+00:00",
+   "step": "reddit",
+   "status": "error",
+   "detail": "0 ok, 10 failed (see Actions log)"
+  },
+  {
+   "started_at": "2026-11-26T06:25:26+00:00",
+   "step": "sec",
+   "status": "error",
+   "detail": "0 ok, 10 failed (see Actions log)"
+  },
+  {
+   "started_at": "2026-11-26T06:25:24+00:00",
+   "step": "prices",
+   "status": "ok",
+   "detail": "11 ok"
+  },
+  {
    "started_at": "2026-11-26T06:24:10+00:00",
    "step": "predict",
    "status": "ok",
@@ -1197,54 +1247,6 @@
   },
   {
    "started_at": "2026-11-26T06:23:45+00:00",
-   "step": "short_interest",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:23:42+00:00",
-   "step": "finra_short_volume",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:23:42+00:00",
-   "step": "reddit",
-   "status": "error",
-   "detail": "0 ok, 10 failed (see Actions log)"
-  },
-  {
-   "started_at": "2026-11-26T06:23:41+00:00",
-   "step": "sec",
-   "status": "error",
-   "detail": "0 ok, 10 failed (see Actions log)"
-  },
-  {
-   "started_at": "2026-11-26T06:23:39+00:00",
-   "step": "prices",
-   "status": "ok",
-   "detail": "11 ok"
-  },
-  {
-   "started_at": "2026-11-26T06:20:14+00:00",
-   "step": "predict",
-   "status": "ok",
-   "detail": "20"
-  },
-  {
-   "started_at": "2026-11-26T06:20:14+00:00",
-   "step": "resolve",
-   "status": "ok",
-   "detail": "0"
-  },
-  {
-   "started_at": "2026-11-26T06:20:14+00:00",
-   "step": "google_trends",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:19:50+00:00",
    "step": "short_interest",
    "status": "ok",
    "detail": ""
