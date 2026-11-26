@@ -10,83 +10,83 @@
    "step": "prices",
    "status": "ok",
    "detail": "21 ok",
-   "started_at": "2026-11-26T07:51:46+00:00"
+   "started_at": "2026-11-26T21:48:14+00:00"
   },
   {
    "step": "yahoo_screener",
    "status": "ok",
    "detail": "500 stocks",
-   "started_at": "2026-11-26T07:51:46+00:00"
+   "started_at": "2026-11-26T21:48:15+00:00"
   },
   {
    "step": "reddit_mentions",
    "status": "ok",
-   "detail": "300 stocks",
-   "started_at": "2026-11-26T07:51:47+00:00"
+   "detail": "292 stocks",
+   "started_at": "2026-11-26T21:48:16+00:00"
   },
   {
    "step": "scan",
    "status": "ok",
-   "detail": "491 found",
-   "started_at": "2026-11-26T07:52:08+00:00"
+   "detail": "490 found",
+   "started_at": "2026-11-26T21:48:26+00:00"
   },
   {
    "step": "prices_shortlist",
    "status": "ok",
    "detail": "12 ok",
-   "started_at": "2026-11-26T07:52:10+00:00"
+   "started_at": "2026-11-26T21:48:28+00:00"
   },
   {
    "step": "pick",
    "status": "ok",
    "detail": "10 found",
-   "started_at": "2026-11-26T07:52:10+00:00"
+   "started_at": "2026-11-26T21:48:28+00:00"
   },
   {
    "step": "sec",
    "status": "partial",
    "detail": "9 ok, 1 failed (see Actions log)",
-   "started_at": "2026-11-26T07:52:12+00:00"
+   "started_at": "2026-11-26T21:48:30+00:00"
   },
   {
    "step": "reddit_tone",
    "status": "skipped",
    "detail": "not set up",
-   "started_at": "2026-11-26T07:52:12+00:00"
+   "started_at": "2026-11-26T21:48:30+00:00"
   },
   {
    "step": "finra_short_volume",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-26T07:52:12+00:00"
+   "started_at": "2026-11-26T21:48:30+00:00"
   },
   {
    "step": "short_interest",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-26T07:52:13+00:00"
+   "started_at": "2026-11-26T21:48:31+00:00"
   },
   {
    "step": "google_trends",
    "status": "partial",
    "detail": "7 ok, 3 failed (see Actions log)",
-   "started_at": "2026-11-26T07:52:31+00:00"
+   "started_at": "2026-11-26T21:48:48+00:00"
   },
   {
    "step": "resolve",
    "status": "ok",
    "detail": "0",
-   "started_at": "2026-11-26T07:52:31+00:00"
+   "started_at": "2026-11-26T21:48:48+00:00"
   },
   {
    "step": "predict",
    "status": "ok",
    "detail": "0",
-   "started_at": "2026-11-26T07:52:31+00:00"
+   "started_at": "2026-11-26T21:48:48+00:00"
   }
  ],
- "scanned": 491,
- "generated_at": "2026-11-26T07:52:32+00:00",
+ "scanned": 490,
+ "generated_at": "2026-11-26T21:48:50+00:00",
  "watchlist": [
   "SNDL",
   "BBAI",
@@ -1383,7 +1383,7 @@
   }
  ],
  "backtest": {
-  "created_at": "2026-11-26T07:52:32+00:00",
+  "created_at": "2026-11-26T21:48:50+00:00",
   "tickers": [
    "AACI",
    "AMBA",
@@ -1658,73 +1658,73 @@
  },
  "runs": [
   {
-   "started_at": "2026-11-26T07:52:31+00:00",
+   "started_at": "2026-11-26T21:48:48+00:00",
    "step": "predict",
    "status": "ok",
    "detail": "0"
   },
   {
-   "started_at": "2026-11-26T07:52:31+00:00",
+   "started_at": "2026-11-26T21:48:48+00:00",
    "step": "resolve",
    "status": "ok",
    "detail": "0"
   },
   {
-   "started_at": "2026-11-26T07:52:31+00:00",
+   "started_at": "2026-11-26T21:48:48+00:00",
    "step": "google_trends",
    "status": "partial",
    "detail": "7 ok, 3 failed (see Actions log)"
   },
   {
-   "started_at": "2026-11-26T07:52:13+00:00",
+   "started_at": "2026-11-26T21:48:31+00:00",
    "step": "short_interest",
    "status": "ok",
    "detail": ""
   },
   {
-   "started_at": "2026-11-26T07:52:12+00:00",
+   "started_at": "2026-11-26T21:48:30+00:00",
    "step": "finra_short_volume",
    "status": "ok",
    "detail": ""
   },
   {
-   "started_at": "2026-11-26T07:52:12+00:00",
+   "started_at": "2026-11-26T21:48:30+00:00",
    "step": "reddit_tone",
    "status": "skipped",
    "detail": "not set up"
   },
   {
-   "started_at": "2026-11-26T07:52:12+00:00",
+   "started_at": "2026-11-26T21:48:30+00:00",
    "step": "sec",
    "status": "partial",
    "detail": "9 ok, 1 failed (see Actions log)"
   },
   {
-   "started_at": "2026-11-26T07:52:10+00:00",
+   "started_at": "2026-11-26T21:48:28+00:00",
    "step": "pick",
    "status": "ok",
    "detail": "10 found"
   },
   {
-   "started_at": "2026-11-26T07:52:10+00:00",
+   "started_at": "2026-11-26T21:48:28+00:00",
    "step": "prices_shortlist",
    "status": "ok",
    "detail": "12 ok"
   },
   {
-   "started_at": "2026-11-26T07:52:08+00:00",
+   "started_at": "2026-11-26T21:48:26+00:00",
    "step": "scan",
    "status": "ok",
-   "detail": "491 found"
+   "detail": "490 found"
   },
   {
-   "started_at": "2026-11-26T07:51:47+00:00",
+   "started_at": "2026-11-26T21:48:16+00:00",
    "step": "reddit_mentions",
    "status": "ok",
-   "detail": "300 stocks"
+   "detail": "292 stocks"
   },
   {
-   "started_at": "2026-11-26T07:51:46+00:00",
+   "started_at": "2026-11-26T21:48:15+00:00",
    "step": "yahoo_screener",
    "status": "ok",
    "detail": "500 stocks"
