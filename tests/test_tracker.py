@@ -91,4 +91,4 @@ def test_demo_end_to_end(tmp_path):
     import scripts.demo as demo
     out = demo.simulate(days=12, out_dir=tmp_path)
     html = out.read_text()
-    assert "Signal Tracker" in html and "/*__DATA__*/null" not in html
+    assert "Stock Signals" in html and "/*__DATA__*/null" not in html
