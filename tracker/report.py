@@ -85,6 +85,43 @@ def _rows(conn, sql, params=()):
     return rows
 
 
+def portfolio(conn, start=1000.0):
+    """What $1,000 would be worth following the next-day calls, vs the S&P 500 (SPY).
+
+    Each trading day the money is split equally across that day's "likely up" picks, held to
+    the next close, then moved into the next day's picks. A day with no "up" picks sits in cash.
+    A second version also bets against the "likely down" picks. Ignores trading costs and taxes.
+    """
+    df = pd.read_sql_query(
+        "SELECT p.as_of, p.ticker, p.direction, o.target_date, o.actual_return, o.market_return, "
+        "s.ticker IS NOT NULL AS picked FROM predictions p JOIN outcomes o ON o.prediction_id=p.id "
+        "LEFT JOIN selections s ON s.as_of=p.as_of AND s.ticker=p.ticker WHERE p.horizon='1d' "
+        "ORDER BY p.as_of", conn)
+    if df.empty:
+        return None
+    has_picks = df.groupby("as_of")["picked"].transform("max") == 1
+    df = df[~has_picks | (df["picked"] == 1)]  # on days with picks, count only the picks
+    rows = []
+    up_v = both_v = mkt_v = start
+    for d, g in df.groupby("as_of"):
+        ups = g[g["direction"] == "up"]["actual_return"]
+        sign = np.where(g["direction"] == "up", 1, -1)
+        r_up = float(ups.mean()) if len(ups) else 0.0
+        r_both = float((sign * g["actual_return"]).mean())
+        m = g["market_return"].dropna()
+        r_mkt = float(m.iloc[0]) if len(m) else 0.0
+        up_v *= 1 + r_up
+        both_v *= 1 + r_both
+        mkt_v *= 1 + r_mkt
+        rows.append({"date": g["target_date"].iloc[0], "made": d, "ups": int(len(ups)),
+                     "picks": int(len(g)), "r_up": r_up, "r_both": r_both, "r_mkt": r_mkt,
+                     "up": round(up_v, 2), "both": round(both_v, 2), "market": round(mkt_v, 2)})
+    return {"start_value": start, "start_date": rows[0]["made"], "days": len(rows),
+            "series": rows, "up": round(up_v, 2), "both": round(both_v, 2),
+            "market": round(mkt_v, 2),
+            "beat_days": int(sum(r["r_up"] > r["r_mkt"] for r in rows))}
+
+
 def build(conn):
     latest = conn.execute("SELECT MAX(as_of) FROM predictions").fetchone()[0]
     today = _rows(conn, "SELECT p.*, o.actual_return, o.correct, s.reasons AS picked_why, "
@@ -121,6 +158,7 @@ def build(conn):
         "latest_as_of": latest,
         "today": today,
         "live": live_stats(conn),
+        "portfolio": portfolio(conn),
         "recent": recent,
         "pumps": pumps,
         "backtest": json.loads(bt["summary"]) if bt else None,
