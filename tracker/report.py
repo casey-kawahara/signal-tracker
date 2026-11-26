@@ -90,7 +90,7 @@ def build(conn):
     recent = _rows(conn, "SELECT p.id, p.created_at, p.as_of, p.ticker, p.horizon, p.direction, "
                          "p.confidence, p.pump_flag, o.target_date, o.actual_return, o.correct "
                          "FROM predictions p JOIN outcomes o ON o.prediction_id=p.id "
-                         "ORDER BY o.target_date DESC, p.ticker LIMIT 60")
+                         "ORDER BY o.target_date DESC, p.ticker LIMIT 300")
     pumps = _rows(conn, "SELECT p.as_of, p.ticker, p.signals, o.actual_return FROM predictions p "
                         "LEFT JOIN outcomes o ON o.prediction_id=p.id "
                         "WHERE p.pump_flag=1 AND p.horizon='1w' ORDER BY p.as_of DESC LIMIT 30")
@@ -117,10 +117,11 @@ def build(conn):
     return data
 
 
-def write(conn, out_dir=None):
+def write(conn, out_dir=None, simulation=None):
     out_dir = out_dir or config.DOCS_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
     data = build(conn)
+    data["simulation"] = simulation
     blob = json.dumps(data, default=str).replace("</", "<\\/")
     html = TEMPLATE.read_text().replace("/*__DATA__*/null", blob)
     (out_dir / "index.html").write_text(html)
