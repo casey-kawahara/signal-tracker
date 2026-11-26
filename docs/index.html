@@ -3,239 +3,369 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Signal Tracker</title>
+<title>Stock Signals</title>
 <style>
 :root {
-  --bg: #f7f7f5; --panel: #ffffff; --ink: #1c1d1f; --muted: #6b6e75; --line: #e4e4e0;
-  --up: #1f8a5b; --down: #c4453c; --accent: #3b5bdb; --warn: #b7791f; --chip: #f0f0ec;
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #1b1c1e; --muted: #6a6c72; --faint: #9a9ca2; --line: #e6e4de;
+  --up: #17804f; --up-bg: #e5f4ec; --down: #c23d33; --down-bg: #fbeae8; --accent: #3654c9;
+  --warn: #9a6200; --warn-bg: #fdf1dc; --chip: #f0efea;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #141518; --panel: #1c1e22; --ink: #e8e8e6; --muted: #9a9ca3; --line: #2c2f35;
-          --up: #4cc38a; --down: #f0716a; --accent: #8ea4ff; --warn: #e0a53a; --chip: #262930; }
+  :root { --bg: #131416; --panel: #1b1d20; --ink: #ebebe8; --muted: #a0a2a8; --faint: #6f7178; --line: #2b2e33;
+          --up: #4fc48b; --up-bg: #15291f; --down: #f2766d; --down-bg: #2e1817; --accent: #91a5ff;
+          --warn: #e8ad4a; --warn-bg: #2d2412; --chip: #24272b; }
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink);
-       font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
-main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
-h1 { font-size: 26px; margin: 0; letter-spacing: -0.01em; }
-h2 { font-size: 18px; margin: 36px 0 12px; }
+       font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+main { max-width: 980px; margin: 0 auto; padding: 28px 16px 72px; }
+a { color: var(--accent); }
+h1 { font-size: 28px; margin: 0; letter-spacing: -0.015em; }
+h2 { font-size: 19px; margin: 40px 0 4px; letter-spacing: -0.01em; }
+.lede { color: var(--muted); margin: 4px 0 0; }
 .sub { color: var(--muted); font-size: 13px; }
-.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
-.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
-.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
-         background: var(--chip); color: var(--muted); }
-.badge.ok { color: var(--up); } .badge.bad { color: var(--down); } .badge.warn { color: var(--warn); }
-.tabs { display: inline-flex; background: var(--chip); border-radius: 8px; padding: 3px; gap: 2px; }
-.tabs button { border: 0; background: transparent; color: var(--muted); padding: 5px 12px; border-radius: 6px;
-               font: inherit; font-size: 13px; cursor: pointer; }
-.tabs button.on { background: var(--panel); color: var(--ink); font-weight: 600; }
-.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 12px; }
-.kpi .label { color: var(--muted); font-size: 12px; }
-.kpi .value { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
-.kpi .cmp { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
 .up { color: var(--up); } .down { color: var(--down); }
+
+/* top bar */
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.seg { display: inline-flex; background: var(--chip); border-radius: 10px; padding: 3px; }
+.seg button { border: 0; background: transparent; color: var(--muted); padding: 7px 14px; border-radius: 8px;
+              font: inherit; font-size: 14px; cursor: pointer; }
+.seg button.on { background: var(--panel); color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+
+/* record strip */
+.record { display: flex; gap: 14px; align-items: center; margin-top: 20px; flex-wrap: wrap; }
+.record .big { font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+.record .txt { flex: 1; min-width: 220px; }
+.record .txt b { font-weight: 600; }
+
+/* stock cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; margin-top: 14px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.card summary { list-style: none; cursor: pointer; padding: 16px; display: block; }
+.card summary::-webkit-details-marker { display: none; }
+.card[open] summary { border-bottom: 1px solid var(--line); }
+.row1 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.tk { font-weight: 700; font-size: 18px; }
+.px { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.call { display: flex; align-items: center; gap: 10px; margin: 10px 0 8px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-weight: 650; font-size: 15px; }
+.pill.up { background: var(--up-bg); } .pill.down { background: var(--down-bg); }
+.conf { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+.dots { display: inline-flex; gap: 3px; }
+.dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+.dots i.on { background: var(--ink); }
+.why { font-size: 15px; margin: 0; }
+.more { color: var(--accent); font-size: 13px; margin-top: 10px; display: inline-block; }
+.card[open] .more .o { display: none; } .card:not([open]) .more .c { display: none; }
+.hype { display: inline-block; background: var(--warn-bg); color: var(--warn); border-radius: 6px; padding: 1px 7px;
+        font-size: 12px; font-weight: 650; margin-left: 6px; vertical-align: 2px; }
+.detail { padding: 14px 16px 16px; font-size: 14px; }
+.detail h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); margin: 14px 0 6px; font-weight: 600; }
+.detail h4:first-child { margin-top: 0; }
+.reasons { margin: 0; padding: 0; list-style: none; }
+.reasons li { padding: 4px 0 4px 22px; position: relative; }
+.reasons li::before { position: absolute; left: 0; top: 4px; font-size: 13px; }
+.reasons li.pos::before { content: "▲"; color: var(--up); } .reasons li.neg::before { content: "▼"; color: var(--down); }
+.facts { width: 100%; border-collapse: collapse; }
+.facts td { padding: 5px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.facts tr:last-child td { border-bottom: 0; }
+.facts td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: 10px; }
+.facts .hint { display: block; color: var(--faint); font-size: 12px; }
+.past { display: flex; gap: 4px; flex-wrap: wrap; }
+.past span { width: 22px; height: 22px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;
+             font-size: 12px; font-weight: 700; }
+.past .r { background: var(--up-bg); color: var(--up); } .past .w { background: var(--down-bg); color: var(--down); }
+
+/* expandable sections */
+details.sec { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; margin-top: 12px; }
+details.sec > summary { cursor: pointer; padding: 16px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+details.sec > summary::-webkit-details-marker { display: none; }
+details.sec > summary::after { content: "Show"; color: var(--accent); font-weight: 500; font-size: 14px; }
+details.sec[open] > summary::after { content: "Hide"; }
+details.sec > summary .s { color: var(--muted); font-weight: 400; font-size: 14px; display: block; }
+.secbody { padding: 0 16px 16px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.kpi { border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.kpi .label { color: var(--muted); font-size: 12px; }
+.kpi .value { font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.kpi .cmp { font-size: 12px; color: var(--muted); }
 .tablewrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
-th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 6px 8px;
-     border-bottom: 1px solid var(--line); white-space: nowrap; }
-td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-tr:last-child td { border-bottom: 0; }
-.chip { display: inline-block; background: var(--chip); border-radius: 6px; padding: 1px 6px; margin: 1px 2px 1px 0;
-        font-size: 12px; white-space: nowrap; }
-.chip.neg { color: var(--down); } .chip.pos { color: var(--up); }
-.empty { color: var(--muted); padding: 24px; text-align: center; }
-svg text { fill: var(--muted); font-size: 11px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.data th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.data td { padding: 7px 8px; border-bottom: 1px solid var(--line); }
+table.data tr:last-child td { border-bottom: 0; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--chip); color: var(--muted); }
+.badge.ok { color: var(--up); } .badge.bad { color: var(--down); } .badge.warn { color: var(--warn); }
+.empty { color: var(--muted); padding: 20px; text-align: center; }
+svg text { fill: var(--faint); font-size: 11px; }
 .legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin-top: 6px; }
 .legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 5px; border-radius: 2px; }
-details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
-.note { font-size: 13px; color: var(--muted); max-width: 70ch; }
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+.sim { background: var(--warn-bg); color: var(--ink); border-radius: 12px; padding: 12px 16px; margin-bottom: 22px; font-size: 14px; }
+.sim b { color: var(--warn); }
+.note p { margin: 0 0 10px; color: var(--muted); font-size: 14px; max-width: 70ch; }
+.mt { margin-top: 14px; }
+.foot { margin-top: 32px; color: var(--faint); font-size: 12px; text-align: center; }
 </style>
 </head>
 <body>
 <main>
-  <div class="head">
+  <div id="simbanner"></div>
+
+  <div class="top">
     <div>
-      <h1>Signal Tracker</h1>
-      <div class="sub" id="meta"></div>
-      <div class="sub" id="sources" style="margin-top:6px"></div>
+      <h1>Stock Signals</h1>
+      <p class="lede" id="lede"></p>
     </div>
-    <div class="tabs" id="htabs"></div>
+    <div class="seg" id="htabs" role="tablist" aria-label="Time frame"></div>
   </div>
 
-  <h2>Scorecard</h2>
-  <div id="score"></div>
+  <div class="record panel" id="record"></div>
 
-  <h2>Today's calls</h2>
-  <div class="panel tablewrap" id="today"></div>
+  <h2 id="callsTitle">Today's calls</h2>
+  <div class="sub" id="callsSub"></div>
+  <div class="cards" id="cards"></div>
 
-  <h2>Possible pump patterns</h2>
-  <div class="panel" id="pumps"></div>
+  <h2>Go deeper</h2>
+  <div class="sub">Full numbers for anyone who wants them.</div>
 
-  <h2>Backtest (early read on past data)</h2>
-  <div id="backtest"></div>
+  <details class="sec" id="secScore"><summary><span>How have past calls done?<span class="s" id="scoreSum"></span></span></summary><div class="secbody" id="score"></div></details>
+  <details class="sec"><summary><span>Hype warnings<span class="s" id="pumpSum"></span></span></summary><div class="secbody" id="pumps"></div></details>
+  <details class="sec"><summary><span>Every past call<span class="s">Each call, what actually happened, and whether it was right</span></span></summary><div class="secbody tablewrap" id="recent"></div></details>
+  <details class="sec"><summary><span>Testing on past data<span class="s" id="btSum"></span></span></summary><div class="secbody" id="backtest"></div></details>
+  <details class="sec"><summary><span>How this works<span class="s">Where the data comes from and how calls are kept honest</span></span></summary>
+    <div class="secbody note">
+      <p>Every weekday before the market opens, the tracker gathers fresh information on each stock: its price and trading
+      activity, company filings with the SEC (such as plans to sell new shares, or insiders buying), Reddit chatter,
+      Google searches, and how much of the trading was people betting against it (short selling).</p>
+      <p>A short list of simple rules turns that into a call: will the stock close higher or lower than yesterday,
+      by tomorrow and by the end of a week? Confidence shows how strongly the rules agree. Most days most stocks have
+      weak signals, so "low" confidence is common, and that's an honest answer.</p>
+      <p>Calls can never be changed after they're made. Each one is locked with a timestamp, chained to the one before
+      it, and saved publicly on GitHub every day, so the track record can't be quietly edited.</p>
+      <p>This is an experiment, not investment advice. Small stocks are risky and a few weeks of results can be luck.</p>
+      <div id="sources" class="mt"></div>
+      <div class="tablewrap mt" id="runs"></div>
+    </div>
+  </details>
 
-  <h2>Recent results</h2>
-  <div class="panel tablewrap" id="recent"></div>
-
-  <h2>How this works</h2>
-  <div class="panel note">
-    <p>Each weekday before the market opens, the tracker pulls the latest prices, SEC filings, Reddit
-    mentions, short-sale volume and Google Trends for the watchlist, then predicts whether each stock will
-    close higher or lower than its last close, one trading day and one week (five trading days) ahead.</p>
-    <p>Every prediction is locked the moment it is made: the database refuses edits and deletes, each row
-    is chained to the one before it with a hash, and the daily commit on GitHub timestamps it publicly.
-    The scorecard compares the hit rate against baselines that need no skill: always predicting
-    "up", always predicting "down", and predicting each stock will move the same way the overall market (SPY) just did.</p>
-    <p>This is an experiment, not investment advice. Small samples swing a lot, so give it a few weeks
-    before reading much into the numbers.</p>
-  </div>
-  <details style="margin-top:16px"><summary>Recent pipeline runs</summary><div class="tablewrap" id="runs"></div></details>
+  <div class="foot" id="foot"></div>
 </main>
 <script>
-const D = {"sources": [{"step": "prices", "status": "ok", "detail": "11 ok", "started_at": "2026-11-26T06:25:24+00:00"}, {"step": "sec", "status": "error", "detail": "0 ok, 10 failed (see Actions log)", "started_at": "2026-11-26T06:25:26+00:00"}, {"step": "reddit", "status": "error", "detail": "0 ok, 10 failed (see Actions log)", "started_at": "2026-11-26T06:25:26+00:00"}, {"step": "finra_short_volume", "status": "ok", "detail": "", "started_at": "2026-11-26T06:25:26+00:00"}, {"step": "short_interest", "status": "ok", "detail": "", "started_at": "2026-11-26T06:25:28+00:00"}, {"step": "google_trends", "status": "ok", "detail": "10 ok", "started_at": "2026-11-26T06:25:51+00:00"}, {"step": "resolve", "status": "ok", "detail": "0", "started_at": "2026-11-26T06:25:51+00:00"}, {"step": "predict", "status": "ok", "detail": "0", "started_at": "2026-11-26T06:25:51+00:00"}], "generated_at": "2026-11-26T06:25:53+00:00", "watchlist": ["SNDL", "BBAI", "PLUG", "OPEN", "TLRY", "CLOV", "FCEL", "MVIS", "KOSS", "ACHR"], "latest_as_of": "2026-11-25", "today": [{"id": 19, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "ACHR", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 3.04, "signals": {"close": 3.04, "dilution_30d": 0.0, "dist_ma20": -0.2169, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.05556, "ret_20d": -0.29954, "ret_5d": -0.05882, "reverse_split_60d": 0.0, "rsi14": 34.1879, "sentiment": null, "short_pct_float": 0.1631, "short_ratio": 0.5065, "short_ratio_z": -2.25216, "trends_z": -0.13772, "volume_z": 0.76552}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "3d7b6178124908f6820ef2d065391418a5057fec9c1b4e3c61c6b8ec59227655", "hash": "5849fbef158626630ae8d2f61abca2eaf5b1418ac3c31790540ffb4b1028d8b6", "actual_return": null, "correct": null}, {"id": 20, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "ACHR", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 3.04, "signals": {"close": 3.04, "dilution_30d": 0.0, "dist_ma20": -0.2169, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.05556, "ret_20d": -0.29954, "ret_5d": -0.05882, "reverse_split_60d": 0.0, "rsi14": 34.1879, "sentiment": null, "short_pct_float": 0.1631, "short_ratio": 0.5065, "short_ratio_z": -2.25216, "trends_z": -0.13772, "volume_z": 0.76552}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "5849fbef158626630ae8d2f61abca2eaf5b1418ac3c31790540ffb4b1028d8b6", "hash": "474fada93283c348755892919e91c11666652a1b1483e7d4284dbd604cbd2d91", "actual_return": null, "correct": null}, {"id": 3, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "BBAI", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 1.59, "signals": {"close": 1.59, "dilution_30d": 0.0, "dist_ma20": -0.24087, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.03247, "ret_20d": -0.35366, "ret_5d": -0.09143, "reverse_split_60d": 0.0, "rsi14": 30.78339, "sentiment": null, "short_pct_float": 0.265, "short_ratio": 0.32851, "short_ratio_z": -1.0519, "trends_z": -0.22827, "volume_z": -0.64688}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "9093f9e0e36a634760359d76d2387d18c76e89751dd8c25894bf19c1e0758066", "hash": "0774badd254f4eaff942ff53c156b5afb618d167b20367993de7901ccfb1b13f", "actual_return": null, "correct": null}, {"id": 4, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "BBAI", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 1.59, "signals": {"close": 1.59, "dilution_30d": 0.0, "dist_ma20": -0.24087, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.03247, "ret_20d": -0.35366, "ret_5d": -0.09143, "reverse_split_60d": 0.0, "rsi14": 30.78339, "sentiment": null, "short_pct_float": 0.265, "short_ratio": 0.32851, "short_ratio_z": -1.0519, "trends_z": -0.22827, "volume_z": -0.64688}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "0774badd254f4eaff942ff53c156b5afb618d167b20367993de7901ccfb1b13f", "hash": "11b6c91afd587eda63df6dc878802031f65498bf59dde30def0b142732e5cdfc", "actual_return": null, "correct": null}, {"id": 11, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "CLOV", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 3.76, "signals": {"close": 3.76, "dilution_30d": 0.0, "dist_ma20": -0.15315, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01348, "ret_20d": -0.21503, "ret_5d": -0.09832, "reverse_split_60d": 0.0, "rsi14": 33.03948, "sentiment": null, "short_pct_float": 0.0513, "short_ratio": 0.22421, "short_ratio_z": -1.52555, "trends_z": -0.10771, "volume_z": 0.29547}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "aa357ec190bfccf1bd591838eebf516c5c746b401f434725f497babce18166fc", "hash": "e679ea10885a5638c71c05138515caff6be7a18bf9d5e7534c34a1909ef1bd48", "actual_return": null, "correct": null}, {"id": 12, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "CLOV", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 3.76, "signals": {"close": 3.76, "dilution_30d": 0.0, "dist_ma20": -0.15315, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01348, "ret_20d": -0.21503, "ret_5d": -0.09832, "reverse_split_60d": 0.0, "rsi14": 33.03948, "sentiment": null, "short_pct_float": 0.0513, "short_ratio": 0.22421, "short_ratio_z": -1.52555, "trends_z": -0.10771, "volume_z": 0.29547}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "e679ea10885a5638c71c05138515caff6be7a18bf9d5e7534c34a1909ef1bd48", "hash": "41e5096d3711954e2cbebb027322255f77998cf7756b4b328f98f92a3f832374", "actual_return": null, "correct": null}, {"id": 13, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "FCEL", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 7.44, "signals": {"close": 7.44, "dilution_30d": 0.0, "dist_ma20": -0.20801, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.04789, "ret_20d": -0.39903, "ret_5d": -0.04124, "reverse_split_60d": 0.0, "rsi14": 35.58623, "sentiment": null, "short_pct_float": 0.2776, "short_ratio": 0.56326, "short_ratio_z": 0.65725, "trends_z": 0.56569, "volume_z": 0.57985}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "41e5096d3711954e2cbebb027322255f77998cf7756b4b328f98f92a3f832374", "hash": "8cfd6e6c7303d32b3d341a79dd34a6321798bdc351fdb1d0877da1139f055b66", "actual_return": null, "correct": null}, {"id": 14, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "FCEL", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 7.44, "signals": {"close": 7.44, "dilution_30d": 0.0, "dist_ma20": -0.20801, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.04789, "ret_20d": -0.39903, "ret_5d": -0.04124, "reverse_split_60d": 0.0, "rsi14": 35.58623, "sentiment": null, "short_pct_float": 0.2776, "short_ratio": 0.56326, "short_ratio_z": 0.65725, "trends_z": 0.56569, "volume_z": 0.57985}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "8cfd6e6c7303d32b3d341a79dd34a6321798bdc351fdb1d0877da1139f055b66", "hash": "8915f486ca617021d5e32f0cfea8573c04af8568329cbcee456bd00a6ba6eb88", "actual_return": null, "correct": null}, {"id": 17, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "KOSS", "horizon": "1d", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 3.38, "signals": {"close": 3.38, "dilution_30d": 0.0, "dist_ma20": 0.05002, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.02424, "ret_20d": -0.01458, "ret_5d": 0.07643, "reverse_split_60d": 0.0, "rsi14": 52.67028, "sentiment": null, "short_pct_float": 0.0409, "short_ratio": 0.50795, "short_ratio_z": -0.90379, "trends_z": -0.52185, "volume_z": 0.04987}, "reasons": [], "pump_flag": 0, "prev_hash": "20b7ee923bc8ce3a3eac7b5614fb6887cb401af0bc57fc2cd2c94d2422cbd1f1", "hash": "8726151d00649ea72c15c60c8dd6c84a18aa793dd4923da2bb2d08b889fa7da9", "actual_return": null, "correct": null}, {"id": 18, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "KOSS", "horizon": "1w", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 3.38, "signals": {"close": 3.38, "dilution_30d": 0.0, "dist_ma20": 0.05002, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.02424, "ret_20d": -0.01458, "ret_5d": 0.07643, "reverse_split_60d": 0.0, "rsi14": 52.67028, "sentiment": null, "short_pct_float": 0.0409, "short_ratio": 0.50795, "short_ratio_z": -0.90379, "trends_z": -0.52185, "volume_z": 0.04987}, "reasons": [], "pump_flag": 0, "prev_hash": "8726151d00649ea72c15c60c8dd6c84a18aa793dd4923da2bb2d08b889fa7da9", "hash": "3d7b6178124908f6820ef2d065391418a5057fec9c1b4e3c61c6b8ec59227655", "actual_return": null, "correct": null}, {"id": 15, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "MVIS", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 0.87, "signals": {"close": 0.87, "dilution_30d": 0.0, "dist_ma20": -0.20037, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01163, "ret_20d": -0.33077, "ret_5d": 0.0, "reverse_split_60d": 0.0, "rsi14": 33.65711, "sentiment": null, "short_pct_float": 0.1864, "short_ratio": 0.74158, "short_ratio_z": 1.84569, "trends_z": 0.80351, "volume_z": 1.39586}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "8915f486ca617021d5e32f0cfea8573c04af8568329cbcee456bd00a6ba6eb88", "hash": "891db92701fb8c26107095d26e18b2d3d7aadaa55c117b30eaabfe5f48917a5d", "actual_return": null, "correct": null}, {"id": 16, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "MVIS", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 0.87, "signals": {"close": 0.87, "dilution_30d": 0.0, "dist_ma20": -0.20037, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01163, "ret_20d": -0.33077, "ret_5d": 0.0, "reverse_split_60d": 0.0, "rsi14": 33.65711, "sentiment": null, "short_pct_float": 0.1864, "short_ratio": 0.74158, "short_ratio_z": 1.84569, "trends_z": 0.80351, "volume_z": 1.39586}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "891db92701fb8c26107095d26e18b2d3d7aadaa55c117b30eaabfe5f48917a5d", "hash": "20b7ee923bc8ce3a3eac7b5614fb6887cb401af0bc57fc2cd2c94d2422cbd1f1", "actual_return": null, "correct": null}, {"id": 7, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "OPEN", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 1.26, "signals": {"close": 1.26, "dilution_30d": 0.0, "dist_ma20": -0.13028, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0678, "ret_20d": -0.34031, "ret_5d": -0.00787, "reverse_split_60d": 0.0, "rsi14": 37.58275, "sentiment": null, "short_pct_float": 0.2768, "short_ratio": 0.47921, "short_ratio_z": -0.85968, "trends_z": 2.25862, "volume_z": 0.58203}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "5a30472d5a23501090e48645c3315196c513871f79e552c3f5e6b854e69a9106", "hash": "421f03c0f1cf8675bd326a2c482ec462f645d02c0560af43cba66dc304d93380", "actual_return": null, "correct": null}, {"id": 8, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "OPEN", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 1.26, "signals": {"close": 1.26, "dilution_30d": 0.0, "dist_ma20": -0.13028, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0678, "ret_20d": -0.34031, "ret_5d": -0.00787, "reverse_split_60d": 0.0, "rsi14": 37.58275, "sentiment": null, "short_pct_float": 0.2768, "short_ratio": 0.47921, "short_ratio_z": -0.85968, "trends_z": 2.25862, "volume_z": 0.58203}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "421f03c0f1cf8675bd326a2c482ec462f645d02c0560af43cba66dc304d93380", "hash": "2052cff05e1f6e0d5fa7bbd43fa2694b80b14b4b5875a562dc2a098de79735ea", "actual_return": null, "correct": null}, {"id": 5, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "PLUG", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 1.07, "signals": {"close": 1.07, "dilution_30d": 0.0, "dist_ma20": -0.1276, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.15054, "ret_20d": -0.24648, "ret_5d": -0.00926, "reverse_split_60d": 0.0, "rsi14": 37.97559, "sentiment": null, "short_pct_float": 0.2425, "short_ratio": 0.69449, "short_ratio_z": 1.70931, "trends_z": 0.52243, "volume_z": 1.54247}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "11b6c91afd587eda63df6dc878802031f65498bf59dde30def0b142732e5cdfc", "hash": "2f4afd4c0472d6c03d27093adfda0b335d2d20d13b2fef61a9dd2c4794e90daa", "actual_return": null, "correct": null}, {"id": 6, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "PLUG", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 1.07, "signals": {"close": 1.07, "dilution_30d": 0.0, "dist_ma20": -0.1276, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.15054, "ret_20d": -0.24648, "ret_5d": -0.00926, "reverse_split_60d": 0.0, "rsi14": 37.97559, "sentiment": null, "short_pct_float": 0.2425, "short_ratio": 0.69449, "short_ratio_z": 1.70931, "trends_z": 0.52243, "volume_z": 1.54247}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "2f4afd4c0472d6c03d27093adfda0b335d2d20d13b2fef61a9dd2c4794e90daa", "hash": "5a30472d5a23501090e48645c3315196c513871f79e552c3f5e6b854e69a9106", "actual_return": null, "correct": null}, {"id": 1, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "SNDL", "horizon": "1d", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 1.31, "signals": {"close": 1.31, "dilution_30d": 0.0, "dist_ma20": -0.01262, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.06504, "ret_20d": 0.0155, "ret_5d": -0.02239, "reverse_split_60d": 0.0, "rsi14": 50.58394, "sentiment": null, "short_pct_float": 0.008, "short_ratio": 0.30685, "short_ratio_z": -1.79734, "trends_z": 0.33192, "volume_z": 1.12539}, "reasons": [], "pump_flag": 0, "prev_hash": "genesis", "hash": "dd0b7cdf4ab869156b7f9171bbb33916a91d63aa9a5c42d42373e2fdb2d78d30", "actual_return": null, "correct": null}, {"id": 2, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "SNDL", "horizon": "1w", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 1.31, "signals": {"close": 1.31, "dilution_30d": 0.0, "dist_ma20": -0.01262, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.06504, "ret_20d": 0.0155, "ret_5d": -0.02239, "reverse_split_60d": 0.0, "rsi14": 50.58394, "sentiment": null, "short_pct_float": 0.008, "short_ratio": 0.30685, "short_ratio_z": -1.79734, "trends_z": 0.33192, "volume_z": 1.12539}, "reasons": [], "pump_flag": 0, "prev_hash": "dd0b7cdf4ab869156b7f9171bbb33916a91d63aa9a5c42d42373e2fdb2d78d30", "hash": "9093f9e0e36a634760359d76d2387d18c76e89751dd8c25894bf19c1e0758066", "actual_return": null, "correct": null}, {"id": 9, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "TLRY", "horizon": "1d", "direction": "up", "prob_up": 0.5, "confidence": 0.0, "base_close": 1.83, "signals": {"close": 1.83, "dilution_30d": 0.0, "dist_ma20": -0.24614, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0, "ret_20d": -0.3197, "ret_5d": -0.18667, "reverse_split_60d": 0.0, "rsi14": 20.10311, "sentiment": null, "short_pct_float": 0.1552, "short_ratio": 0.52992, "short_ratio_z": -1.46514, "trends_z": 0.37413, "volume_z": -0.33188}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}, {"rule": "oversold", "why": "RSI below 25", "weight": 0.2}], "pump_flag": 0, "prev_hash": "2052cff05e1f6e0d5fa7bbd43fa2694b80b14b4b5875a562dc2a098de79735ea", "hash": "907c8787c56d4b73345e3d67f58e7d5435ad0b03c0211826eb2c798bfb560d07", "actual_return": null, "correct": null}, {"id": 10, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "TLRY", "horizon": "1w", "direction": "down", "prob_up": 0.475, "confidence": 0.05, "base_close": 1.83, "signals": {"close": 1.83, "dilution_30d": 0.0, "dist_ma20": -0.24614, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0, "ret_20d": -0.3197, "ret_5d": -0.18667, "reverse_split_60d": 0.0, "rsi14": 20.10311, "sentiment": null, "short_pct_float": 0.1552, "short_ratio": 0.52992, "short_ratio_z": -1.46514, "trends_z": 0.37413, "volume_z": -0.33188}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}, {"rule": "oversold", "why": "RSI below 25", "weight": 0.15}], "pump_flag": 0, "prev_hash": "907c8787c56d4b73345e3d67f58e7d5435ad0b03c0211826eb2c798bfb560d07", "hash": "aa357ec190bfccf1bd591838eebf516c5c746b401f434725f497babce18166fc", "actual_return": null, "correct": null}], "live": {"1d": {"n": 0}, "1w": {"n": 0}}, "recent": [], "pumps": [], "backtest": {"created_at": "2026-11-26T06:25:53+00:00", "tickers": ["SNDL", "BBAI", "PLUG", "OPEN", "TLRY", "CLOV", "FCEL", "MVIS", "KOSS", "ACHR"], "start": "2024-02-23", "end": "2026-11-24", "horizons": {"1d": {"n": 6568, "hit_rate": 0.5175091352009744, "always_up": 0.45006090133982946, "always_down": 0.5499390986601705, "follow_market": 0.4817295980511571, "strategy_avg_return": 0.0006249138127377373, "buy_hold_avg_return": 0.0006644958523843582, "pump_flags": 63, "pump_then_down": 0.5396825396825397, "rules": [{"rule": "pump_pattern", "why": "Buzz or volume spike plus a price jump with no news or filing behind it", "fired": 63, "says": "down", "hit_rate": 0.5396825396825397, "avg_return": 0.008873348223106361}, {"rule": "overextended", "why": "Up more than 30% in 5 days", "fired": 217, "says": "down", "hit_rate": 0.543778801843318, "avg_return": 0.005315514043303431}, {"rule": "capitulation", "why": "Down more than 25% in 5 days on heavy volume", "fired": 32, "says": "up", "hit_rate": 0.5625, "avg_return": 0.0201708950393704}, {"rule": "dilution", "why": "Offering or share-sale filing in the last 30 days", "fired": 0}, {"rule": "reverse_split", "why": "Reverse split in the last 60 days", "fired": 120, "says": "down", "hit_rate": 0.5583333333333333, "avg_return": 0.00037380025568430064}, {"rule": "insider_buying", "why": "Insiders bought more shares than they sold in the last 30 days", "fired": 0}, {"rule": "uptrend", "why": "Above its 20-day average and up over 20 days", "fired": 2027, "says": "up", "hit_rate": 0.4390725209669462, "avg_return": 0.0024838859924892712}, {"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "fired": 3416, "says": "down", "hit_rate": 0.5433255269320844, "avg_return": -0.00013390696551594924}, {"rule": "oversold", "why": "RSI below 25", "fired": 49, "says": "up", "hit_rate": 0.6326530612244898, "avg_return": 0.016005106505129114}, {"rule": "overbought", "why": "RSI above 80", "fired": 58, "says": "down", "hit_rate": 0.603448275862069, "avg_return": 0.0028740341729393587}, {"rule": "buzz_with_news", "why": "Reddit buzz rising with positive tone and a fresh filing behind it", "fired": 0}, {"rule": "short_pressure", "why": "Short-sale share of volume spiking while the price rises", "fired": 0}], "confidence": [{"range": "0.00-0.10", "n": 6364, "hit_rate": 0.5158705216844752}, {"range": "0.10-0.25", "n": 166, "hit_rate": 0.5602409638554217}, {"range": "0.25-0.50", "n": 38, "hit_rate": 0.6052631578947368}]}, "1w": {"n": 6717, "hit_rate": 0.5243412237606074, "always_up": 0.42846508858121185, "always_down": 0.5715349114187881, "follow_market": 0.48280482358195626, "strategy_avg_return": -0.0002703482745409222, "buy_hold_avg_return": 0.0025632552091801853, "pump_flags": 64, "pump_then_down": 0.53125, "rules": [{"rule": "pump_pattern", "why": "Buzz or volume spike plus a price jump with no news or filing behind it", "fired": 64, "says": "down", "hit_rate": 0.53125, "avg_return": 0.015137318341374459}, {"rule": "overextended", "why": "Up more than 30% in 5 days", "fired": 214, "says": "down", "hit_rate": 0.5467289719626168, "avg_return": 0.04625713623039876}, {"rule": "capitulation", "why": "Down more than 25% in 5 days on heavy volume", "fired": 31, "says": "up", "hit_rate": 0.4838709677419355, "avg_return": 0.02373241018077919}, {"rule": "dilution", "why": "Offering or share-sale filing in the last 30 days", "fired": 0}, {"rule": "reverse_split", "why": "Reverse split in the last 60 days", "fired": 123, "says": "down", "hit_rate": 0.5772357723577236, "avg_return": 0.008903688120927239}, {"rule": "insider_buying", "why": "Insiders bought more shares than they sold in the last 30 days", "fired": 0}, {"rule": "uptrend", "why": "Above its 20-day average and up over 20 days", "fired": 2046, "says": "up", "hit_rate": 0.41544477028348, "avg_return": 0.00801529203038106}, {"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "fired": 3520, "says": "down", "hit_rate": 0.5599431818181818, "avg_return": 0.0004766820899346229}, {"rule": "oversold", "why": "RSI below 25", "fired": 46, "says": "up", "hit_rate": 0.5, "avg_return": 0.03020948358476985}, {"rule": "overbought", "why": "RSI above 80", "fired": 58, "says": "down", "hit_rate": 0.5344827586206896, "avg_return": 0.017974413807185577}, {"rule": "buzz_with_news", "why": "Reddit buzz rising with positive tone and a fresh filing behind it", "fired": 0}, {"rule": "short_pressure", "why": "Short-sale share of volume spiking while the price rises", "fired": 0}], "confidence": [{"range": "0.00-0.10", "n": 2966, "hit_rate": 0.4801078894133513}, {"range": "0.10-0.25", "n": 3552, "hit_rate": 0.5602477477477478}, {"range": "0.25-0.50", "n": 173, "hit_rate": 0.5606936416184971}, {"range": "0.50-1.00", "n": 26, "hit_rate": 0.4230769230769231}]}}}, "chain": {"ok": true, "count": 20, "pending": 20}, "runs": [{"started_at": "2026-11-26T06:25:51+00:00", "step": "predict", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:25:51+00:00", "step": "resolve", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:25:51+00:00", "step": "google_trends", "status": "ok", "detail": "10 ok"}, {"started_at": "2026-11-26T06:25:28+00:00", "step": "short_interest", "status": "ok", "detail": ""}, {"started_at": "2026-11-26T06:25:26+00:00", "step": "finra_short_volume", "status": "ok", "detail": ""}, {"started_at": "2026-11-26T06:25:26+00:00", "step": "reddit", "status": "error", "detail": "0 ok, 10 failed (see Actions log)"}, {"started_at": "2026-11-26T06:25:26+00:00", "step": "sec", "status": "error", "detail": "0 ok, 10 failed (see Actions log)"}, {"started_at": "2026-11-26T06:25:24+00:00", "step": "prices", "status": "ok", "detail": "11 ok"}, {"started_at": "2026-11-26T06:24:10+00:00", "step": "predict", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:24:10+00:00", "step": "resolve", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:24:10+00:00", "step": "google_trends", "status": "ok", "detail": "10 ok"}, {"started_at": "2026-11-26T06:23:45+00:00", "step": "short_interest", "status": "ok", "detail": ""}]};
-const H = { "1d": "Next day", "1w": "Next week" };
+const D = {"sources": [{"step": "prices", "status": "ok", "detail": "11 ok", "started_at": "2026-11-26T06:25:24+00:00"}, {"step": "sec", "status": "error", "detail": "0 ok, 10 failed (see Actions log)", "started_at": "2026-11-26T06:25:26+00:00"}, {"step": "reddit", "status": "error", "detail": "0 ok, 10 failed (see Actions log)", "started_at": "2026-11-26T06:25:26+00:00"}, {"step": "finra_short_volume", "status": "ok", "detail": "", "started_at": "2026-11-26T06:25:26+00:00"}, {"step": "short_interest", "status": "ok", "detail": "", "started_at": "2026-11-26T06:25:28+00:00"}, {"step": "google_trends", "status": "ok", "detail": "10 ok", "started_at": "2026-11-26T06:25:51+00:00"}, {"step": "resolve", "status": "ok", "detail": "0", "started_at": "2026-11-26T06:25:51+00:00"}, {"step": "predict", "status": "ok", "detail": "0", "started_at": "2026-11-26T06:25:51+00:00"}], "generated_at": "2026-11-26T07:00:37+00:00", "watchlist": ["SNDL", "BBAI", "PLUG", "OPEN", "TLRY", "CLOV", "FCEL", "MVIS", "KOSS", "ACHR"], "latest_as_of": "2026-11-25", "today": [{"id": 19, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "ACHR", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 3.04, "signals": {"close": 3.04, "dilution_30d": 0.0, "dist_ma20": -0.2169, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.05556, "ret_20d": -0.29954, "ret_5d": -0.05882, "reverse_split_60d": 0.0, "rsi14": 34.1879, "sentiment": null, "short_pct_float": 0.1631, "short_ratio": 0.5065, "short_ratio_z": -2.25216, "trends_z": -0.13772, "volume_z": 0.76552}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "3d7b6178124908f6820ef2d065391418a5057fec9c1b4e3c61c6b8ec59227655", "hash": "5849fbef158626630ae8d2f61abca2eaf5b1418ac3c31790540ffb4b1028d8b6", "actual_return": null, "correct": null}, {"id": 20, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "ACHR", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 3.04, "signals": {"close": 3.04, "dilution_30d": 0.0, "dist_ma20": -0.2169, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.05556, "ret_20d": -0.29954, "ret_5d": -0.05882, "reverse_split_60d": 0.0, "rsi14": 34.1879, "sentiment": null, "short_pct_float": 0.1631, "short_ratio": 0.5065, "short_ratio_z": -2.25216, "trends_z": -0.13772, "volume_z": 0.76552}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "5849fbef158626630ae8d2f61abca2eaf5b1418ac3c31790540ffb4b1028d8b6", "hash": "474fada93283c348755892919e91c11666652a1b1483e7d4284dbd604cbd2d91", "actual_return": null, "correct": null}, {"id": 3, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "BBAI", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 1.59, "signals": {"close": 1.59, "dilution_30d": 0.0, "dist_ma20": -0.24087, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.03247, "ret_20d": -0.35366, "ret_5d": -0.09143, "reverse_split_60d": 0.0, "rsi14": 30.78339, "sentiment": null, "short_pct_float": 0.265, "short_ratio": 0.32851, "short_ratio_z": -1.0519, "trends_z": -0.22827, "volume_z": -0.64688}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "9093f9e0e36a634760359d76d2387d18c76e89751dd8c25894bf19c1e0758066", "hash": "0774badd254f4eaff942ff53c156b5afb618d167b20367993de7901ccfb1b13f", "actual_return": null, "correct": null}, {"id": 4, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "BBAI", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 1.59, "signals": {"close": 1.59, "dilution_30d": 0.0, "dist_ma20": -0.24087, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.03247, "ret_20d": -0.35366, "ret_5d": -0.09143, "reverse_split_60d": 0.0, "rsi14": 30.78339, "sentiment": null, "short_pct_float": 0.265, "short_ratio": 0.32851, "short_ratio_z": -1.0519, "trends_z": -0.22827, "volume_z": -0.64688}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "0774badd254f4eaff942ff53c156b5afb618d167b20367993de7901ccfb1b13f", "hash": "11b6c91afd587eda63df6dc878802031f65498bf59dde30def0b142732e5cdfc", "actual_return": null, "correct": null}, {"id": 11, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "CLOV", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 3.76, "signals": {"close": 3.76, "dilution_30d": 0.0, "dist_ma20": -0.15315, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01348, "ret_20d": -0.21503, "ret_5d": -0.09832, "reverse_split_60d": 0.0, "rsi14": 33.03948, "sentiment": null, "short_pct_float": 0.0513, "short_ratio": 0.22421, "short_ratio_z": -1.52555, "trends_z": -0.10771, "volume_z": 0.29547}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "aa357ec190bfccf1bd591838eebf516c5c746b401f434725f497babce18166fc", "hash": "e679ea10885a5638c71c05138515caff6be7a18bf9d5e7534c34a1909ef1bd48", "actual_return": null, "correct": null}, {"id": 12, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "CLOV", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 3.76, "signals": {"close": 3.76, "dilution_30d": 0.0, "dist_ma20": -0.15315, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01348, "ret_20d": -0.21503, "ret_5d": -0.09832, "reverse_split_60d": 0.0, "rsi14": 33.03948, "sentiment": null, "short_pct_float": 0.0513, "short_ratio": 0.22421, "short_ratio_z": -1.52555, "trends_z": -0.10771, "volume_z": 0.29547}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "e679ea10885a5638c71c05138515caff6be7a18bf9d5e7534c34a1909ef1bd48", "hash": "41e5096d3711954e2cbebb027322255f77998cf7756b4b328f98f92a3f832374", "actual_return": null, "correct": null}, {"id": 13, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "FCEL", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 7.44, "signals": {"close": 7.44, "dilution_30d": 0.0, "dist_ma20": -0.20801, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.04789, "ret_20d": -0.39903, "ret_5d": -0.04124, "reverse_split_60d": 0.0, "rsi14": 35.58623, "sentiment": null, "short_pct_float": 0.2776, "short_ratio": 0.56326, "short_ratio_z": 0.65725, "trends_z": 0.56569, "volume_z": 0.57985}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "41e5096d3711954e2cbebb027322255f77998cf7756b4b328f98f92a3f832374", "hash": "8cfd6e6c7303d32b3d341a79dd34a6321798bdc351fdb1d0877da1139f055b66", "actual_return": null, "correct": null}, {"id": 14, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "FCEL", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 7.44, "signals": {"close": 7.44, "dilution_30d": 0.0, "dist_ma20": -0.20801, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.04789, "ret_20d": -0.39903, "ret_5d": -0.04124, "reverse_split_60d": 0.0, "rsi14": 35.58623, "sentiment": null, "short_pct_float": 0.2776, "short_ratio": 0.56326, "short_ratio_z": 0.65725, "trends_z": 0.56569, "volume_z": 0.57985}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "8cfd6e6c7303d32b3d341a79dd34a6321798bdc351fdb1d0877da1139f055b66", "hash": "8915f486ca617021d5e32f0cfea8573c04af8568329cbcee456bd00a6ba6eb88", "actual_return": null, "correct": null}, {"id": 17, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "KOSS", "horizon": "1d", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 3.38, "signals": {"close": 3.38, "dilution_30d": 0.0, "dist_ma20": 0.05002, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.02424, "ret_20d": -0.01458, "ret_5d": 0.07643, "reverse_split_60d": 0.0, "rsi14": 52.67028, "sentiment": null, "short_pct_float": 0.0409, "short_ratio": 0.50795, "short_ratio_z": -0.90379, "trends_z": -0.52185, "volume_z": 0.04987}, "reasons": [], "pump_flag": 0, "prev_hash": "20b7ee923bc8ce3a3eac7b5614fb6887cb401af0bc57fc2cd2c94d2422cbd1f1", "hash": "8726151d00649ea72c15c60c8dd6c84a18aa793dd4923da2bb2d08b889fa7da9", "actual_return": null, "correct": null}, {"id": 18, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "KOSS", "horizon": "1w", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 3.38, "signals": {"close": 3.38, "dilution_30d": 0.0, "dist_ma20": 0.05002, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.02424, "ret_20d": -0.01458, "ret_5d": 0.07643, "reverse_split_60d": 0.0, "rsi14": 52.67028, "sentiment": null, "short_pct_float": 0.0409, "short_ratio": 0.50795, "short_ratio_z": -0.90379, "trends_z": -0.52185, "volume_z": 0.04987}, "reasons": [], "pump_flag": 0, "prev_hash": "8726151d00649ea72c15c60c8dd6c84a18aa793dd4923da2bb2d08b889fa7da9", "hash": "3d7b6178124908f6820ef2d065391418a5057fec9c1b4e3c61c6b8ec59227655", "actual_return": null, "correct": null}, {"id": 15, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "MVIS", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 0.87, "signals": {"close": 0.87, "dilution_30d": 0.0, "dist_ma20": -0.20037, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01163, "ret_20d": -0.33077, "ret_5d": 0.0, "reverse_split_60d": 0.0, "rsi14": 33.65711, "sentiment": null, "short_pct_float": 0.1864, "short_ratio": 0.74158, "short_ratio_z": 1.84569, "trends_z": 0.80351, "volume_z": 1.39586}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "8915f486ca617021d5e32f0cfea8573c04af8568329cbcee456bd00a6ba6eb88", "hash": "891db92701fb8c26107095d26e18b2d3d7aadaa55c117b30eaabfe5f48917a5d", "actual_return": null, "correct": null}, {"id": 16, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "MVIS", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 0.87, "signals": {"close": 0.87, "dilution_30d": 0.0, "dist_ma20": -0.20037, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.01163, "ret_20d": -0.33077, "ret_5d": 0.0, "reverse_split_60d": 0.0, "rsi14": 33.65711, "sentiment": null, "short_pct_float": 0.1864, "short_ratio": 0.74158, "short_ratio_z": 1.84569, "trends_z": 0.80351, "volume_z": 1.39586}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "891db92701fb8c26107095d26e18b2d3d7aadaa55c117b30eaabfe5f48917a5d", "hash": "20b7ee923bc8ce3a3eac7b5614fb6887cb401af0bc57fc2cd2c94d2422cbd1f1", "actual_return": null, "correct": null}, {"id": 7, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "OPEN", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 1.26, "signals": {"close": 1.26, "dilution_30d": 0.0, "dist_ma20": -0.13028, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0678, "ret_20d": -0.34031, "ret_5d": -0.00787, "reverse_split_60d": 0.0, "rsi14": 37.58275, "sentiment": null, "short_pct_float": 0.2768, "short_ratio": 0.47921, "short_ratio_z": -0.85968, "trends_z": 2.25862, "volume_z": 0.58203}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "5a30472d5a23501090e48645c3315196c513871f79e552c3f5e6b854e69a9106", "hash": "421f03c0f1cf8675bd326a2c482ec462f645d02c0560af43cba66dc304d93380", "actual_return": null, "correct": null}, {"id": 8, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "OPEN", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 1.26, "signals": {"close": 1.26, "dilution_30d": 0.0, "dist_ma20": -0.13028, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0678, "ret_20d": -0.34031, "ret_5d": -0.00787, "reverse_split_60d": 0.0, "rsi14": 37.58275, "sentiment": null, "short_pct_float": 0.2768, "short_ratio": 0.47921, "short_ratio_z": -0.85968, "trends_z": 2.25862, "volume_z": 0.58203}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "421f03c0f1cf8675bd326a2c482ec462f645d02c0560af43cba66dc304d93380", "hash": "2052cff05e1f6e0d5fa7bbd43fa2694b80b14b4b5875a562dc2a098de79735ea", "actual_return": null, "correct": null}, {"id": 5, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "PLUG", "horizon": "1d", "direction": "down", "prob_up": 0.4502, "confidence": 0.0997, "base_close": 1.07, "signals": {"close": 1.07, "dilution_30d": 0.0, "dist_ma20": -0.1276, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.15054, "ret_20d": -0.24648, "ret_5d": -0.00926, "reverse_split_60d": 0.0, "rsi14": 37.97559, "sentiment": null, "short_pct_float": 0.2425, "short_ratio": 0.69449, "short_ratio_z": 1.70931, "trends_z": 0.52243, "volume_z": 1.54247}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}], "pump_flag": 0, "prev_hash": "11b6c91afd587eda63df6dc878802031f65498bf59dde30def0b142732e5cdfc", "hash": "2f4afd4c0472d6c03d27093adfda0b335d2d20d13b2fef61a9dd2c4794e90daa", "actual_return": null, "correct": null}, {"id": 6, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "PLUG", "horizon": "1w", "direction": "down", "prob_up": 0.4378, "confidence": 0.1244, "base_close": 1.07, "signals": {"close": 1.07, "dilution_30d": 0.0, "dist_ma20": -0.1276, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.15054, "ret_20d": -0.24648, "ret_5d": -0.00926, "reverse_split_60d": 0.0, "rsi14": 37.97559, "sentiment": null, "short_pct_float": 0.2425, "short_ratio": 0.69449, "short_ratio_z": 1.70931, "trends_z": 0.52243, "volume_z": 1.54247}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}], "pump_flag": 0, "prev_hash": "2f4afd4c0472d6c03d27093adfda0b335d2d20d13b2fef61a9dd2c4794e90daa", "hash": "5a30472d5a23501090e48645c3315196c513871f79e552c3f5e6b854e69a9106", "actual_return": null, "correct": null}, {"id": 1, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "SNDL", "horizon": "1d", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 1.31, "signals": {"close": 1.31, "dilution_30d": 0.0, "dist_ma20": -0.01262, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.06504, "ret_20d": 0.0155, "ret_5d": -0.02239, "reverse_split_60d": 0.0, "rsi14": 50.58394, "sentiment": null, "short_pct_float": 0.008, "short_ratio": 0.30685, "short_ratio_z": -1.79734, "trends_z": 0.33192, "volume_z": 1.12539}, "reasons": [], "pump_flag": 0, "prev_hash": "genesis", "hash": "dd0b7cdf4ab869156b7f9171bbb33916a91d63aa9a5c42d42373e2fdb2d78d30", "actual_return": null, "correct": null}, {"id": 2, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "SNDL", "horizon": "1w", "direction": "down", "prob_up": 0.4875, "confidence": 0.025, "base_close": 1.31, "signals": {"close": 1.31, "dilution_30d": 0.0, "dist_ma20": -0.01262, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.06504, "ret_20d": 0.0155, "ret_5d": -0.02239, "reverse_split_60d": 0.0, "rsi14": 50.58394, "sentiment": null, "short_pct_float": 0.008, "short_ratio": 0.30685, "short_ratio_z": -1.79734, "trends_z": 0.33192, "volume_z": 1.12539}, "reasons": [], "pump_flag": 0, "prev_hash": "dd0b7cdf4ab869156b7f9171bbb33916a91d63aa9a5c42d42373e2fdb2d78d30", "hash": "9093f9e0e36a634760359d76d2387d18c76e89751dd8c25894bf19c1e0758066", "actual_return": null, "correct": null}, {"id": 9, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "TLRY", "horizon": "1d", "direction": "up", "prob_up": 0.5, "confidence": 0.0, "base_close": 1.83, "signals": {"close": 1.83, "dilution_30d": 0.0, "dist_ma20": -0.24614, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0, "ret_20d": -0.3197, "ret_5d": -0.18667, "reverse_split_60d": 0.0, "rsi14": 20.10311, "sentiment": null, "short_pct_float": 0.1552, "short_ratio": 0.52992, "short_ratio_z": -1.46514, "trends_z": 0.37413, "volume_z": -0.33188}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.15}, {"rule": "oversold", "why": "RSI below 25", "weight": 0.2}], "pump_flag": 0, "prev_hash": "2052cff05e1f6e0d5fa7bbd43fa2694b80b14b4b5875a562dc2a098de79735ea", "hash": "907c8787c56d4b73345e3d67f58e7d5435ad0b03c0211826eb2c798bfb560d07", "actual_return": null, "correct": null}, {"id": 10, "created_at": "2026-11-26T06:20:14+00:00", "as_of": "2026-11-25", "ticker": "TLRY", "horizon": "1w", "direction": "down", "prob_up": 0.475, "confidence": 0.05, "base_close": 1.83, "signals": {"close": 1.83, "dilution_30d": 0.0, "dist_ma20": -0.24614, "filings_3d": 0.0, "insider_net_30d": 0.0, "mentions": null, "mentions_z": null, "ret_1d": 0.0, "ret_20d": -0.3197, "ret_5d": -0.18667, "reverse_split_60d": 0.0, "rsi14": 20.10311, "sentiment": null, "short_pct_float": 0.1552, "short_ratio": 0.52992, "short_ratio_z": -1.46514, "trends_z": 0.37413, "volume_z": -0.33188}, "reasons": [{"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "weight": -0.2}, {"rule": "oversold", "why": "RSI below 25", "weight": 0.15}], "pump_flag": 0, "prev_hash": "907c8787c56d4b73345e3d67f58e7d5435ad0b03c0211826eb2c798bfb560d07", "hash": "aa357ec190bfccf1bd591838eebf516c5c746b401f434725f497babce18166fc", "actual_return": null, "correct": null}], "live": {"1d": {"n": 0}, "1w": {"n": 0}}, "recent": [], "pumps": [], "backtest": {"created_at": "2026-11-26T06:25:53+00:00", "tickers": ["SNDL", "BBAI", "PLUG", "OPEN", "TLRY", "CLOV", "FCEL", "MVIS", "KOSS", "ACHR"], "start": "2024-02-23", "end": "2026-11-24", "horizons": {"1d": {"n": 6568, "hit_rate": 0.5175091352009744, "always_up": 0.45006090133982946, "always_down": 0.5499390986601705, "follow_market": 0.4817295980511571, "strategy_avg_return": 0.0006249138127377373, "buy_hold_avg_return": 0.0006644958523843582, "pump_flags": 63, "pump_then_down": 0.5396825396825397, "rules": [{"rule": "pump_pattern", "why": "Buzz or volume spike plus a price jump with no news or filing behind it", "fired": 63, "says": "down", "hit_rate": 0.5396825396825397, "avg_return": 0.008873348223106361}, {"rule": "overextended", "why": "Up more than 30% in 5 days", "fired": 217, "says": "down", "hit_rate": 0.543778801843318, "avg_return": 0.005315514043303431}, {"rule": "capitulation", "why": "Down more than 25% in 5 days on heavy volume", "fired": 32, "says": "up", "hit_rate": 0.5625, "avg_return": 0.0201708950393704}, {"rule": "dilution", "why": "Offering or share-sale filing in the last 30 days", "fired": 0}, {"rule": "reverse_split", "why": "Reverse split in the last 60 days", "fired": 120, "says": "down", "hit_rate": 0.5583333333333333, "avg_return": 0.00037380025568430064}, {"rule": "insider_buying", "why": "Insiders bought more shares than they sold in the last 30 days", "fired": 0}, {"rule": "uptrend", "why": "Above its 20-day average and up over 20 days", "fired": 2027, "says": "up", "hit_rate": 0.4390725209669462, "avg_return": 0.0024838859924892712}, {"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "fired": 3416, "says": "down", "hit_rate": 0.5433255269320844, "avg_return": -0.00013390696551594924}, {"rule": "oversold", "why": "RSI below 25", "fired": 49, "says": "up", "hit_rate": 0.6326530612244898, "avg_return": 0.016005106505129114}, {"rule": "overbought", "why": "RSI above 80", "fired": 58, "says": "down", "hit_rate": 0.603448275862069, "avg_return": 0.0028740341729393587}, {"rule": "buzz_with_news", "why": "Reddit buzz rising with positive tone and a fresh filing behind it", "fired": 0}, {"rule": "short_pressure", "why": "Short-sale share of volume spiking while the price rises", "fired": 0}], "confidence": [{"range": "0.00-0.10", "n": 6364, "hit_rate": 0.5158705216844752}, {"range": "0.10-0.25", "n": 166, "hit_rate": 0.5602409638554217}, {"range": "0.25-0.50", "n": 38, "hit_rate": 0.6052631578947368}]}, "1w": {"n": 6717, "hit_rate": 0.5243412237606074, "always_up": 0.42846508858121185, "always_down": 0.5715349114187881, "follow_market": 0.48280482358195626, "strategy_avg_return": -0.0002703482745409222, "buy_hold_avg_return": 0.0025632552091801853, "pump_flags": 64, "pump_then_down": 0.53125, "rules": [{"rule": "pump_pattern", "why": "Buzz or volume spike plus a price jump with no news or filing behind it", "fired": 64, "says": "down", "hit_rate": 0.53125, "avg_return": 0.015137318341374459}, {"rule": "overextended", "why": "Up more than 30% in 5 days", "fired": 214, "says": "down", "hit_rate": 0.5467289719626168, "avg_return": 0.04625713623039876}, {"rule": "capitulation", "why": "Down more than 25% in 5 days on heavy volume", "fired": 31, "says": "up", "hit_rate": 0.4838709677419355, "avg_return": 0.02373241018077919}, {"rule": "dilution", "why": "Offering or share-sale filing in the last 30 days", "fired": 0}, {"rule": "reverse_split", "why": "Reverse split in the last 60 days", "fired": 123, "says": "down", "hit_rate": 0.5772357723577236, "avg_return": 0.008903688120927239}, {"rule": "insider_buying", "why": "Insiders bought more shares than they sold in the last 30 days", "fired": 0}, {"rule": "uptrend", "why": "Above its 20-day average and up over 20 days", "fired": 2046, "says": "up", "hit_rate": 0.41544477028348, "avg_return": 0.00801529203038106}, {"rule": "downtrend", "why": "Below its 20-day average and down over 20 days", "fired": 3520, "says": "down", "hit_rate": 0.5599431818181818, "avg_return": 0.0004766820899346229}, {"rule": "oversold", "why": "RSI below 25", "fired": 46, "says": "up", "hit_rate": 0.5, "avg_return": 0.03020948358476985}, {"rule": "overbought", "why": "RSI above 80", "fired": 58, "says": "down", "hit_rate": 0.5344827586206896, "avg_return": 0.017974413807185577}, {"rule": "buzz_with_news", "why": "Reddit buzz rising with positive tone and a fresh filing behind it", "fired": 0}, {"rule": "short_pressure", "why": "Short-sale share of volume spiking while the price rises", "fired": 0}], "confidence": [{"range": "0.00-0.10", "n": 2966, "hit_rate": 0.4801078894133513}, {"range": "0.10-0.25", "n": 3552, "hit_rate": 0.5602477477477478}, {"range": "0.25-0.50", "n": 173, "hit_rate": 0.5606936416184971}, {"range": "0.50-1.00", "n": 26, "hit_rate": 0.4230769230769231}]}}}, "chain": {"ok": true, "count": 20, "pending": 20}, "runs": [{"started_at": "2026-11-26T06:25:51+00:00", "step": "predict", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:25:51+00:00", "step": "resolve", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:25:51+00:00", "step": "google_trends", "status": "ok", "detail": "10 ok"}, {"started_at": "2026-11-26T06:25:28+00:00", "step": "short_interest", "status": "ok", "detail": ""}, {"started_at": "2026-11-26T06:25:26+00:00", "step": "finra_short_volume", "status": "ok", "detail": ""}, {"started_at": "2026-11-26T06:25:26+00:00", "step": "reddit", "status": "error", "detail": "0 ok, 10 failed (see Actions log)"}, {"started_at": "2026-11-26T06:25:26+00:00", "step": "sec", "status": "error", "detail": "0 ok, 10 failed (see Actions log)"}, {"started_at": "2026-11-26T06:25:24+00:00", "step": "prices", "status": "ok", "detail": "11 ok"}, {"started_at": "2026-11-26T06:24:10+00:00", "step": "predict", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:24:10+00:00", "step": "resolve", "status": "ok", "detail": "0"}, {"started_at": "2026-11-26T06:24:10+00:00", "step": "google_trends", "status": "ok", "detail": "10 ok"}, {"started_at": "2026-11-26T06:23:45+00:00", "step": "short_interest", "status": "ok", "detail": ""}], "simulation": null};
+const H = { "1d": { tab: "Tomorrow", by: "by tomorrow's close", noun: "day" }, "1w": { tab: "This week", by: "within a week", noun: "week" } };
 let hz = "1d";
-const pct = (x, d = 1) => x == null ? "–" : (x * 100).toFixed(d) + "%";
+try { hz = localStorage.getItem("hz") || "1d"; } catch (e) {}
+
+const pct = (x, d = 0) => x == null ? "–" : (x * 100).toFixed(d) + "%";
 const spct = (x, d = 1) => x == null ? "–" : (x > 0 ? "+" : "") + (x * 100).toFixed(d) + "%";
 const cls = x => x == null ? "" : x > 0 ? "up" : x < 0 ? "down" : "";
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const arrow = d => d === "up" ? '<span class="up">▲ up</span>' : '<span class="down">▼ down</span>';
+const fmtDate = s => s ? new Date(s + "T12:00:00").toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" }) : "–";
+const shortDate = s => s ? new Date(s + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "–";
 
-function meta() {
-  const c = D.chain;
-  const chain = c.ok ? `<span class="badge ok">${c.count} predictions locked · chain verified</span>`
-                     : `<span class="badge bad">Lock chain broken at #${c.count + 1}</span>`;
-  document.getElementById("meta").innerHTML =
-    `Updated ${new Date(D.generated_at).toLocaleString()} · data through ${esc(D.latest_as_of || "–")} · ${chain}`;
-  const names = { prices: "Prices", sec: "SEC filings", reddit: "Reddit", finra_short_volume: "Short volume", short_interest: "Short interest", google_trends: "Google Trends" };
-  document.getElementById("sources").innerHTML = (D.sources || []).filter(s => names[s.step]).map(s =>
-    `<span class="badge ${s.status === "ok" ? "ok" : s.status === "partial" ? "warn" : "bad"}" title="${esc(s.detail)}">${names[s.step]} ${s.status === "ok" ? "✓" : s.status === "partial" ? "partial" : "failing"}</span>`).join(" ");
+// Plain-English versions of each rule
+const PLAIN = {
+  pump_pattern: "It jumped on a burst of online hype with no company news behind it. Spikes like that often fade.",
+  overextended: "It's up more than 30% in a week. Big run-ups often give some back.",
+  capitulation: "It dropped more than 25% in a week on heavy trading. Sharp sell-offs sometimes bounce back.",
+  dilution: "The company recently filed to sell new shares, which usually pushes the price down.",
+  reverse_split: "It did a reverse split recently, which is often a sign the company is struggling.",
+  insider_buying: "People who run the company have been buying shares with their own money.",
+  uptrend: "It has been climbing over the past month, and trends often continue.",
+  downtrend: "It has been sliding over the past month, and trends often continue.",
+  oversold: "It has fallen so fast that a short bounce is common.",
+  overbought: "It has risen so fast that a pullback is common.",
+  buzz_with_news: "Reddit chatter is rising and upbeat, and there's real company news behind it.",
+  short_pressure: "More traders are betting against it while the price rises, which can force them to buy back.",
+};
+const NONE = "No strong signals right now, so this call is close to a coin flip.";
+
+function confWord(c) { return c >= 0.3 ? ["High", 3] : c >= 0.1 ? ["Medium", 2] : ["Low", 1]; }
+function confHtml(c) {
+  const [w, n] = confWord(c);
+  return `<span class="conf" title="How strongly the signals agree"><span class="dots">${[1, 2, 3].map(i => `<i class="${i <= n ? "on" : ""}"></i>`).join("")}</span>${w} confidence</span>`;
+}
+function headline(p) {
+  const rs = p.reasons || [];
+  if (!rs.length) return NONE;
+  const agree = rs.filter(r => (r.weight > 0) === (p.direction === "up"));
+  const pick = (agree.length ? agree : rs).slice().sort((a, b) => Math.abs(b.weight) - Math.abs(a.weight))[0];
+  return PLAIN[pick.rule] || pick.why;
+}
+
+function tabs() {
   const t = document.getElementById("htabs");
-  t.innerHTML = Object.entries(H).map(([k, v]) => `<button data-h="${k}" class="${k === hz ? "on" : ""}">${v}</button>`).join("");
-  t.querySelectorAll("button").forEach(b => b.onclick = () => { hz = b.dataset.h; render(); });
+  t.innerHTML = Object.entries(H).map(([k, v]) => `<button role="tab" aria-selected="${k === hz}" data-h="${k}" class="${k === hz ? "on" : ""}">${v.tab}</button>`).join("");
+  t.querySelectorAll("button").forEach(b => b.onclick = () => { hz = b.dataset.h; try { localStorage.setItem("hz", hz); } catch (e) {} render(); });
 }
 
-function kpi(label, value, cmp, c = "") {
-  return `<div class="panel kpi"><div class="label">${label}</div><div class="value ${c}">${value}</div><div class="cmp">${cmp}</div></div>`;
+function header() {
+  document.getElementById("simbanner").innerHTML = D.simulation ?
+    `<div class="sim"><b>Practice run.</b> ${esc(D.simulation)} <a href="../">See the real record</a>.</div>` : "";
+  document.getElementById("lede").textContent = `Daily up-or-down calls for ${D.watchlist.length} small, fast-moving stocks, and an honest count of how often they're right.`;
+  document.getElementById("foot").textContent = `Updated ${new Date(D.generated_at).toLocaleString()} · ${D.chain.count} calls locked${D.chain.ok ? " and verified unchanged" : " · WARNING: lock check failed"} · Not investment advice`;
 }
+
+function record() {
+  const s = D.live[hz] || { n: 0 };
+  const el = document.getElementById("record");
+  if (!s.n) {
+    el.innerHTML = `<div class="txt"><b>No results yet.</b> The first ${H[hz].tab.toLowerCase()} calls get checked after ${hz === "1d" ? "the next trading day" : "five trading days"}. Check back soon.</div>`;
+    return;
+  }
+  const best = Math.max(s.always_up, s.always_down ?? 0);
+  const bestWord = s.always_down > s.always_up ? "down" : "up";
+  const beat = s.hit_rate > best;
+  el.innerHTML = `<div class="big">${pct(s.hit_rate)}</div>
+    <div class="txt"><b>right so far</b> (${s.right} of ${s.n} ${H[hz].tab.toLowerCase()} calls).<br>
+    <span class="sub">${beat ? "That's better than" : "For comparison,"} simply guessing "${bestWord}" every time, which would have been right ${pct(best)}.</span></div>`;
+}
+
+function facts(sg) {
+  if (!sg) return "";
+  const rows = [];
+  const add = (label, hint, val) => rows.push(`<tr><td>${label}<span class="hint">${hint}</span></td><td>${val}</td></tr>`);
+  if (sg.ret_5d != null) add("Price change, past week", "", `<span class="${cls(sg.ret_5d)}">${spct(sg.ret_5d)}</span>`);
+  if (sg.ret_20d != null) add("Price change, past month", "", `<span class="${cls(sg.ret_20d)}">${spct(sg.ret_20d)}</span>`);
+  if (sg.volume_z != null) add("Trading activity", "Compared with a normal day", sg.volume_z > 2 ? "Much higher" : sg.volume_z > 0.75 ? "Higher" : sg.volume_z < -0.75 ? "Lower" : "Normal");
+  if (sg.trends_z != null) add("Google searches", "Compared with recent weeks", sg.trends_z > 2 ? "Spiking" : sg.trends_z > 0.75 ? "Rising" : sg.trends_z < -0.75 ? "Falling" : "Normal");
+  if (sg.mentions != null) add("Reddit posts, past day", "Across stock-picking subreddits", sg.mentions.toFixed(0));
+  if (sg.short_ratio != null) add("Short selling", "Share of trades betting it will fall", pct(sg.short_ratio));
+  add("Plans to sell new shares", "SEC filings in the past 30 days", sg.dilution_30d ? '<span class="down">Yes</span>' : "None found");
+  add("Insiders buying", "Company leaders, past 30 days", sg.insider_net_30d > 0 ? '<span class="up">Yes</span>' : "No");
+  if (sg.reverse_split_60d) add("Reverse split", "In the past 60 days", '<span class="down">Yes</span>');
+  return `<table class="facts">${rows.join("")}</table>`;
+}
+
+function card(t, p, other) {
+  const up = p.direction === "up";
+  const rec = (D.live[hz] && D.live[hz].per_ticker || {})[t];
+  const past = D.recent.filter(r => r.ticker === t && r.horizon === hz).slice(0, 12).reverse();
+  const reasons = (p.reasons || []).map(r => `<li class="${r.weight > 0 ? "pos" : "neg"}">${esc(PLAIN[r.rule] || r.why)}</li>`).join("");
+  const otherTxt = other ? `${H[other.horizon].tab}: <b class="${other.direction}">${other.direction}</b> (${confWord(other.confidence)[0].toLowerCase()} confidence)` : "";
+  return `<details class="card"><summary>
+      <div class="row1"><span class="tk">${esc(t)}${p.pump_flag ? '<span class="hype" title="Hype with no news behind it">Hype warning</span>' : ""}</span>
+        <span class="px">$${(+p.base_close).toFixed(2)}${p.signals && p.signals.ret_5d != null ? ` · <span class="${cls(p.signals.ret_5d)}">${spct(p.signals.ret_5d, 0)}</span> this week` : ""}</span></div>
+      <div class="call"><span class="pill ${up ? "up" : "down"}">${up ? "▲ Likely up" : "▼ Likely down"}</span>${confHtml(p.confidence)}</div>
+      <p class="why">${esc(headline(p))}</p>
+      <span class="more"><span class="o">Why this call ›</span><span class="c">Hide details</span></span>
+    </summary>
+    <div class="detail">
+      <h4>Everything that went into it</h4>
+      ${reasons ? `<ul class="reasons">${reasons}</ul>` : `<p style="margin:0">${NONE}</p>`}
+      <p class="sub" style="margin:8px 0 0">The signals add up to a ${pct(p.prob_up)} chance of closing higher ${H[hz].by}. ${otherTxt}</p>
+      <h4>What we looked at</h4>
+      ${facts(p.signals)}
+      <h4>Past ${H[hz].tab.toLowerCase()} calls for ${esc(t)}</h4>
+      ${past.length ? `<div class="past">${past.map(r => `<span class="${r.correct ? "r" : "w"}" title="${esc(shortDate(r.as_of))}: called ${r.direction}, moved ${spct(r.actual_return)}">${r.correct ? "✓" : "✗"}</span>`).join("")}</div>
+        <p class="sub" style="margin:6px 0 0">${rec ? `Right ${rec.right} of ${rec.n} times.` : ""} Oldest on the left.</p>` : '<p class="sub" style="margin:0">None checked yet.</p>'}
+    </div></details>`;
+}
+
+function cards() {
+  const el = document.getElementById("cards");
+  document.getElementById("callsTitle").textContent = D.simulation ? "Latest calls in this practice run" : "Today's calls";
+  if (!D.today.length) { el.innerHTML = `<div class="panel empty" style="grid-column:1/-1">No calls yet. They appear after the first morning run.</div>`; document.getElementById("callsSub").textContent = ""; return; }
+  const next = (() => { const d = new Date(D.latest_as_of + "T12:00:00"); do { d.setDate(d.getDate() + 1); } while ([0, 6].includes(d.getDay())); return d.toISOString().slice(0, 10); })();
+  document.getElementById("callsSub").textContent = `Will each stock close higher or lower ${H[hz].by}? Made before the market opened on ${fmtDate(next)}, using prices through ${shortDate(D.latest_as_of)}. Tap a stock to see why.`;
+  const by = {};
+  D.today.forEach(p => { (by[p.ticker] = by[p.ticker] || {})[p.horizon] = p; });
+  const otherH = hz === "1d" ? "1w" : "1d";
+  const list = Object.entries(by).filter(([, h]) => h[hz]).sort((a, b) => (a[1][hz].direction === "up" ? 0 : 1) - (b[1][hz].direction === "up" ? 0 : 1) || b[1][hz].confidence - a[1][hz].confidence || a[0].localeCompare(b[0]));
+  el.innerHTML = list.map(([t, h]) => card(t, h[hz], h[otherH])).join("");
+}
+
+function kpi(label, value, cmp, c = "") { return `<div class="kpi"><div class="label">${label}</div><div class="value ${c}">${value}</div><div class="cmp">${cmp}</div></div>`; }
 
 function chart(series) {
   if (!series || series.length < 2) return "";
-  const W = 1000, Hh = 220, P = { l: 40, r: 10, t: 10, b: 24 };
+  const W = 900, Hh = 200, P = { l: 38, r: 8, t: 10, b: 22 };
   const x = i => P.l + i * (W - P.l - P.r) / (series.length - 1);
   const ys = series.flatMap(s => [s.model, s.always_up]);
-  let lo = Math.min(0.35, ...ys), hi = Math.max(0.65, ...ys);
+  const lo = Math.min(0.3, ...ys), hi = Math.max(0.7, ...ys);
   const y = v => P.t + (hi - v) * (Hh - P.t - P.b) / (hi - lo);
   const path = k => series.map((s, i) => (i ? "L" : "M") + x(i).toFixed(1) + "," + y(s[k]).toFixed(1)).join("");
-  const ticks = [lo, 0.5, hi].map(v => `<line x1="${P.l}" x2="${W - P.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v === 0.5 ? "" : 'stroke-dasharray="3 4"'}/><text x="${P.l - 6}" y="${y(v) + 4}" text-anchor="end">${pct(v, 0)}</text>`).join("");
-  const n = series.length;
-  return `<div class="panel" style="margin-top:12px"><div class="label sub">Cumulative hit rate</div>
-    <svg viewBox="0 0 ${W} ${Hh}" width="100%" preserveAspectRatio="none" style="height:220px">${ticks}
-      <path d="${path("always_up")}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>
+  const grid = [lo, 0.5, hi].map(v => `<line x1="${P.l}" x2="${W - P.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v === 0.5 ? "" : 'stroke-dasharray="3 4"'}/><text x="${P.l - 6}" y="${y(v) + 4}" text-anchor="end">${pct(v)}</text>`).join("");
+  return `<div class="mt"><div class="sub">Share of calls right so far, over time</div>
+    <svg viewBox="0 0 ${W} ${Hh}" width="100%" preserveAspectRatio="none" style="height:200px">${grid}
+      <path d="${path("always_up")}" fill="none" stroke="var(--faint)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>
       <path d="${path("model")}" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
-      <text x="${P.l}" y="${Hh - 6}">${esc(series[0].date)}</text><text x="${W - P.r}" y="${Hh - 6}" text-anchor="end">${esc(series[n - 1].date)}</text>
-    </svg>
-    <div class="legend"><span><i style="background:var(--accent)"></i>Model</span><span><i style="background:var(--muted)"></i>Always "up"</span></div></div>`;
+      <text x="${P.l}" y="${Hh - 5}">${esc(shortDate(series[0].date))}</text><text x="${W - P.r}" y="${Hh - 5}" text-anchor="end">${esc(shortDate(series[series.length - 1].date))}</text>
+    </svg><div class="legend"><span><i style="background:var(--accent)"></i>Our calls</span><span><i style="background:var(--faint)"></i>Always guessing "up"</span></div></div>`;
 }
 
 function score() {
   const s = D.live[hz] || { n: 0 };
+  document.getElementById("scoreSum").textContent = s.n ? `Right ${pct(s.hit_rate)} of the time, compared with simple guessing` : "No results yet";
   const el = document.getElementById("score");
-  if (!s.n) {
-    el.innerHTML = `<div class="panel empty">No ${H[hz].toLowerCase()} predictions have been scored yet.
-      ${D.chain.pending ? `${D.chain.pending} locked predictions are waiting for their result.` : ""}
-      The first results arrive after ${hz === "1d" ? "the next trading day" : "five trading days"}.</div>`;
-    return;
-  }
-  const edge = s.hit_rate - Math.max(s.always_up, s.always_down ?? 0);
+  if (!s.n) { el.innerHTML = `<div class="empty">Nothing checked yet. ${D.chain.pending} calls are waiting for their result.</div>`; return; }
+  const best = Math.max(s.always_up, s.always_down ?? 0);
   el.innerHTML = `<div class="kpis">
-    ${kpi("Hit rate", pct(s.hit_rate), `${s.n} calls scored · last 20 days ${pct(s.hit_rate_recent)}`)}
-    ${kpi("vs best simple guess", spct(edge), `always "up" ${pct(s.always_up)} · always "down" ${pct(s.always_down)}`, cls(edge))}
-    ${kpi("vs follow the market", spct(s.follow_market == null ? null : s.hit_rate - s.follow_market), `baseline ${pct(s.follow_market)}`, cls(s.follow_market == null ? null : s.hit_rate - s.follow_market))}
-    ${kpi("Avg return following calls", spct(s.strategy_avg_return, 2), `buy and hold ${spct(s.buy_hold_avg_return, 2)} · SPY ${spct(s.market_avg_return, 2)}`, cls(s.strategy_avg_return))}
-    ${kpi("Move size", pct(s.avg_move_right), `avg move when right · ${pct(s.avg_move_wrong)} when wrong`)}
+    ${kpi("Right", pct(s.hit_rate, 1), `${s.n} calls · last 20 days ${pct(s.hit_rate_recent, 1)}`)}
+    ${kpi("Vs. guessing one way", spct(s.hit_rate - best), `always "up" ${pct(s.always_up, 1)} · always "down" ${pct(s.always_down, 1)}`, cls(s.hit_rate - best))}
+    ${kpi("Vs. following the market", spct(s.follow_market == null ? null : s.hit_rate - s.follow_market), `guessing each stock moves like the S&P 500 just did: ${pct(s.follow_market, 1)}`, cls(s.follow_market == null ? null : s.hit_rate - s.follow_market))}
+    ${kpi("Average gain per call", spct(s.strategy_avg_return, 2), `if you bet with each call · buying and holding: ${spct(s.buy_hold_avg_return, 2)} · S&P 500: ${spct(s.market_avg_return, 2)}`, cls(s.strategy_avg_return))}
+    ${kpi("Size of moves", pct(s.avg_move_right, 1), `average move when right · ${pct(s.avg_move_wrong, 1)} when wrong`)}
   </div>${chart(s.series)}
-  ${s.confidence.length ? `<div class="panel" style="margin-top:12px"><div class="sub">Hit rate by confidence</div>
-    <table><tr><th>Confidence</th><th>Calls</th><th>Hit rate</th></tr>${s.confidence.map(c => `<tr><td>${c.bucket}</td><td>${c.n}</td><td>${pct(c.hit_rate)}</td></tr>`).join("")}</table></div>` : ""}`;
-}
-
-function sigChips(sg) {
-  if (!sg) return "";
-  const out = [];
-  const add = (label, v, f, bad) => { if (v != null) out.push(`<span class="chip ${bad == null ? "" : bad ? "neg" : "pos"}">${label} ${f(v)}</span>`); };
-  add("5d", sg.ret_5d, v => spct(v, 0), sg.ret_5d < 0);
-  add("vol z", sg.volume_z, v => v.toFixed(1));
-  add("reddit", sg.mentions, v => v.toFixed(0));
-  add("trends z", sg.trends_z, v => v.toFixed(1));
-  add("short vol", sg.short_ratio, v => pct(v, 0));
-  if (sg.dilution_30d) out.push(`<span class="chip neg">offering filed</span>`);
-  if (sg.reverse_split_60d) out.push(`<span class="chip neg">reverse split</span>`);
-  if (sg.insider_net_30d > 0) out.push(`<span class="chip pos">insider buying</span>`);
-  return out.join("");
-}
-
-function today() {
-  const el = document.getElementById("today");
-  if (!D.today.length) { el.innerHTML = `<div class="empty">No predictions yet. They appear after the first daily run.</div>`; return; }
-  const by = {};
-  D.today.forEach(p => { (by[p.ticker] = by[p.ticker] || {})[p.horizon] = p; });
-  const cell = p => p ? `${arrow(p.direction)} <span class="sub">${pct(p.prob_up, 0)} up · conf ${pct(p.confidence, 0)}</span>` : "–";
-  el.innerHTML = `<div class="sub" style="margin-bottom:8px">Locked ${esc(D.today[0].created_at)} UTC, based on the close of ${esc(D.latest_as_of)}</div>
-  <table><tr><th>Ticker</th><th>Close</th><th>Next day</th><th>Next week</th><th>Why</th><th>Signals</th></tr>
-  ${Object.entries(by).map(([t, h]) => {
-    const p = h["1w"] || h["1d"];
-    const reasons = (p.reasons || []).map(r => `<span class="chip ${r.weight < 0 ? "neg" : "pos"}" title="${esc(r.why)}">${esc(r.rule.replace(/_/g, " "))}</span>`).join("") || '<span class="sub">no strong signal</span>';
-    return `<tr><td><b>${esc(t)}</b>${p.pump_flag ? ' <span class="badge warn">pump?</span>' : ""}</td><td>$${(+p.base_close).toFixed(2)}</td>
-      <td>${cell(h["1d"])}</td><td>${cell(h["1w"])}</td><td>${reasons}</td><td>${sigChips(p.signals)}</td></tr>`;
-  }).join("")}</table>`;
+  ${s.confidence.length ? `<div class="mt tablewrap"><div class="sub">Does higher confidence mean more often right?</div>
+    <table class="data"><tr><th>Confidence</th><th>Calls</th><th>Right</th></tr>${s.confidence.map(c => `<tr><td>${c.bucket}</td><td>${c.n}</td><td>${pct(c.hit_rate, 1)}</td></tr>`).join("")}</table></div>` : ""}`;
 }
 
 function pumps() {
   const el = document.getElementById("pumps");
-  if (!D.pumps.length) { el.innerHTML = `<div class="empty">No pump patterns flagged yet. A flag means a spike in buzz or volume plus a big price jump, with no SEC filing behind it.</div>`; return; }
-  el.innerHTML = `<div class="tablewrap"><table><tr><th>Date</th><th>Ticker</th><th>Signals</th><th>Week after</th></tr>
-    ${D.pumps.map(p => `<tr><td>${esc(p.as_of)}</td><td><b>${esc(p.ticker)}</b></td><td>${sigChips(p.signals)}</td>
-    <td class="${cls(p.actual_return)}">${p.actual_return == null ? '<span class="sub">pending</span>' : spct(p.actual_return)}</td></tr>`).join("")}</table></div>`;
-}
-
-function backtest() {
-  const el = document.getElementById("backtest");
-  const b = D.backtest;
-  if (!b) { el.innerHTML = `<div class="panel empty">No backtest has been run yet.</div>`; return; }
-  const s = b.horizons[hz];
-  if (!s) { el.innerHTML = `<div class="panel empty">No backtest data for this horizon.</div>`; return; }
-  el.innerHTML = `<div class="sub" style="margin-bottom:8px">${esc(b.start)} to ${esc(b.end)} · ${s.n.toLocaleString()} simulated calls.
-    Uses prices, volume and SEC filings only (no free history for Reddit or short volume), and today's watchlist, so stocks that died are missing.</div>
-  <div class="kpis">
-    ${kpi("Hit rate", pct(s.hit_rate), `always "up" ${pct(s.always_up)} · always "down" ${pct(s.always_down)} · follow market ${pct(s.follow_market)}`, cls(s.hit_rate - Math.max(s.always_up, s.always_down ?? 0, s.follow_market || 0)))}
-    ${kpi("Avg return following calls", spct(s.strategy_avg_return, 2), `buy and hold ${spct(s.buy_hold_avg_return, 2)}`, cls(s.strategy_avg_return))}
-    ${kpi("Pump flags", s.pump_flags, s.pump_then_down == null ? "none" : `${pct(s.pump_then_down)} fell over the next ${hz === "1d" ? "day" : "week"}`)}
-  </div>
-  <div class="panel tablewrap" style="margin-top:12px"><div class="sub">How each rule did when it fired</div>
-  <table><tr><th>Rule</th><th>Says</th><th>Fired</th><th>Hit rate</th><th>Avg return after</th></tr>
-  ${s.rules.map(r => `<tr><td title="${esc(r.why)}">${esc(r.why)}</td><td>${r.says ? arrow(r.says) : "–"}</td><td>${r.fired}</td>
-    <td>${r.fired ? pct(r.hit_rate) : '<span class="sub">no history</span>'}</td><td class="${cls(r.avg_return)}">${r.fired ? spct(r.avg_return, 2) : ""}</td></tr>`).join("")}
-  </table></div>`;
+  document.getElementById("pumpSum").textContent = D.pumps.length ? `${D.pumps.length} times a stock jumped on hype with no news behind it` : "None flagged yet";
+  if (!D.pumps.length) { el.innerHTML = `<div class="empty">A hype warning means a stock jumped on a spike in online buzz or trading, with no company news or filing to explain it. None so far.</div>`; return; }
+  const done = D.pumps.filter(p => p.actual_return != null);
+  const fell = done.filter(p => p.actual_return < 0).length;
+  el.innerHTML = `<p class="sub" style="margin-top:0">A hype warning means a stock jumped on a spike in online buzz or trading, with no company news or filing to explain it. ${done.length ? `${fell} of ${done.length} fell over the following week.` : ""}</p>
+    <div class="tablewrap"><table class="data"><tr><th>Date</th><th>Stock</th><th>Jump that week</th><th>The week after</th></tr>
+    ${D.pumps.map(p => `<tr><td>${esc(shortDate(p.as_of))}</td><td><b>${esc(p.ticker)}</b></td><td class="${cls(p.signals.ret_5d)}">${spct(p.signals.ret_5d)}</td>
+      <td class="${cls(p.actual_return)}">${p.actual_return == null ? '<span class="sub">waiting</span>' : spct(p.actual_return)}</td></tr>`).join("")}</table></div>`;
 }
 
 function recent() {
   const el = document.getElementById("recent");
   const rows = D.recent.filter(r => r.horizon === hz);
-  if (!rows.length) { el.innerHTML = `<div class="empty">Nothing scored yet.</div>`; return; }
-  el.innerHTML = `<table><tr><th>Made on close of</th><th>Scored</th><th>Ticker</th><th>Call</th><th>Actual</th><th>Result</th></tr>
-  ${rows.map(r => `<tr><td>${esc(r.as_of)}</td><td>${esc(r.target_date)}</td><td><b>${esc(r.ticker)}</b>${r.pump_flag ? ' <span class="badge warn">pump?</span>' : ""}</td>
-    <td>${arrow(r.direction)} <span class="sub">conf ${pct(r.confidence, 0)}</span></td><td class="${cls(r.actual_return)}">${spct(r.actual_return)}</td>
-    <td>${r.correct ? '<span class="badge ok">right</span>' : '<span class="badge bad">wrong</span>'}</td></tr>`).join("")}</table>`;
+  if (!rows.length) { el.innerHTML = `<div class="empty">Nothing checked yet.</div>`; return; }
+  el.innerHTML = `<table class="data"><tr><th>Called on</th><th>Stock</th><th>Call</th><th>Confidence</th><th>What happened</th><th></th></tr>
+  ${rows.map(r => `<tr><td>${esc(shortDate(r.as_of))}</td><td><b>${esc(r.ticker)}</b></td>
+    <td class="${r.direction}">${r.direction === "up" ? "▲ up" : "▼ down"}</td><td>${confWord(r.confidence)[0]}</td>
+    <td class="${cls(r.actual_return)}">${spct(r.actual_return)}</td>
+    <td>${r.correct ? '<span class="badge ok">Right</span>' : '<span class="badge bad">Wrong</span>'}</td></tr>`).join("")}</table>`;
 }
 
-function runs() {
-  document.getElementById("runs").innerHTML = D.runs.length ? `<table><tr><th>Time (UTC)</th><th>Step</th><th>Status</th><th>Detail</th></tr>
-    ${D.runs.map(r => `<tr><td>${esc(r.started_at)}</td><td>${esc(r.step)}</td><td>${r.status === "ok" ? '<span class="badge ok">ok</span>' : `<span class="badge bad">${esc(r.status)}</span>`}</td><td class="sub">${esc(r.detail)}</td></tr>`).join("")}</table>` : '<div class="empty">No runs yet.</div>';
+function backtest() {
+  const el = document.getElementById("backtest");
+  const b = D.backtest, s = b && b.horizons[hz];
+  if (!s) { document.getElementById("btSum").textContent = "Not run yet"; el.innerHTML = `<div class="empty">No test run yet.</div>`; return; }
+  const best = Math.max(s.always_up, s.always_down ?? 0);
+  document.getElementById("btSum").textContent = `Over ${new Date(b.start).getFullYear()}–${new Date(b.end).getFullYear()}, the rules were right ${pct(s.hit_rate)} of the time vs ${pct(best)} for simple guessing`;
+  el.innerHTML = `<p class="sub" style="margin-top:0">What would have happened if these rules had run every day from ${esc(shortDate(b.start))}, ${new Date(b.start).getFullYear()} to ${esc(shortDate(b.end))}.
+    It only uses prices, trading and SEC filings, because there's no free history for Reddit or short selling. It also only includes stocks still trading today, which flatters the results a little.</p>
+  <div class="kpis">
+    ${kpi("Right", pct(s.hit_rate, 1), `${s.n.toLocaleString()} practice calls`)}
+    ${kpi("Guessing one way", pct(best, 1), `always "up" ${pct(s.always_up, 1)} · always "down" ${pct(s.always_down, 1)}`)}
+    ${kpi("Average gain per call", spct(s.strategy_avg_return, 2), `buying and holding: ${spct(s.buy_hold_avg_return, 2)}`, cls(s.strategy_avg_return))}
+    ${kpi("Hype warnings", s.pump_flags, s.pump_then_down == null ? "none" : `${pct(s.pump_then_down)} fell over the next ${H[hz].noun}`)}
+  </div>
+  <div class="mt tablewrap"><div class="sub">How each rule did on its own</div>
+  <table class="data"><tr><th>Rule</th><th>Leans</th><th>Times</th><th>Right</th><th>Avg move after</th></tr>
+  ${s.rules.map(r => `<tr><td>${esc(r.why)}</td><td>${r.says ? `<span class="${r.says}">${r.says === "up" ? "▲ up" : "▼ down"}</span>` : "–"}</td><td>${r.fired}</td>
+    <td>${r.fired ? pct(r.hit_rate, 1) : '<span class="sub">no history</span>'}</td><td class="${cls(r.avg_return)}">${r.fired ? spct(r.avg_return, 2) : ""}</td></tr>`).join("")}</table></div>`;
 }
 
-function render() { meta(); score(); today(); pumps(); backtest(); recent(); runs(); }
+function sources() {
+  const names = { prices: "Prices", sec: "SEC filings", reddit: "Reddit", finra_short_volume: "Short selling", short_interest: "Short interest", google_trends: "Google searches" };
+  const list = (D.sources || []).filter(s => names[s.step]);
+  document.getElementById("sources").innerHTML = list.length ? `<div class="sub" style="margin-bottom:6px">Data sources on the last run</div>` + list.map(s =>
+    `<span class="badge ${s.status === "ok" ? "ok" : s.status === "partial" ? "warn" : "bad"}" title="${esc(s.detail)}">${names[s.step]} ${s.status === "ok" ? "✓" : s.status === "partial" ? "partly working" : "not working"}</span>`).join(" ") : "";
+  document.getElementById("runs").innerHTML = D.runs.length ? `<div class="sub" style="margin-bottom:6px">Recent run log</div><table class="data"><tr><th>Time (UTC)</th><th>Step</th><th>Status</th><th>Detail</th></tr>
+    ${D.runs.map(r => `<tr><td>${esc(r.started_at)}</td><td>${esc(r.step)}</td><td>${esc(r.status)}</td><td class="sub">${esc(r.detail)}</td></tr>`).join("")}</table>` : "";
+}
+
+function render() { tabs(); header(); record(); cards(); score(); pumps(); recent(); backtest(); sources(); }
 render();
 </script>
 </body>

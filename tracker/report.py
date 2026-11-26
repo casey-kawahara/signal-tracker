@@ -67,6 +67,9 @@ def live_stats(conn):
             if g["pump_flag"].any() else None,
             "series": series,
             "confidence": conf,
+            "right": int(g["correct"].sum()),
+            "per_ticker": {t: {"n": int(len(x)), "right": int(x["correct"].sum())}
+                           for t, x in g.groupby("ticker")},
         }
     return out
 

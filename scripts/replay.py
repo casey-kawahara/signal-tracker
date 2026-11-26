@@ -64,7 +64,7 @@ def replay(days=30, source=None, out_dir=None, note=None):
     backtest.run(sim)
     db.log_run(sim, "replay", "ok", f"{days} trading days replayed")
     first = all_days[-(days + 5)]
-    note = note or (f"These calls were not made live. The tracker was replayed over {days} trading "
+    note = note or (f"These calls were not made live. We replayed the tracker over {days} trading "
                     f"days starting {first}, using only data available each morning, then scored.")
     return report.write(sim, out_dir or config.DOCS_DIR / "replay", simulation=note)
 
