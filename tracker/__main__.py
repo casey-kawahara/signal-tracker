@@ -63,8 +63,7 @@ def main(argv=None):
         _step(conn, "resolve", predict.resolve, conn)
     if cmd in ("daily", "predict"):
         _step(conn, "predict", predict.make_predictions, conn)
-    if cmd == "backtest" or (cmd == "daily" and date.today().weekday() == 0) or \
-            (cmd == "daily" and not conn.execute("SELECT 1 FROM backtest").fetchone()):
+    if cmd in ("backtest", "daily"):  # takes seconds, so refresh it every run
         s = backtest.run(conn)
         if s:
             for h, v in s["horizons"].items():
