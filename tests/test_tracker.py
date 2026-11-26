@@ -117,3 +117,10 @@ def test_picks_are_locked_and_fill_from_backup(conn, monkeypatch):
     assert scanner.lock_picks(conn, last, [{"ticker": "AAA", "score": 1}], lambda t: True) == ["AAA"]
     with pytest.raises(sqlite3.DatabaseError, match="locked"):
         conn.execute("DELETE FROM selections")
+
+
+def test_spac_shells_are_skipped():
+    from tracker import scanner
+    base = {"price": 10.0, "market_cap": 3e8, "volume": 5e6, "avg_volume": 1e5}
+    assert not scanner.eligible({**base, "name": "TRG Latin America Acquisitions"})
+    assert scanner.eligible({**base, "name": "Brand Engagement Network Inc."})

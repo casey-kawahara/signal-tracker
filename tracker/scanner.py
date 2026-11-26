@@ -11,6 +11,7 @@ so every pick gets scored and the record can't be cherry-picked later.
 import json
 import logging
 import math
+import re
 from datetime import datetime, timezone
 
 import requests
@@ -28,7 +29,7 @@ def score(c):
     move = abs(c.get("change") or 0)
     s = 0.0
     if vol_ratio > 1:
-        s += math.log2(vol_ratio)                     # 2x volume = 1 point, 4x = 2, 8x = 3
+        s += min(math.log2(vol_ratio), 4)             # 2x volume = 1 point, 4x = 2, capped at 16x
     if m >= 5:
         s += 0.8 * max(0.0, math.log2((m + 3) / (m0 + 3)))  # mention jump
         s += 0.3 * min(math.log10(m), 2)              # sheer amount of chatter
@@ -125,8 +126,16 @@ def _fill_quote(c):
     return c
 
 
+SHELL_NAME = re.compile(r"acquisition|spac\b|merger corp|capital investment corp|blank check", re.I)
+
+
+def is_shell(c):
+    """SPACs and blank-check shells sit near $10 in trust; their volume spikes mean nothing."""
+    return bool(SHELL_NAME.search(c.get("name") or ""))
+
+
 def eligible(c):
-    return (c.get("price") or 0) >= config.MIN_PRICE and \
+    return not is_shell(c) and (c.get("price") or 0) >= config.MIN_PRICE and \
         config.MIN_MARKET_CAP <= (c.get("market_cap") or 0) <= config.MAX_MARKET_CAP and \
         max(c.get("volume") or 0, c.get("avg_volume") or 0) >= config.MIN_VOLUME
 
