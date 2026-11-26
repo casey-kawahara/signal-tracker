@@ -1,5 +1,55 @@
 {
- "generated_at": "2026-11-26T06:20:16+00:00",
+ "sources": [
+  {
+   "step": "prices",
+   "status": "ok",
+   "detail": "11 ok",
+   "started_at": "2026-11-26T06:23:39+00:00"
+  },
+  {
+   "step": "sec",
+   "status": "error",
+   "detail": "0 ok, 10 failed (see Actions log)",
+   "started_at": "2026-11-26T06:23:41+00:00"
+  },
+  {
+   "step": "reddit",
+   "status": "error",
+   "detail": "0 ok, 10 failed (see Actions log)",
+   "started_at": "2026-11-26T06:23:42+00:00"
+  },
+  {
+   "step": "finra_short_volume",
+   "status": "ok",
+   "detail": "",
+   "started_at": "2026-11-26T06:23:42+00:00"
+  },
+  {
+   "step": "short_interest",
+   "status": "ok",
+   "detail": "",
+   "started_at": "2026-11-26T06:23:45+00:00"
+  },
+  {
+   "step": "google_trends",
+   "status": "ok",
+   "detail": "10 ok",
+   "started_at": "2026-11-26T06:24:10+00:00"
+  },
+  {
+   "step": "resolve",
+   "status": "ok",
+   "detail": "0",
+   "started_at": "2026-11-26T06:24:10+00:00"
+  },
+  {
+   "step": "predict",
+   "status": "ok",
+   "detail": "0",
+   "started_at": "2026-11-26T06:24:10+00:00"
+  }
+ ],
+ "generated_at": "2026-11-26T06:24:10+00:00",
  "watchlist": [
   "SNDL",
   "BBAI",
@@ -1128,6 +1178,54 @@
  },
  "runs": [
   {
+   "started_at": "2026-11-26T06:24:10+00:00",
+   "step": "predict",
+   "status": "ok",
+   "detail": "0"
+  },
+  {
+   "started_at": "2026-11-26T06:24:10+00:00",
+   "step": "resolve",
+   "status": "ok",
+   "detail": "0"
+  },
+  {
+   "started_at": "2026-11-26T06:24:10+00:00",
+   "step": "google_trends",
+   "status": "ok",
+   "detail": "10 ok"
+  },
+  {
+   "started_at": "2026-11-26T06:23:45+00:00",
+   "step": "short_interest",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "started_at": "2026-11-26T06:23:42+00:00",
+   "step": "finra_short_volume",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "started_at": "2026-11-26T06:23:42+00:00",
+   "step": "reddit",
+   "status": "error",
+   "detail": "0 ok, 10 failed (see Actions log)"
+  },
+  {
+   "started_at": "2026-11-26T06:23:41+00:00",
+   "step": "sec",
+   "status": "error",
+   "detail": "0 ok, 10 failed (see Actions log)"
+  },
+  {
+   "started_at": "2026-11-26T06:23:39+00:00",
+   "step": "prices",
+   "status": "ok",
+   "detail": "11 ok"
+  },
+  {
    "started_at": "2026-11-26T06:20:14+00:00",
    "step": "predict",
    "status": "ok",
@@ -1148,30 +1246,6 @@
   {
    "started_at": "2026-11-26T06:19:50+00:00",
    "step": "short_interest",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:19:49+00:00",
-   "step": "finra_short_volume",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:19:47+00:00",
-   "step": "reddit",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:19:47+00:00",
-   "step": "sec",
-   "status": "ok",
-   "detail": ""
-  },
-  {
-   "started_at": "2026-11-26T06:19:45+00:00",
-   "step": "prices",
    "status": "ok",
    "detail": ""
   }
