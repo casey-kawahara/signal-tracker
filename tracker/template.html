@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal Tracker</title>
+<style>
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --ink: #1c1d1f; --muted: #6b6e75; --line: #e4e4e0;
+  --up: #1f8a5b; --down: #c4453c; --accent: #3b5bdb; --warn: #b7791f; --chip: #f0f0ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #141518; --panel: #1c1e22; --ink: #e8e8e6; --muted: #9a9ca3; --line: #2c2f35;
+          --up: #4cc38a; --down: #f0716a; --accent: #8ea4ff; --warn: #e0a53a; --chip: #262930; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+       font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 26px; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 18px; margin: 36px 0 12px; }
+.sub { color: var(--muted); font-size: 13px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
+         background: var(--chip); color: var(--muted); }
+.badge.ok { color: var(--up); } .badge.bad { color: var(--down); } .badge.warn { color: var(--warn); }
+.tabs { display: inline-flex; background: var(--chip); border-radius: 8px; padding: 3px; gap: 2px; }
+.tabs button { border: 0; background: transparent; color: var(--muted); padding: 5px 12px; border-radius: 6px;
+               font: inherit; font-size: 13px; cursor: pointer; }
+.tabs button.on { background: var(--panel); color: var(--ink); font-weight: 600; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 12px; }
+.kpi .label { color: var(--muted); font-size: 12px; }
+.kpi .value { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.kpi .cmp { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.up { color: var(--up); } .down { color: var(--down); }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 6px 8px;
+     border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.chip { display: inline-block; background: var(--chip); border-radius: 6px; padding: 1px 6px; margin: 1px 2px 1px 0;
+        font-size: 12px; white-space: nowrap; }
+.chip.neg { color: var(--down); } .chip.pos { color: var(--up); }
+.empty { color: var(--muted); padding: 24px; text-align: center; }
+svg text { fill: var(--muted); font-size: 11px; }
+.legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 5px; border-radius: 2px; }
+details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+.note { font-size: 13px; color: var(--muted); max-width: 70ch; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="head">
+    <div>
+      <h1>Signal Tracker</h1>
+      <div class="sub" id="meta"></div>
+    </div>
+    <div class="tabs" id="htabs"></div>
+  </div>
+
+  <h2>Scorecard</h2>
+  <div id="score"></div>
+
+  <h2>Today's calls</h2>
+  <div class="panel tablewrap" id="today"></div>
+
+  <h2>Possible pump patterns</h2>
+  <div class="panel" id="pumps"></div>
+
+  <h2>Backtest (early read on past data)</h2>
+  <div id="backtest"></div>
+
+  <h2>Recent results</h2>
+  <div class="panel tablewrap" id="recent"></div>
+
+  <h2>How this works</h2>
+  <div class="panel note">
+    <p>Each weekday before the market opens, the tracker pulls the latest prices, SEC filings, Reddit
+    mentions, short-sale volume and Google Trends for the watchlist, then predicts whether each stock will
+    close higher or lower than its last close, one trading day and one week (five trading days) ahead.</p>
+    <p>Every prediction is locked the moment it is made: the database refuses edits and deletes, each row
+    is chained to the one before it with a hash, and the daily commit on GitHub timestamps it publicly.
+    The scorecard compares the hit rate against two baselines that need no skill: always predicting
+    "up", and predicting each stock will move the same way the overall market (SPY) just did.</p>
+    <p>This is an experiment, not investment advice. Small samples swing a lot, so give it a few weeks
+    before reading much into the numbers.</p>
+  </div>
+  <details style="margin-top:16px"><summary>Recent pipeline runs</summary><div class="tablewrap" id="runs"></div></details>
+</main>
+<script>
+const D = /*__DATA__*/null;
+const H = { "1d": "Next day", "1w": "Next week" };
+let hz = "1d";
+const pct = (x, d = 1) => x == null ? "–" : (x * 100).toFixed(d) + "%";
+const spct = (x, d = 1) => x == null ? "–" : (x > 0 ? "+" : "") + (x * 100).toFixed(d) + "%";
+const cls = x => x == null ? "" : x > 0 ? "up" : x < 0 ? "down" : "";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const arrow = d => d === "up" ? '<span class="up">▲ up</span>' : '<span class="down">▼ down</span>';
+
+function meta() {
+  const c = D.chain;
+  const chain = c.ok ? `<span class="badge ok">${c.count} predictions locked · chain verified</span>`
+                     : `<span class="badge bad">Lock chain broken at #${c.count + 1}</span>`;
+  document.getElementById("meta").innerHTML =
+    `Updated ${new Date(D.generated_at).toLocaleString()} · data through ${esc(D.latest_as_of || "–")} · ${chain}`;
+  const t = document.getElementById("htabs");
+  t.innerHTML = Object.entries(H).map(([k, v]) => `<button data-h="${k}" class="${k === hz ? "on" : ""}">${v}</button>`).join("");
+  t.querySelectorAll("button").forEach(b => b.onclick = () => { hz = b.dataset.h; render(); });
+}
+
+function kpi(label, value, cmp, c = "") {
+  return `<div class="panel kpi"><div class="label">${label}</div><div class="value ${c}">${value}</div><div class="cmp">${cmp}</div></div>`;
+}
+
+function chart(series) {
+  if (!series || series.length < 2) return "";
+  const W = 1000, Hh = 220, P = { l: 40, r: 10, t: 10, b: 24 };
+  const x = i => P.l + i * (W - P.l - P.r) / (series.length - 1);
+  const ys = series.flatMap(s => [s.model, s.always_up]);
+  let lo = Math.min(0.35, ...ys), hi = Math.max(0.65, ...ys);
+  const y = v => P.t + (hi - v) * (Hh - P.t - P.b) / (hi - lo);
+  const path = k => series.map((s, i) => (i ? "L" : "M") + x(i).toFixed(1) + "," + y(s[k]).toFixed(1)).join("");
+  const ticks = [lo, 0.5, hi].map(v => `<line x1="${P.l}" x2="${W - P.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v === 0.5 ? "" : 'stroke-dasharray="3 4"'}/><text x="${P.l - 6}" y="${y(v) + 4}" text-anchor="end">${pct(v, 0)}</text>`).join("");
+  const n = series.length;
+  return `<div class="panel" style="margin-top:12px"><div class="label sub">Cumulative hit rate</div>
+    <svg viewBox="0 0 ${W} ${Hh}" width="100%" preserveAspectRatio="none" style="height:220px">${ticks}
+      <path d="${path("always_up")}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>
+      <path d="${path("model")}" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      <text x="${P.l}" y="${Hh - 6}">${esc(series[0].date)}</text><text x="${W - P.r}" y="${Hh - 6}" text-anchor="end">${esc(series[n - 1].date)}</text>
+    </svg>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Model</span><span><i style="background:var(--muted)"></i>Always "up"</span></div></div>`;
+}
+
+function score() {
+  const s = D.live[hz] || { n: 0 };
+  const el = document.getElementById("score");
+  if (!s.n) {
+    el.innerHTML = `<div class="panel empty">No ${H[hz].toLowerCase()} predictions have been scored yet.
+      ${D.chain.pending ? `${D.chain.pending} locked predictions are waiting for their result.` : ""}
+      The first results arrive after ${hz === "1d" ? "the next trading day" : "five trading days"}.</div>`;
+    return;
+  }
+  const edge = s.hit_rate - s.always_up;
+  el.innerHTML = `<div class="kpis">
+    ${kpi("Hit rate", pct(s.hit_rate), `${s.n} calls scored · last 20 days ${pct(s.hit_rate_recent)}`)}
+    ${kpi('vs always "up"', spct(edge), `baseline ${pct(s.always_up)}`, cls(edge))}
+    ${kpi("vs follow the market", spct(s.follow_market == null ? null : s.hit_rate - s.follow_market), `baseline ${pct(s.follow_market)}`, cls(s.follow_market == null ? null : s.hit_rate - s.follow_market))}
+    ${kpi("Avg return following calls", spct(s.strategy_avg_return, 2), `buy and hold ${spct(s.buy_hold_avg_return, 2)} · SPY ${spct(s.market_avg_return, 2)}`, cls(s.strategy_avg_return))}
+    ${kpi("Move size", pct(s.avg_move_right), `avg move when right · ${pct(s.avg_move_wrong)} when wrong`)}
+  </div>${chart(s.series)}
+  ${s.confidence.length ? `<div class="panel" style="margin-top:12px"><div class="sub">Hit rate by confidence</div>
+    <table><tr><th>Confidence</th><th>Calls</th><th>Hit rate</th></tr>${s.confidence.map(c => `<tr><td>${c.bucket}</td><td>${c.n}</td><td>${pct(c.hit_rate)}</td></tr>`).join("")}</table></div>` : ""}`;
+}
+
+function sigChips(sg) {
+  if (!sg) return "";
+  const out = [];
+  const add = (label, v, f, bad) => { if (v != null) out.push(`<span class="chip ${bad == null ? "" : bad ? "neg" : "pos"}">${label} ${f(v)}</span>`); };
+  add("5d", sg.ret_5d, v => spct(v, 0), sg.ret_5d < 0);
+  add("vol z", sg.volume_z, v => v.toFixed(1));
+  add("reddit", sg.mentions, v => v.toFixed(0));
+  add("trends z", sg.trends_z, v => v.toFixed(1));
+  add("short vol", sg.short_ratio, v => pct(v, 0));
+  if (sg.dilution_30d) out.push(`<span class="chip neg">offering filed</span>`);
+  if (sg.reverse_split_60d) out.push(`<span class="chip neg">reverse split</span>`);
+  if (sg.insider_net_30d > 0) out.push(`<span class="chip pos">insider buying</span>`);
+  return out.join("");
+}
+
+function today() {
+  const el = document.getElementById("today");
+  if (!D.today.length) { el.innerHTML = `<div class="empty">No predictions yet. They appear after the first daily run.</div>`; return; }
+  const by = {};
+  D.today.forEach(p => { (by[p.ticker] = by[p.ticker] || {})[p.horizon] = p; });
+  const cell = p => p ? `${arrow(p.direction)} <span class="sub">${pct(p.prob_up, 0)} up · conf ${pct(p.confidence, 0)}</span>` : "–";
+  el.innerHTML = `<div class="sub" style="margin-bottom:8px">Locked ${esc(D.today[0].created_at)} UTC, based on the close of ${esc(D.latest_as_of)}</div>
+  <table><tr><th>Ticker</th><th>Close</th><th>Next day</th><th>Next week</th><th>Why</th><th>Signals</th></tr>
+  ${Object.entries(by).map(([t, h]) => {
+    const p = h["1w"] || h["1d"];
+    const reasons = (p.reasons || []).map(r => `<span class="chip ${r.weight < 0 ? "neg" : "pos"}" title="${esc(r.why)}">${esc(r.rule.replace(/_/g, " "))}</span>`).join("") || '<span class="sub">no strong signal</span>';
+    return `<tr><td><b>${esc(t)}</b>${p.pump_flag ? ' <span class="badge warn">pump?</span>' : ""}</td><td>$${(+p.base_close).toFixed(2)}</td>
+      <td>${cell(h["1d"])}</td><td>${cell(h["1w"])}</td><td>${reasons}</td><td>${sigChips(p.signals)}</td></tr>`;
+  }).join("")}</table>`;
+}
+
+function pumps() {
+  const el = document.getElementById("pumps");
+  if (!D.pumps.length) { el.innerHTML = `<div class="empty">No pump patterns flagged yet. A flag means a spike in buzz or volume plus a big price jump, with no SEC filing behind it.</div>`; return; }
+  el.innerHTML = `<div class="tablewrap"><table><tr><th>Date</th><th>Ticker</th><th>Signals</th><th>Week after</th></tr>
+    ${D.pumps.map(p => `<tr><td>${esc(p.as_of)}</td><td><b>${esc(p.ticker)}</b></td><td>${sigChips(p.signals)}</td>
+    <td class="${cls(p.actual_return)}">${p.actual_return == null ? '<span class="sub">pending</span>' : spct(p.actual_return)}</td></tr>`).join("")}</table></div>`;
+}
+
+function backtest() {
+  const el = document.getElementById("backtest");
+  const b = D.backtest;
+  if (!b) { el.innerHTML = `<div class="panel empty">No backtest has been run yet.</div>`; return; }
+  const s = b.horizons[hz];
+  if (!s) { el.innerHTML = `<div class="panel empty">No backtest data for this horizon.</div>`; return; }
+  el.innerHTML = `<div class="sub" style="margin-bottom:8px">${esc(b.start)} to ${esc(b.end)} · ${s.n.toLocaleString()} simulated calls.
+    Uses prices, volume and SEC filings only (no free history for Reddit or short volume), and today's watchlist, so stocks that died are missing.</div>
+  <div class="kpis">
+    ${kpi("Hit rate", pct(s.hit_rate), `always "up" ${pct(s.always_up)} · follow market ${pct(s.follow_market)}`, cls(s.hit_rate - Math.max(s.always_up, s.follow_market || 0)))}
+    ${kpi("Avg return following calls", spct(s.strategy_avg_return, 2), `buy and hold ${spct(s.buy_hold_avg_return, 2)}`, cls(s.strategy_avg_return))}
+    ${kpi("Pump flags", s.pump_flags, s.pump_then_down == null ? "none" : `${pct(s.pump_then_down)} fell over the next ${hz === "1d" ? "day" : "week"}`)}
+  </div>
+  <div class="panel tablewrap" style="margin-top:12px"><div class="sub">How each rule did when it fired</div>
+  <table><tr><th>Rule</th><th>Says</th><th>Fired</th><th>Hit rate</th><th>Avg return after</th></tr>
+  ${s.rules.map(r => `<tr><td title="${esc(r.why)}">${esc(r.why)}</td><td>${r.says ? arrow(r.says) : "–"}</td><td>${r.fired}</td>
+    <td>${r.fired ? pct(r.hit_rate) : '<span class="sub">no history</span>'}</td><td class="${cls(r.avg_return)}">${r.fired ? spct(r.avg_return, 2) : ""}</td></tr>`).join("")}
+  </table></div>`;
+}
+
+function recent() {
+  const el = document.getElementById("recent");
+  const rows = D.recent.filter(r => r.horizon === hz);
+  if (!rows.length) { el.innerHTML = `<div class="empty">Nothing scored yet.</div>`; return; }
+  el.innerHTML = `<table><tr><th>Made on close of</th><th>Scored</th><th>Ticker</th><th>Call</th><th>Actual</th><th>Result</th></tr>
+  ${rows.map(r => `<tr><td>${esc(r.as_of)}</td><td>${esc(r.target_date)}</td><td><b>${esc(r.ticker)}</b>${r.pump_flag ? ' <span class="badge warn">pump?</span>' : ""}</td>
+    <td>${arrow(r.direction)} <span class="sub">conf ${pct(r.confidence, 0)}</span></td><td class="${cls(r.actual_return)}">${spct(r.actual_return)}</td>
+    <td>${r.correct ? '<span class="badge ok">right</span>' : '<span class="badge bad">wrong</span>'}</td></tr>`).join("")}</table>`;
+}
+
+function runs() {
+  document.getElementById("runs").innerHTML = D.runs.length ? `<table><tr><th>Time (UTC)</th><th>Step</th><th>Status</th><th>Detail</th></tr>
+    ${D.runs.map(r => `<tr><td>${esc(r.started_at)}</td><td>${esc(r.step)}</td><td>${r.status === "ok" ? '<span class="badge ok">ok</span>' : `<span class="badge bad">${esc(r.status)}</span>`}</td><td class="sub">${esc(r.detail)}</td></tr>`).join("")}</table>` : '<div class="empty">No runs yet.</div>';
+}
+
+function render() { meta(); score(); today(); pumps(); backtest(); recent(); runs(); }
+render();
+</script>
+</body>
+</html>

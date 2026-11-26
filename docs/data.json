@@ -1,0 +1,34 @@
+{
+ "generated_at": "2026-11-26T06:18:40+00:00",
+ "watchlist": [
+  "SNDL",
+  "BBAI",
+  "PLUG",
+  "OPEN",
+  "TLRY",
+  "CLOV",
+  "FCEL",
+  "MVIS",
+  "KOSS",
+  "ACHR"
+ ],
+ "latest_as_of": null,
+ "today": [],
+ "live": {
+  "1d": {
+   "n": 0
+  },
+  "1w": {
+   "n": 0
+  }
+ },
+ "recent": [],
+ "pumps": [],
+ "backtest": null,
+ "chain": {
+  "ok": true,
+  "count": 0,
+  "pending": 0
+ },
+ "runs": []
+}
