@@ -1,55 +1,92 @@
 {
  "sources": [
   {
-   "step": "prices",
-   "status": "ok",
-   "detail": "11 ok",
-   "started_at": "2026-11-26T06:25:24+00:00"
-  },
-  {
-   "step": "sec",
-   "status": "error",
-   "detail": "0 ok, 10 failed (see Actions log)",
-   "started_at": "2026-11-26T06:25:26+00:00"
-  },
-  {
    "step": "reddit",
    "status": "error",
    "detail": "0 ok, 10 failed (see Actions log)",
    "started_at": "2026-11-26T06:25:26+00:00"
   },
   {
+   "step": "prices",
+   "status": "ok",
+   "detail": "11 ok",
+   "started_at": "2026-11-26T07:33:17+00:00"
+  },
+  {
+   "step": "yahoo_screener",
+   "status": "ok",
+   "detail": "500 stocks",
+   "started_at": "2026-11-26T07:33:17+00:00"
+  },
+  {
+   "step": "reddit_mentions",
+   "status": "ok",
+   "detail": "300 stocks",
+   "started_at": "2026-11-26T07:33:18+00:00"
+  },
+  {
+   "step": "scan",
+   "status": "ok",
+   "detail": "493 found",
+   "started_at": "2026-11-26T07:33:43+00:00"
+  },
+  {
+   "step": "prices_shortlist",
+   "status": "ok",
+   "detail": "20 ok",
+   "started_at": "2026-11-26T07:33:47+00:00"
+  },
+  {
+   "step": "pick",
+   "status": "ok",
+   "detail": "10 found",
+   "started_at": "2026-11-26T07:33:47+00:00"
+  },
+  {
+   "step": "sec",
+   "status": "partial",
+   "detail": "9 ok, 1 failed (see Actions log)",
+   "started_at": "2026-11-26T07:33:57+00:00"
+  },
+  {
+   "step": "reddit_tone",
+   "status": "skipped",
+   "detail": "not set up",
+   "started_at": "2026-11-26T07:33:57+00:00"
+  },
+  {
    "step": "finra_short_volume",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-26T06:25:26+00:00"
+   "started_at": "2026-11-26T07:33:57+00:00"
   },
   {
    "step": "short_interest",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-26T06:25:28+00:00"
+   "started_at": "2026-11-26T07:33:59+00:00"
   },
   {
    "step": "google_trends",
-   "status": "ok",
-   "detail": "10 ok",
-   "started_at": "2026-11-26T06:25:51+00:00"
+   "status": "partial",
+   "detail": "7 ok, 3 failed (see Actions log)",
+   "started_at": "2026-11-26T07:34:16+00:00"
   },
   {
    "step": "resolve",
    "status": "ok",
    "detail": "0",
-   "started_at": "2026-11-26T06:25:51+00:00"
+   "started_at": "2026-11-26T07:34:16+00:00"
   },
   {
    "step": "predict",
    "status": "ok",
-   "detail": "0",
-   "started_at": "2026-11-26T06:25:51+00:00"
+   "detail": "20",
+   "started_at": "2026-11-26T07:34:16+00:00"
   }
  ],
- "generated_at": "2026-11-26T07:00:37+00:00",
+ "scanned": 493,
+ "generated_at": "2026-11-26T07:34:17+00:00",
  "watchlist": [
   "SNDL",
   "BBAI",
@@ -65,850 +102,1246 @@
  "latest_as_of": "2026-11-25",
  "today": [
   {
-   "id": 19,
-   "created_at": "2026-11-26T06:20:14+00:00",
+   "id": 29,
+   "created_at": "2026-11-26T07:34:16+00:00",
    "as_of": "2026-11-25",
-   "ticker": "ACHR",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 3.04,
-   "signals": {
-    "close": 3.04,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.2169,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.05556,
-    "ret_20d": -0.29954,
-    "ret_5d": -0.05882,
-    "reverse_split_60d": 0.0,
-    "rsi14": 34.1879,
-    "sentiment": null,
-    "short_pct_float": 0.1631,
-    "short_ratio": 0.5065,
-    "short_ratio_z": -2.25216,
-    "trends_z": -0.13772,
-    "volume_z": 0.76552
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "3d7b6178124908f6820ef2d065391418a5057fec9c1b4e3c61c6b8ec59227655",
-   "hash": "5849fbef158626630ae8d2f61abca2eaf5b1418ac3c31790540ffb4b1028d8b6",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 20,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "ACHR",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 3.04,
-   "signals": {
-    "close": 3.04,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.2169,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.05556,
-    "ret_20d": -0.29954,
-    "ret_5d": -0.05882,
-    "reverse_split_60d": 0.0,
-    "rsi14": 34.1879,
-    "sentiment": null,
-    "short_pct_float": 0.1631,
-    "short_ratio": 0.5065,
-    "short_ratio_z": -2.25216,
-    "trends_z": -0.13772,
-    "volume_z": 0.76552
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "5849fbef158626630ae8d2f61abca2eaf5b1418ac3c31790540ffb4b1028d8b6",
-   "hash": "474fada93283c348755892919e91c11666652a1b1483e7d4284dbd604cbd2d91",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 3,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "BBAI",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 1.59,
-   "signals": {
-    "close": 1.59,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.24087,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.03247,
-    "ret_20d": -0.35366,
-    "ret_5d": -0.09143,
-    "reverse_split_60d": 0.0,
-    "rsi14": 30.78339,
-    "sentiment": null,
-    "short_pct_float": 0.265,
-    "short_ratio": 0.32851,
-    "short_ratio_z": -1.0519,
-    "trends_z": -0.22827,
-    "volume_z": -0.64688
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "9093f9e0e36a634760359d76d2387d18c76e89751dd8c25894bf19c1e0758066",
-   "hash": "0774badd254f4eaff942ff53c156b5afb618d167b20367993de7901ccfb1b13f",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 4,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "BBAI",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 1.59,
-   "signals": {
-    "close": 1.59,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.24087,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.03247,
-    "ret_20d": -0.35366,
-    "ret_5d": -0.09143,
-    "reverse_split_60d": 0.0,
-    "rsi14": 30.78339,
-    "sentiment": null,
-    "short_pct_float": 0.265,
-    "short_ratio": 0.32851,
-    "short_ratio_z": -1.0519,
-    "trends_z": -0.22827,
-    "volume_z": -0.64688
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "0774badd254f4eaff942ff53c156b5afb618d167b20367993de7901ccfb1b13f",
-   "hash": "11b6c91afd587eda63df6dc878802031f65498bf59dde30def0b142732e5cdfc",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 11,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "CLOV",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 3.76,
-   "signals": {
-    "close": 3.76,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.15315,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.01348,
-    "ret_20d": -0.21503,
-    "ret_5d": -0.09832,
-    "reverse_split_60d": 0.0,
-    "rsi14": 33.03948,
-    "sentiment": null,
-    "short_pct_float": 0.0513,
-    "short_ratio": 0.22421,
-    "short_ratio_z": -1.52555,
-    "trends_z": -0.10771,
-    "volume_z": 0.29547
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "aa357ec190bfccf1bd591838eebf516c5c746b401f434725f497babce18166fc",
-   "hash": "e679ea10885a5638c71c05138515caff6be7a18bf9d5e7534c34a1909ef1bd48",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 12,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "CLOV",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 3.76,
-   "signals": {
-    "close": 3.76,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.15315,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.01348,
-    "ret_20d": -0.21503,
-    "ret_5d": -0.09832,
-    "reverse_split_60d": 0.0,
-    "rsi14": 33.03948,
-    "sentiment": null,
-    "short_pct_float": 0.0513,
-    "short_ratio": 0.22421,
-    "short_ratio_z": -1.52555,
-    "trends_z": -0.10771,
-    "volume_z": 0.29547
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "e679ea10885a5638c71c05138515caff6be7a18bf9d5e7534c34a1909ef1bd48",
-   "hash": "41e5096d3711954e2cbebb027322255f77998cf7756b4b328f98f92a3f832374",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 13,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "FCEL",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 7.44,
-   "signals": {
-    "close": 7.44,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.20801,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.04789,
-    "ret_20d": -0.39903,
-    "ret_5d": -0.04124,
-    "reverse_split_60d": 0.0,
-    "rsi14": 35.58623,
-    "sentiment": null,
-    "short_pct_float": 0.2776,
-    "short_ratio": 0.56326,
-    "short_ratio_z": 0.65725,
-    "trends_z": 0.56569,
-    "volume_z": 0.57985
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "41e5096d3711954e2cbebb027322255f77998cf7756b4b328f98f92a3f832374",
-   "hash": "8cfd6e6c7303d32b3d341a79dd34a6321798bdc351fdb1d0877da1139f055b66",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 14,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "FCEL",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 7.44,
-   "signals": {
-    "close": 7.44,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.20801,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.04789,
-    "ret_20d": -0.39903,
-    "ret_5d": -0.04124,
-    "reverse_split_60d": 0.0,
-    "rsi14": 35.58623,
-    "sentiment": null,
-    "short_pct_float": 0.2776,
-    "short_ratio": 0.56326,
-    "short_ratio_z": 0.65725,
-    "trends_z": 0.56569,
-    "volume_z": 0.57985
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "8cfd6e6c7303d32b3d341a79dd34a6321798bdc351fdb1d0877da1139f055b66",
-   "hash": "8915f486ca617021d5e32f0cfea8573c04af8568329cbcee456bd00a6ba6eb88",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 17,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "KOSS",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4875,
-   "confidence": 0.025,
-   "base_close": 3.38,
-   "signals": {
-    "close": 3.38,
-    "dilution_30d": 0.0,
-    "dist_ma20": 0.05002,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.02424,
-    "ret_20d": -0.01458,
-    "ret_5d": 0.07643,
-    "reverse_split_60d": 0.0,
-    "rsi14": 52.67028,
-    "sentiment": null,
-    "short_pct_float": 0.0409,
-    "short_ratio": 0.50795,
-    "short_ratio_z": -0.90379,
-    "trends_z": -0.52185,
-    "volume_z": 0.04987
-   },
-   "reasons": [],
-   "pump_flag": 0,
-   "prev_hash": "20b7ee923bc8ce3a3eac7b5614fb6887cb401af0bc57fc2cd2c94d2422cbd1f1",
-   "hash": "8726151d00649ea72c15c60c8dd6c84a18aa793dd4923da2bb2d08b889fa7da9",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 18,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "KOSS",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4875,
-   "confidence": 0.025,
-   "base_close": 3.38,
-   "signals": {
-    "close": 3.38,
-    "dilution_30d": 0.0,
-    "dist_ma20": 0.05002,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.02424,
-    "ret_20d": -0.01458,
-    "ret_5d": 0.07643,
-    "reverse_split_60d": 0.0,
-    "rsi14": 52.67028,
-    "sentiment": null,
-    "short_pct_float": 0.0409,
-    "short_ratio": 0.50795,
-    "short_ratio_z": -0.90379,
-    "trends_z": -0.52185,
-    "volume_z": 0.04987
-   },
-   "reasons": [],
-   "pump_flag": 0,
-   "prev_hash": "8726151d00649ea72c15c60c8dd6c84a18aa793dd4923da2bb2d08b889fa7da9",
-   "hash": "3d7b6178124908f6820ef2d065391418a5057fec9c1b4e3c61c6b8ec59227655",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 15,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "MVIS",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 0.87,
-   "signals": {
-    "close": 0.87,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.20037,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.01163,
-    "ret_20d": -0.33077,
-    "ret_5d": 0.0,
-    "reverse_split_60d": 0.0,
-    "rsi14": 33.65711,
-    "sentiment": null,
-    "short_pct_float": 0.1864,
-    "short_ratio": 0.74158,
-    "short_ratio_z": 1.84569,
-    "trends_z": 0.80351,
-    "volume_z": 1.39586
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "8915f486ca617021d5e32f0cfea8573c04af8568329cbcee456bd00a6ba6eb88",
-   "hash": "891db92701fb8c26107095d26e18b2d3d7aadaa55c117b30eaabfe5f48917a5d",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 16,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "MVIS",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 0.87,
-   "signals": {
-    "close": 0.87,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.20037,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.01163,
-    "ret_20d": -0.33077,
-    "ret_5d": 0.0,
-    "reverse_split_60d": 0.0,
-    "rsi14": 33.65711,
-    "sentiment": null,
-    "short_pct_float": 0.1864,
-    "short_ratio": 0.74158,
-    "short_ratio_z": 1.84569,
-    "trends_z": 0.80351,
-    "volume_z": 1.39586
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "891db92701fb8c26107095d26e18b2d3d7aadaa55c117b30eaabfe5f48917a5d",
-   "hash": "20b7ee923bc8ce3a3eac7b5614fb6887cb401af0bc57fc2cd2c94d2422cbd1f1",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 7,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "OPEN",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 1.26,
-   "signals": {
-    "close": 1.26,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.13028,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.0678,
-    "ret_20d": -0.34031,
-    "ret_5d": -0.00787,
-    "reverse_split_60d": 0.0,
-    "rsi14": 37.58275,
-    "sentiment": null,
-    "short_pct_float": 0.2768,
-    "short_ratio": 0.47921,
-    "short_ratio_z": -0.85968,
-    "trends_z": 2.25862,
-    "volume_z": 0.58203
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "5a30472d5a23501090e48645c3315196c513871f79e552c3f5e6b854e69a9106",
-   "hash": "421f03c0f1cf8675bd326a2c482ec462f645d02c0560af43cba66dc304d93380",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 8,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "OPEN",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 1.26,
-   "signals": {
-    "close": 1.26,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.13028,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.0678,
-    "ret_20d": -0.34031,
-    "ret_5d": -0.00787,
-    "reverse_split_60d": 0.0,
-    "rsi14": 37.58275,
-    "sentiment": null,
-    "short_pct_float": 0.2768,
-    "short_ratio": 0.47921,
-    "short_ratio_z": -0.85968,
-    "trends_z": 2.25862,
-    "volume_z": 0.58203
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "421f03c0f1cf8675bd326a2c482ec462f645d02c0560af43cba66dc304d93380",
-   "hash": "2052cff05e1f6e0d5fa7bbd43fa2694b80b14b4b5875a562dc2a098de79735ea",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 5,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "PLUG",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 1.07,
-   "signals": {
-    "close": 1.07,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.1276,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.15054,
-    "ret_20d": -0.24648,
-    "ret_5d": -0.00926,
-    "reverse_split_60d": 0.0,
-    "rsi14": 37.97559,
-    "sentiment": null,
-    "short_pct_float": 0.2425,
-    "short_ratio": 0.69449,
-    "short_ratio_z": 1.70931,
-    "trends_z": 0.52243,
-    "volume_z": 1.54247
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "11b6c91afd587eda63df6dc878802031f65498bf59dde30def0b142732e5cdfc",
-   "hash": "2f4afd4c0472d6c03d27093adfda0b335d2d20d13b2fef61a9dd2c4794e90daa",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 6,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "PLUG",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 1.07,
-   "signals": {
-    "close": 1.07,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.1276,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.15054,
-    "ret_20d": -0.24648,
-    "ret_5d": -0.00926,
-    "reverse_split_60d": 0.0,
-    "rsi14": 37.97559,
-    "sentiment": null,
-    "short_pct_float": 0.2425,
-    "short_ratio": 0.69449,
-    "short_ratio_z": 1.70931,
-    "trends_z": 0.52243,
-    "volume_z": 1.54247
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "2f4afd4c0472d6c03d27093adfda0b335d2d20d13b2fef61a9dd2c4794e90daa",
-   "hash": "5a30472d5a23501090e48645c3315196c513871f79e552c3f5e6b854e69a9106",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 1,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "SNDL",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4875,
-   "confidence": 0.025,
-   "base_close": 1.31,
-   "signals": {
-    "close": 1.31,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.01262,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.06504,
-    "ret_20d": 0.0155,
-    "ret_5d": -0.02239,
-    "reverse_split_60d": 0.0,
-    "rsi14": 50.58394,
-    "sentiment": null,
-    "short_pct_float": 0.008,
-    "short_ratio": 0.30685,
-    "short_ratio_z": -1.79734,
-    "trends_z": 0.33192,
-    "volume_z": 1.12539
-   },
-   "reasons": [],
-   "pump_flag": 0,
-   "prev_hash": "genesis",
-   "hash": "dd0b7cdf4ab869156b7f9171bbb33916a91d63aa9a5c42d42373e2fdb2d78d30",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 2,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "SNDL",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4875,
-   "confidence": 0.025,
-   "base_close": 1.31,
-   "signals": {
-    "close": 1.31,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.01262,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.06504,
-    "ret_20d": 0.0155,
-    "ret_5d": -0.02239,
-    "reverse_split_60d": 0.0,
-    "rsi14": 50.58394,
-    "sentiment": null,
-    "short_pct_float": 0.008,
-    "short_ratio": 0.30685,
-    "short_ratio_z": -1.79734,
-    "trends_z": 0.33192,
-    "volume_z": 1.12539
-   },
-   "reasons": [],
-   "pump_flag": 0,
-   "prev_hash": "dd0b7cdf4ab869156b7f9171bbb33916a91d63aa9a5c42d42373e2fdb2d78d30",
-   "hash": "9093f9e0e36a634760359d76d2387d18c76e89751dd8c25894bf19c1e0758066",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 9,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "TLRY",
+   "ticker": "AACI",
    "horizon": "1d",
    "direction": "up",
-   "prob_up": 0.5,
-   "confidence": 0.0,
-   "base_close": 1.83,
-   "signals": {
-    "close": 1.83,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.24614,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.0,
-    "ret_20d": -0.3197,
-    "ret_5d": -0.18667,
-    "reverse_split_60d": 0.0,
-    "rsi14": 20.10311,
-    "sentiment": null,
-    "short_pct_float": 0.1552,
-    "short_ratio": 0.52992,
-    "short_ratio_z": -1.46514,
-    "trends_z": 0.37413,
-    "volume_z": -0.33188
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    },
-    {
-     "rule": "oversold",
-     "why": "RSI below 25",
-     "weight": 0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "2052cff05e1f6e0d5fa7bbd43fa2694b80b14b4b5875a562dc2a098de79735ea",
-   "hash": "907c8787c56d4b73345e3d67f58e7d5435ad0b03c0211826eb2c798bfb560d07",
-   "actual_return": null,
-   "correct": null
-  },
-  {
-   "id": 10,
-   "created_at": "2026-11-26T06:20:14+00:00",
-   "as_of": "2026-11-25",
-   "ticker": "TLRY",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.475,
+   "prob_up": 0.525,
    "confidence": 0.05,
-   "base_close": 1.83,
+   "base_close": 10.13,
    "signals": {
-    "close": 1.83,
+    "close": 10.13,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.24614,
+    "dist_ma20": 0.00237,
     "filings_3d": 0.0,
     "insider_net_30d": 0.0,
+    "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": 0.0,
-    "ret_20d": -0.3197,
-    "ret_5d": -0.18667,
+    "ret_1d": 0.00099,
+    "ret_20d": 0.00596,
+    "ret_5d": 0.00198,
     "reverse_split_60d": 0.0,
-    "rsi14": 20.10311,
+    "rsi14": 69.47842,
     "sentiment": null,
-    "short_pct_float": 0.1552,
-    "short_ratio": 0.52992,
-    "short_ratio_z": -1.46514,
-    "trends_z": 0.37413,
-    "volume_z": -0.33188
+    "short_pct_float": 0.0001,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 1.4271
    },
    "reasons": [
     {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    },
-    {
-     "rule": "oversold",
-     "why": "RSI below 25",
+     "rule": "uptrend",
+     "why": "Above its 20-day average and up over 20 days",
      "weight": 0.15
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "907c8787c56d4b73345e3d67f58e7d5435ad0b03c0211826eb2c798bfb560d07",
-   "hash": "aa357ec190bfccf1bd591838eebf516c5c746b401f434725f497babce18166fc",
+   "prev_hash": "93262e01cc09727e1451fe99a1c66d03eb118eaf2ab531e7f20fd9e63b4850aa",
+   "hash": "4a0b750e9174bc2448b467f0aed2ea0f8b3280c84655b42640fac868faa38f81",
    "actual_return": null,
-   "correct": null
+   "correct": null,
+   "picked_why": [
+    "About 27\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "Armada Acquisition Corp. III",
+    "price": 10.13,
+    "market_cap": 344722208,
+    "volume": 2052622,
+    "avg_volume": 76448,
+    "vol_ratio": 26.849911050648807,
+    "change": 0.0009881649,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 5
+  },
+  {
+   "id": 30,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "AACI",
+   "horizon": "1w",
+   "direction": "up",
+   "prob_up": 0.5374,
+   "confidence": 0.0749,
+   "base_close": 10.13,
+   "signals": {
+    "close": 10.13,
+    "dilution_30d": 0.0,
+    "dist_ma20": 0.00237,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.00099,
+    "ret_20d": 0.00596,
+    "ret_5d": 0.00198,
+    "reverse_split_60d": 0.0,
+    "rsi14": 69.47842,
+    "sentiment": null,
+    "short_pct_float": 0.0001,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 1.4271
+   },
+   "reasons": [
+    {
+     "rule": "uptrend",
+     "why": "Above its 20-day average and up over 20 days",
+     "weight": 0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "4a0b750e9174bc2448b467f0aed2ea0f8b3280c84655b42640fac868faa38f81",
+   "hash": "c2fb2f0ec1edfca3e9ce94b803cf0db131cd46db91976b582fa132f981475060",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 27\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "Armada Acquisition Corp. III",
+    "price": 10.13,
+    "market_cap": 344722208,
+    "volume": 2052622,
+    "avg_volume": 76448,
+    "vol_ratio": 26.849911050648807,
+    "change": 0.0009881649,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 5
+  },
+  {
+   "id": 33,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "AMBA",
+   "horizon": "1d",
+   "direction": "up",
+   "prob_up": 0.525,
+   "confidence": 0.05,
+   "base_close": 35.68,
+   "signals": {
+    "close": 35.68,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.37546,
+    "filings_3d": 1.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": 0.34483,
+    "mentions": 7.0,
+    "mentions_z": null,
+    "ret_1d": -0.19766,
+    "ret_20d": -0.4616,
+    "ret_5d": -0.347,
+    "reverse_split_60d": 0.0,
+    "rsi14": 25.85187,
+    "sentiment": null,
+    "short_pct_float": 0.1202,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 5.55646,
+    "volume_z": 3.72762
+   },
+   "reasons": [
+    {
+     "rule": "capitulation",
+     "why": "Down more than 25% in 5 days on heavy volume",
+     "weight": 0.3
+    },
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "604f7d2b235b0701a80b5d41f30307dfc8505da25acdd76811f6c026c363fe01",
+   "hash": "016015b1894dbdb43cbc70b9304c0cb75fe217ab517c293b626a332a15d4751c",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 9\u00d7 its usual trading volume",
+    "Price fell 20% in one day"
+   ],
+   "picked_detail": {
+    "name": "Ambarella, Inc.",
+    "price": 35.68,
+    "market_cap": 1574949888,
+    "volume": 14743492,
+    "avg_volume": 1676512,
+    "vol_ratio": 8.794146418277949,
+    "change": -0.197661,
+    "mentions": 7,
+    "mentions_prev": 26
+   },
+   "picked_rank": 7
+  },
+  {
+   "id": 34,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "AMBA",
+   "horizon": "1w",
+   "direction": "up",
+   "prob_up": 0.5125,
+   "confidence": 0.025,
+   "base_close": 35.68,
+   "signals": {
+    "close": 35.68,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.37546,
+    "filings_3d": 1.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": 0.34483,
+    "mentions": 7.0,
+    "mentions_z": null,
+    "ret_1d": -0.19766,
+    "ret_20d": -0.4616,
+    "ret_5d": -0.347,
+    "reverse_split_60d": 0.0,
+    "rsi14": 25.85187,
+    "sentiment": null,
+    "short_pct_float": 0.1202,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 5.55646,
+    "volume_z": 3.72762
+   },
+   "reasons": [
+    {
+     "rule": "capitulation",
+     "why": "Down more than 25% in 5 days on heavy volume",
+     "weight": 0.3
+    },
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "016015b1894dbdb43cbc70b9304c0cb75fe217ab517c293b626a332a15d4751c",
+   "hash": "cdb9e6955cc74e227c62df01ac0328220765fe2cd1e80b5ccfc9c2b3e988bbaa",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 9\u00d7 its usual trading volume",
+    "Price fell 20% in one day"
+   ],
+   "picked_detail": {
+    "name": "Ambarella, Inc.",
+    "price": 35.68,
+    "market_cap": 1574949888,
+    "volume": 14743492,
+    "avg_volume": 1676512,
+    "vol_ratio": 8.794146418277949,
+    "change": -0.197661,
+    "mentions": 7,
+    "mentions_prev": 26
+   },
+   "picked_rank": 7
+  },
+  {
+   "id": 37,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "AREC",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 0.743,
+   "signals": {
+    "close": 0.743,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.26809,
+    "filings_3d": 2.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.30561,
+    "ret_20d": -0.39098,
+    "ret_5d": -0.12998,
+    "reverse_split_60d": 0.0,
+    "rsi14": 32.47126,
+    "sentiment": null,
+    "short_pct_float": 0.1997,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 2.32053,
+    "volume_z": 4.23337
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "15728d7350cb695911c256a9f6f1b0568a4be8867a0c4f5233ee747ce0457203",
+   "hash": "f945c3941044673c66ff14455d38d7f7f7a8a26894afef6c0ffb5e9c35a4c4c9",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 6\u00d7 its usual trading volume",
+    "Price fell 31% in one day"
+   ],
+   "picked_detail": {
+    "name": "American Resources Corporation",
+    "price": 0.7425,
+    "market_cap": 79447824,
+    "volume": 12124938,
+    "avg_volume": 1959225,
+    "vol_ratio": 6.188639895877197,
+    "change": -0.30607500000000004,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 9
+  },
+  {
+   "id": 38,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "AREC",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4378,
+   "confidence": 0.1244,
+   "base_close": 0.743,
+   "signals": {
+    "close": 0.743,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.26809,
+    "filings_3d": 2.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.30561,
+    "ret_20d": -0.39098,
+    "ret_5d": -0.12998,
+    "reverse_split_60d": 0.0,
+    "rsi14": 32.47126,
+    "sentiment": null,
+    "short_pct_float": 0.1997,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 2.32053,
+    "volume_z": 4.23337
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "f945c3941044673c66ff14455d38d7f7f7a8a26894afef6c0ffb5e9c35a4c4c9",
+   "hash": "3d37ae5ce88bc3de8cb0cf4ad941307caba3b27d3663c7c4492593720d675217",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 6\u00d7 its usual trading volume",
+    "Price fell 31% in one day"
+   ],
+   "picked_detail": {
+    "name": "American Resources Corporation",
+    "price": 0.7425,
+    "market_cap": 79447824,
+    "volume": 12124938,
+    "avg_volume": 1959225,
+    "vol_ratio": 6.188639895877197,
+    "change": -0.30607500000000004,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 9
+  },
+  {
+   "id": 27,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "BNAI",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.3775,
+   "confidence": 0.2449,
+   "base_close": 8.15,
+   "signals": {
+    "close": 8.15,
+    "dilution_30d": 1.0,
+    "dist_ma20": 0.8017,
+    "filings_3d": 1.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.22556,
+    "ret_20d": 0.77948,
+    "ret_5d": 1.89007,
+    "reverse_split_60d": 0.0,
+    "rsi14": 68.59868,
+    "sentiment": null,
+    "short_pct_float": 0.1346,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 4.48633,
+    "volume_z": 2.59607
+   },
+   "reasons": [
+    {
+     "rule": "overextended",
+     "why": "Up more than 30% in 5 days",
+     "weight": -0.3
+    },
+    {
+     "rule": "dilution",
+     "why": "Offering or share-sale filing in the last 30 days",
+     "weight": -0.3
+    },
+    {
+     "rule": "uptrend",
+     "why": "Above its 20-day average and up over 20 days",
+     "weight": 0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "2fe63b404c98b04f7af539895803b7d4aceea9fd7266f2ec67c25245a961a542",
+   "hash": "65da63102b06d381cdd9820358bb6d96c40b48a666fc1df05b5632dda798caf1",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 21\u00d7 its usual trading volume",
+    "Price jumped 23% in one day"
+   ],
+   "picked_detail": {
+    "name": "Brand Engagement Network Inc.",
+    "price": 8.15,
+    "market_cap": 62387284,
+    "volume": 22088891,
+    "avg_volume": 1075129,
+    "vol_ratio": 20.545340140578478,
+    "change": 0.225564,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 4
+  },
+  {
+   "id": 28,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "BNAI",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.2994,
+   "confidence": 0.4011,
+   "base_close": 8.15,
+   "signals": {
+    "close": 8.15,
+    "dilution_30d": 1.0,
+    "dist_ma20": 0.8017,
+    "filings_3d": 1.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.22556,
+    "ret_20d": 0.77948,
+    "ret_5d": 1.89007,
+    "reverse_split_60d": 0.0,
+    "rsi14": 68.59868,
+    "sentiment": null,
+    "short_pct_float": 0.1346,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 4.48633,
+    "volume_z": 2.59607
+   },
+   "reasons": [
+    {
+     "rule": "overextended",
+     "why": "Up more than 30% in 5 days",
+     "weight": -0.5
+    },
+    {
+     "rule": "dilution",
+     "why": "Offering or share-sale filing in the last 30 days",
+     "weight": -0.5
+    },
+    {
+     "rule": "uptrend",
+     "why": "Above its 20-day average and up over 20 days",
+     "weight": 0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "65da63102b06d381cdd9820358bb6d96c40b48a666fc1df05b5632dda798caf1",
+   "hash": "93262e01cc09727e1451fe99a1c66d03eb118eaf2ab531e7f20fd9e63b4850aa",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 21\u00d7 its usual trading volume",
+    "Price jumped 23% in one day"
+   ],
+   "picked_detail": {
+    "name": "Brand Engagement Network Inc.",
+    "price": 8.15,
+    "market_cap": 62387284,
+    "volume": 22088891,
+    "avg_volume": 1075129,
+    "vol_ratio": 20.545340140578478,
+    "change": 0.225564,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 4
+  },
+  {
+   "id": 25,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "BYAH",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 1.16,
+   "signals": {
+    "close": 1.16,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.28171,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.45,
+    "ret_20d": -0.48695,
+    "ret_5d": 0.04505,
+    "reverse_split_60d": 0.0,
+    "rsi14": 37.25783,
+    "sentiment": null,
+    "short_pct_float": 0.0016,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 2.56537
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "bb8d40a2f5f498d58238a724950d34a39f946761f0e5f67b5372c87f81a4b4e3",
+   "hash": "39472915fea5fde3201c05de5856a8e2778e567fb5cfc8d65b9a869dab705760",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 16\u00d7 its usual trading volume",
+    "Price jumped 45% in one day"
+   ],
+   "picked_detail": {
+    "name": "Park Ha Biological Technology C",
+    "price": 1.16,
+    "market_cap": 22632574,
+    "volume": 3110008,
+    "avg_volume": 192448,
+    "vol_ratio": 16.16025108081144,
+    "change": 0.45,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 3
+  },
+  {
+   "id": 26,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "BYAH",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4378,
+   "confidence": 0.1244,
+   "base_close": 1.16,
+   "signals": {
+    "close": 1.16,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.28171,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.45,
+    "ret_20d": -0.48695,
+    "ret_5d": 0.04505,
+    "reverse_split_60d": 0.0,
+    "rsi14": 37.25783,
+    "sentiment": null,
+    "short_pct_float": 0.0016,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 2.56537
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "39472915fea5fde3201c05de5856a8e2778e567fb5cfc8d65b9a869dab705760",
+   "hash": "2fe63b404c98b04f7af539895803b7d4aceea9fd7266f2ec67c25245a961a542",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 16\u00d7 its usual trading volume",
+    "Price jumped 45% in one day"
+   ],
+   "picked_detail": {
+    "name": "Park Ha Biological Technology C",
+    "price": 1.16,
+    "market_cap": 22632574,
+    "volume": 3110008,
+    "avg_volume": 192448,
+    "vol_ratio": 16.16025108081144,
+    "change": 0.45,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 3
+  },
+  {
+   "id": 31,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "CAMP",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4875,
+   "confidence": 0.025,
+   "base_close": 3.97,
+   "signals": {
+    "close": 3.97,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.00781,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.07674,
+    "ret_20d": 0.08767,
+    "ret_5d": -0.03171,
+    "reverse_split_60d": 0.0,
+    "rsi14": 50.95204,
+    "sentiment": null,
+    "short_pct_float": 0.0705,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 0.13072,
+    "volume_z": 5.81722
+   },
+   "reasons": [],
+   "pump_flag": 0,
+   "prev_hash": "c2fb2f0ec1edfca3e9ce94b803cf0db131cd46db91976b582fa132f981475060",
+   "hash": "3360528a400339fc9b95f0bc45c4dc43afc1b3ca7758dbc29af4197994ad40fc",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 18\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "CAMP4 THERAPEUTICS CORPORATION",
+    "price": 3.97,
+    "market_cap": 249134176,
+    "volume": 4382474,
+    "avg_volume": 247373,
+    "vol_ratio": 17.716056319808548,
+    "change": -0.0767442,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 6
+  },
+  {
+   "id": 32,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "CAMP",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4875,
+   "confidence": 0.025,
+   "base_close": 3.97,
+   "signals": {
+    "close": 3.97,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.00781,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.07674,
+    "ret_20d": 0.08767,
+    "ret_5d": -0.03171,
+    "reverse_split_60d": 0.0,
+    "rsi14": 50.95204,
+    "sentiment": null,
+    "short_pct_float": 0.0705,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 0.13072,
+    "volume_z": 5.81722
+   },
+   "reasons": [],
+   "pump_flag": 0,
+   "prev_hash": "3360528a400339fc9b95f0bc45c4dc43afc1b3ca7758dbc29af4197994ad40fc",
+   "hash": "604f7d2b235b0701a80b5d41f30307dfc8505da25acdd76811f6c026c363fe01",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 18\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "CAMP4 THERAPEUTICS CORPORATION",
+    "price": 3.97,
+    "market_cap": 249134176,
+    "volume": 4382474,
+    "avg_volume": 247373,
+    "vol_ratio": 17.716056319808548,
+    "change": -0.0767442,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 6
+  },
+  {
+   "id": 23,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "HVII",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 0.505,
+   "signals": {
+    "close": 0.505,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.5482,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.01,
+    "ret_20d": -0.66107,
+    "ret_5d": -0.14552,
+    "reverse_split_60d": 0.0,
+    "rsi14": 26.6934,
+    "sentiment": null,
+    "short_pct_float": 0.0028,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": -0.92774
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "12dbc2f4d81350b3f596b9fa6fe954122d3217e5e72cc76bcc8485d36ba28171",
+   "hash": "efc40f887205f7db16f74c169c9ac9ec92bdd16d4b45054566637e9f8471aece",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 38\u00d7 its usual trading volume",
+    "Price fell 51% in one day"
+   ],
+   "picked_detail": {
+    "name": "Hennessy Capital Investment Cor",
+    "price": 4.46,
+    "market_cap": 116064064,
+    "volume": 10512865,
+    "avg_volume": 275695,
+    "vol_ratio": 38.13222945646457,
+    "change": -0.50881058,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 2
+  },
+  {
+   "id": 24,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "HVII",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4378,
+   "confidence": 0.1244,
+   "base_close": 0.505,
+   "signals": {
+    "close": 0.505,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.5482,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.01,
+    "ret_20d": -0.66107,
+    "ret_5d": -0.14552,
+    "reverse_split_60d": 0.0,
+    "rsi14": 26.6934,
+    "sentiment": null,
+    "short_pct_float": 0.0028,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": -0.92774
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "efc40f887205f7db16f74c169c9ac9ec92bdd16d4b45054566637e9f8471aece",
+   "hash": "bb8d40a2f5f498d58238a724950d34a39f946761f0e5f67b5372c87f81a4b4e3",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 38\u00d7 its usual trading volume",
+    "Price fell 51% in one day"
+   ],
+   "picked_detail": {
+    "name": "Hennessy Capital Investment Cor",
+    "price": 4.46,
+    "market_cap": 116064064,
+    "volume": 10512865,
+    "avg_volume": 275695,
+    "vol_ratio": 38.13222945646457,
+    "change": -0.50881058,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 2
+  },
+  {
+   "id": 35,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "LONA",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.3775,
+   "confidence": 0.2449,
+   "base_close": 2.71,
+   "signals": {
+    "close": 2.71,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.24291,
+    "filings_3d": 0.0,
+    "insider_net_30d": 3149470.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.5848,
+    "ret_20d": -0.45363,
+    "ret_5d": 0.02264,
+    "reverse_split_60d": 0.0,
+    "rsi14": 37.05298,
+    "sentiment": null,
+    "short_pct_float": 0.0035,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 4.47759
+   },
+   "reasons": [
+    {
+     "rule": "pump_pattern",
+     "why": "Buzz or volume spike plus a price jump with no news or filing behind it",
+     "weight": -0.5
+    },
+    {
+     "rule": "insider_buying",
+     "why": "Insiders bought more shares than they sold in the last 30 days",
+     "weight": 0.2
+    },
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 1,
+   "prev_hash": "cdb9e6955cc74e227c62df01ac0328220765fe2cd1e80b5ccfc9c2b3e988bbaa",
+   "hash": "f457a50c8db498592e1af87d16e98c0346c4c151f4525f31eb77f7551a5596b7",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "Price jumped 58% in one day",
+    "About 7\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "LeonaBio, Inc.",
+    "price": 2.71,
+    "market_cap": 35436904,
+    "volume": 1344852,
+    "avg_volume": 200603,
+    "vol_ratio": 6.704047297398344,
+    "change": 0.5847950000000001,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 8
+  },
+  {
+   "id": 36,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "LONA",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.343,
+   "confidence": 0.314,
+   "base_close": 2.71,
+   "signals": {
+    "close": 2.71,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.24291,
+    "filings_3d": 0.0,
+    "insider_net_30d": 3149470.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.5848,
+    "ret_20d": -0.45363,
+    "ret_5d": 0.02264,
+    "reverse_split_60d": 0.0,
+    "rsi14": 37.05298,
+    "sentiment": null,
+    "short_pct_float": 0.0035,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 4.47759
+   },
+   "reasons": [
+    {
+     "rule": "pump_pattern",
+     "why": "Buzz or volume spike plus a price jump with no news or filing behind it",
+     "weight": -0.8
+    },
+    {
+     "rule": "insider_buying",
+     "why": "Insiders bought more shares than they sold in the last 30 days",
+     "weight": 0.4
+    },
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 1,
+   "prev_hash": "f457a50c8db498592e1af87d16e98c0346c4c151f4525f31eb77f7551a5596b7",
+   "hash": "15728d7350cb695911c256a9f6f1b0568a4be8867a0c4f5233ee747ce0457203",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "Price jumped 58% in one day",
+    "About 7\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "LeonaBio, Inc.",
+    "price": 2.71,
+    "market_cap": 35436904,
+    "volume": 1344852,
+    "avg_volume": 200603,
+    "vol_ratio": 6.704047297398344,
+    "change": 0.5847950000000001,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 8
+  },
+  {
+   "id": 39,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "PYPD",
+   "horizon": "1d",
+   "direction": "up",
+   "prob_up": 0.525,
+   "confidence": 0.05,
+   "base_close": 4.57,
+   "signals": {
+    "close": 4.57,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.23261,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.17583,
+    "ret_20d": -0.20934,
+    "ret_5d": -0.30335,
+    "reverse_split_60d": 0.0,
+    "rsi14": 31.10091,
+    "sentiment": null,
+    "short_pct_float": 0.0236,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 1.93528,
+    "volume_z": 2.30225
+   },
+   "reasons": [
+    {
+     "rule": "capitulation",
+     "why": "Down more than 25% in 5 days on heavy volume",
+     "weight": 0.3
+    },
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "3d37ae5ce88bc3de8cb0cf4ad941307caba3b27d3663c7c4492593720d675217",
+   "hash": "0fca1150285275ecb3ebf90c64bcffb74d3a1d55493bbdc9f3d028b7f24b42b9",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 9\u00d7 its usual trading volume",
+    "Price fell 18% in one day"
+   ],
+   "picked_detail": {
+    "name": "PolyPid Ltd.",
+    "price": 4.57,
+    "market_cap": 96544472,
+    "volume": 1936837,
+    "avg_volume": 211181,
+    "vol_ratio": 9.171454818378548,
+    "change": -0.17583400000000002,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 10
+  },
+  {
+   "id": 40,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "PYPD",
+   "horizon": "1w",
+   "direction": "up",
+   "prob_up": 0.5125,
+   "confidence": 0.025,
+   "base_close": 4.57,
+   "signals": {
+    "close": 4.57,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.23261,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.17583,
+    "ret_20d": -0.20934,
+    "ret_5d": -0.30335,
+    "reverse_split_60d": 0.0,
+    "rsi14": 31.10091,
+    "sentiment": null,
+    "short_pct_float": 0.0236,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": 1.93528,
+    "volume_z": 2.30225
+   },
+   "reasons": [
+    {
+     "rule": "capitulation",
+     "why": "Down more than 25% in 5 days on heavy volume",
+     "weight": 0.3
+    },
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "0fca1150285275ecb3ebf90c64bcffb74d3a1d55493bbdc9f3d028b7f24b42b9",
+   "hash": "0041fea5ea509b720bcc8df9e9ac09aab101ec71a059415d0493216b26871433",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 9\u00d7 its usual trading volume",
+    "Price fell 18% in one day"
+   ],
+   "picked_detail": {
+    "name": "PolyPid Ltd.",
+    "price": 4.57,
+    "market_cap": 96544472,
+    "volume": 1936837,
+    "avg_volume": 211181,
+    "vol_ratio": 9.171454818378548,
+    "change": -0.17583400000000002,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 10
+  },
+  {
+   "id": 21,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "TRGS",
+   "horizon": "1d",
+   "direction": "up",
+   "prob_up": 0.525,
+   "confidence": 0.05,
+   "base_close": 10.01,
+   "signals": {
+    "close": 10.01,
+    "dilution_30d": 0.0,
+    "dist_ma20": 0.00165,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.0,
+    "ret_20d": 0.00502,
+    "ret_5d": 0.0,
+    "reverse_split_60d": 0.0,
+    "rsi14": 64.5831,
+    "sentiment": null,
+    "short_pct_float": 0.0,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 2.05608
+   },
+   "reasons": [
+    {
+     "rule": "uptrend",
+     "why": "Above its 20-day average and up over 20 days",
+     "weight": 0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "474fada93283c348755892919e91c11666652a1b1483e7d4284dbd604cbd2d91",
+   "hash": "1378089c6f4766caa857180f7390a23006af056d287f4dab65d8b4b2bbbfb585",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 127\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "TRG Latin America Acquisitions ",
+    "price": 10.01,
+    "market_cap": 260410160,
+    "volume": 1532527,
+    "avg_volume": 12096,
+    "vol_ratio": 126.69700727513228,
+    "change": 0.0,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 1
+  },
+  {
+   "id": 22,
+   "created_at": "2026-11-26T07:34:16+00:00",
+   "as_of": "2026-11-25",
+   "ticker": "TRGS",
+   "horizon": "1w",
+   "direction": "up",
+   "prob_up": 0.5374,
+   "confidence": 0.0749,
+   "base_close": 10.01,
+   "signals": {
+    "close": 10.01,
+    "dilution_30d": 0.0,
+    "dist_ma20": 0.00165,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.0,
+    "ret_20d": 0.00502,
+    "ret_5d": 0.0,
+    "reverse_split_60d": 0.0,
+    "rsi14": 64.5831,
+    "sentiment": null,
+    "short_pct_float": 0.0,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 2.05608
+   },
+   "reasons": [
+    {
+     "rule": "uptrend",
+     "why": "Above its 20-day average and up over 20 days",
+     "weight": 0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "1378089c6f4766caa857180f7390a23006af056d287f4dab65d8b4b2bbbfb585",
+   "hash": "12dbc2f4d81350b3f596b9fa6fe954122d3217e5e72cc76bcc8485d36ba28171",
+   "actual_return": null,
+   "correct": null,
+   "picked_why": [
+    "About 127\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": "TRG Latin America Acquisitions ",
+    "price": 10.01,
+    "market_cap": 260410160,
+    "volume": 1532527,
+    "avg_volume": 12096,
+    "vol_ratio": 126.69700727513228,
+    "change": 0.0,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 1
   }
  ],
  "live": {
@@ -920,108 +1353,141 @@
   }
  },
  "recent": [],
- "pumps": [],
+ "pumps": [
+  {
+   "as_of": "2026-11-25",
+   "ticker": "LONA",
+   "signals": {
+    "close": 2.71,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.24291,
+    "filings_3d": 0.0,
+    "insider_net_30d": 3149470.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.5848,
+    "ret_20d": -0.45363,
+    "ret_5d": 0.02264,
+    "reverse_split_60d": 0.0,
+    "rsi14": 37.05298,
+    "sentiment": null,
+    "short_pct_float": 0.0035,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 4.47759
+   },
+   "actual_return": null
+  }
+ ],
  "backtest": {
-  "created_at": "2026-11-26T06:25:53+00:00",
+  "created_at": "2026-11-26T07:34:17+00:00",
   "tickers": [
-   "SNDL",
-   "BBAI",
-   "PLUG",
-   "OPEN",
-   "TLRY",
-   "CLOV",
-   "FCEL",
-   "MVIS",
-   "KOSS",
-   "ACHR"
+   "AACI",
+   "AMBA",
+   "AREC",
+   "BNAI",
+   "BYAH",
+   "CAMP",
+   "HVII",
+   "LONA",
+   "PYPD",
+   "TRGS"
   ],
   "start": "2024-02-23",
   "end": "2026-11-24",
   "horizons": {
    "1d": {
-    "n": 6568,
-    "hit_rate": 0.5175091352009744,
-    "always_up": 0.45006090133982946,
-    "always_down": 0.5499390986601705,
-    "follow_market": 0.4817295980511571,
-    "strategy_avg_return": 0.0006249138127377373,
-    "buy_hold_avg_return": 0.0006644958523843582,
-    "pump_flags": 63,
-    "pump_then_down": 0.5396825396825397,
+    "n": 4334,
+    "hit_rate": 0.5087678818643285,
+    "always_up": 0.4621596677434241,
+    "always_down": 0.5378403322565759,
+    "follow_market": 0.5002307337332718,
+    "strategy_avg_return": -0.001413779945448843,
+    "buy_hold_avg_return": 0.00044687538821822325,
+    "pump_flags": 33,
+    "pump_then_down": 0.5757575757575758,
     "rules": [
      {
       "rule": "pump_pattern",
       "why": "Buzz or volume spike plus a price jump with no news or filing behind it",
-      "fired": 63,
+      "fired": 33,
       "says": "down",
-      "hit_rate": 0.5396825396825397,
-      "avg_return": 0.008873348223106361
+      "hit_rate": 0.5757575757575758,
+      "avg_return": 0.02371209208684467
      },
      {
       "rule": "overextended",
       "why": "Up more than 30% in 5 days",
-      "fired": 217,
+      "fired": 180,
       "says": "down",
-      "hit_rate": 0.543778801843318,
-      "avg_return": 0.005315514043303431
+      "hit_rate": 0.49444444444444446,
+      "avg_return": 0.03134144475536823
      },
      {
       "rule": "capitulation",
       "why": "Down more than 25% in 5 days on heavy volume",
-      "fired": 32,
+      "fired": 60,
       "says": "up",
-      "hit_rate": 0.5625,
-      "avg_return": 0.0201708950393704
+      "hit_rate": 0.4,
+      "avg_return": -0.024190012017189157
      },
      {
       "rule": "dilution",
       "why": "Offering or share-sale filing in the last 30 days",
-      "fired": 0
+      "fired": 871,
+      "says": "down",
+      "hit_rate": 0.5717566016073479,
+      "avg_return": -0.0029186888191720917
      },
      {
       "rule": "reverse_split",
       "why": "Reverse split in the last 60 days",
-      "fired": 120,
+      "fired": 159,
       "says": "down",
-      "hit_rate": 0.5583333333333333,
-      "avg_return": 0.00037380025568430064
+      "hit_rate": 0.6037735849056604,
+      "avg_return": 0.026765817047703273
      },
      {
       "rule": "insider_buying",
       "why": "Insiders bought more shares than they sold in the last 30 days",
-      "fired": 0
+      "fired": 34,
+      "says": "up",
+      "hit_rate": 0.29411764705882354,
+      "avg_return": -0.008340718623523244
      },
      {
       "rule": "uptrend",
       "why": "Above its 20-day average and up over 20 days",
-      "fired": 2027,
+      "fired": 1485,
       "says": "up",
-      "hit_rate": 0.4390725209669462,
-      "avg_return": 0.0024838859924892712
+      "hit_rate": 0.44511784511784513,
+      "avg_return": 0.0004920495819684951
      },
      {
       "rule": "downtrend",
       "why": "Below its 20-day average and down over 20 days",
-      "fired": 3416,
+      "fired": 2100,
       "says": "down",
-      "hit_rate": 0.5433255269320844,
-      "avg_return": -0.00013390696551594924
+      "hit_rate": 0.5414285714285715,
+      "avg_return": -0.00028334992505074495
      },
      {
       "rule": "oversold",
       "why": "RSI below 25",
-      "fired": 49,
+      "fired": 153,
       "says": "up",
-      "hit_rate": 0.6326530612244898,
-      "avg_return": 0.016005106505129114
+      "hit_rate": 0.40522875816993464,
+      "avg_return": 0.003137123037145707
      },
      {
       "rule": "overbought",
       "why": "RSI above 80",
-      "fired": 58,
+      "fired": 46,
       "says": "down",
-      "hit_rate": 0.603448275862069,
-      "avg_return": 0.0028740341729393587
+      "hit_rate": 0.45652173913043476,
+      "avg_return": 0.03657311622664597
      },
      {
       "rule": "buzz_with_news",
@@ -1037,105 +1503,116 @@
     "confidence": [
      {
       "range": "0.00-0.10",
-      "n": 6364,
-      "hit_rate": 0.5158705216844752
+      "n": 3520,
+      "hit_rate": 0.49886363636363634
      },
      {
       "range": "0.10-0.25",
-      "n": 166,
-      "hit_rate": 0.5602409638554217
+      "n": 743,
+      "hit_rate": 0.550471063257066
      },
      {
       "range": "0.25-0.50",
-      "n": 38,
-      "hit_rate": 0.6052631578947368
+      "n": 69,
+      "hit_rate": 0.5652173913043478
+     },
+     {
+      "range": "0.50-1.00",
+      "n": 2,
+      "hit_rate": 0.5
      }
     ]
    },
    "1w": {
-    "n": 6717,
-    "hit_rate": 0.5243412237606074,
-    "always_up": 0.42846508858121185,
-    "always_down": 0.5715349114187881,
-    "follow_market": 0.48280482358195626,
-    "strategy_avg_return": -0.0002703482745409222,
-    "buy_hold_avg_return": 0.0025632552091801853,
-    "pump_flags": 64,
+    "n": 4441,
+    "hit_rate": 0.5167755010132853,
+    "always_up": 0.4476469263679351,
+    "always_down": 0.5523530736320649,
+    "follow_market": 0.47219094798468814,
+    "strategy_avg_return": -0.00696538482746637,
+    "buy_hold_avg_return": 0.004985914520924409,
+    "pump_flags": 32,
     "pump_then_down": 0.53125,
     "rules": [
      {
       "rule": "pump_pattern",
       "why": "Buzz or volume spike plus a price jump with no news or filing behind it",
-      "fired": 64,
+      "fired": 32,
       "says": "down",
       "hit_rate": 0.53125,
-      "avg_return": 0.015137318341374459
+      "avg_return": 0.04861963489439483
      },
      {
       "rule": "overextended",
       "why": "Up more than 30% in 5 days",
-      "fired": 214,
+      "fired": 180,
       "says": "down",
-      "hit_rate": 0.5467289719626168,
-      "avg_return": 0.04625713623039876
+      "hit_rate": 0.5722222222222222,
+      "avg_return": 0.1614868617070241
      },
      {
       "rule": "capitulation",
       "why": "Down more than 25% in 5 days on heavy volume",
-      "fired": 31,
+      "fired": 57,
       "says": "up",
-      "hit_rate": 0.4838709677419355,
-      "avg_return": 0.02373241018077919
+      "hit_rate": 0.3333333333333333,
+      "avg_return": -0.004657498230836865
      },
      {
       "rule": "dilution",
       "why": "Offering or share-sale filing in the last 30 days",
-      "fired": 0
+      "fired": 881,
+      "says": "down",
+      "hit_rate": 0.619750283768445,
+      "avg_return": 0.0130745786713967
      },
      {
       "rule": "reverse_split",
       "why": "Reverse split in the last 60 days",
-      "fired": 123,
+      "fired": 162,
       "says": "down",
-      "hit_rate": 0.5772357723577236,
-      "avg_return": 0.008903688120927239
+      "hit_rate": 0.5740740740740741,
+      "avg_return": 0.2126630119121289
      },
      {
       "rule": "insider_buying",
       "why": "Insiders bought more shares than they sold in the last 30 days",
-      "fired": 0
+      "fired": 29,
+      "says": "up",
+      "hit_rate": 0.20689655172413793,
+      "avg_return": -0.1155543917298387
      },
      {
       "rule": "uptrend",
       "why": "Above its 20-day average and up over 20 days",
-      "fired": 2046,
+      "fired": 1529,
       "says": "up",
-      "hit_rate": 0.41544477028348,
-      "avg_return": 0.00801529203038106
+      "hit_rate": 0.4251144538914323,
+      "avg_return": 0.009210288837763403
      },
      {
       "rule": "downtrend",
       "why": "Below its 20-day average and down over 20 days",
-      "fired": 3520,
+      "fired": 2133,
       "says": "down",
-      "hit_rate": 0.5599431818181818,
-      "avg_return": 0.0004766820899346229
+      "hit_rate": 0.5555555555555556,
+      "avg_return": -0.0015118648162392452
      },
      {
       "rule": "oversold",
       "why": "RSI below 25",
-      "fired": 46,
+      "fired": 146,
       "says": "up",
-      "hit_rate": 0.5,
-      "avg_return": 0.03020948358476985
+      "hit_rate": 0.3972602739726027,
+      "avg_return": 0.00019637679779017602
      },
      {
       "rule": "overbought",
       "why": "RSI above 80",
-      "fired": 58,
+      "fired": 47,
       "says": "down",
-      "hit_rate": 0.5344827586206896,
-      "avg_return": 0.017974413807185577
+      "hit_rate": 0.6170212765957447,
+      "avg_return": -0.1360108531048477
      },
      {
       "rule": "buzz_with_news",
@@ -1151,23 +1628,23 @@
     "confidence": [
      {
       "range": "0.00-0.10",
-      "n": 2966,
-      "hit_rate": 0.4801078894133513
+      "n": 1861,
+      "hit_rate": 0.4486835034927458
      },
      {
       "range": "0.10-0.25",
-      "n": 3552,
-      "hit_rate": 0.5602477477477478
+      "n": 1775,
+      "hit_rate": 0.5487323943661971
      },
      {
       "range": "0.25-0.50",
-      "n": 173,
-      "hit_rate": 0.5606936416184971
+      "n": 747,
+      "hit_rate": 0.606425702811245
      },
      {
       "range": "0.50-1.00",
-      "n": 26,
-      "hit_rate": 0.4230769230769231
+      "n": 58,
+      "hit_rate": 0.5689655172413793
      }
     ]
    }
@@ -1175,81 +1652,81 @@
  },
  "chain": {
   "ok": true,
-  "count": 20,
-  "pending": 20
+  "count": 40,
+  "pending": 40
  },
  "runs": [
   {
-   "started_at": "2026-11-26T06:25:51+00:00",
+   "started_at": "2026-11-26T07:34:16+00:00",
    "step": "predict",
    "status": "ok",
-   "detail": "0"
+   "detail": "20"
   },
   {
-   "started_at": "2026-11-26T06:25:51+00:00",
+   "started_at": "2026-11-26T07:34:16+00:00",
    "step": "resolve",
    "status": "ok",
    "detail": "0"
   },
   {
-   "started_at": "2026-11-26T06:25:51+00:00",
+   "started_at": "2026-11-26T07:34:16+00:00",
    "step": "google_trends",
-   "status": "ok",
-   "detail": "10 ok"
+   "status": "partial",
+   "detail": "7 ok, 3 failed (see Actions log)"
   },
   {
-   "started_at": "2026-11-26T06:25:28+00:00",
+   "started_at": "2026-11-26T07:33:59+00:00",
    "step": "short_interest",
    "status": "ok",
    "detail": ""
   },
   {
-   "started_at": "2026-11-26T06:25:26+00:00",
+   "started_at": "2026-11-26T07:33:57+00:00",
    "step": "finra_short_volume",
    "status": "ok",
    "detail": ""
   },
   {
-   "started_at": "2026-11-26T06:25:26+00:00",
-   "step": "reddit",
-   "status": "error",
-   "detail": "0 ok, 10 failed (see Actions log)"
+   "started_at": "2026-11-26T07:33:57+00:00",
+   "step": "reddit_tone",
+   "status": "skipped",
+   "detail": "not set up"
   },
   {
-   "started_at": "2026-11-26T06:25:26+00:00",
+   "started_at": "2026-11-26T07:33:57+00:00",
    "step": "sec",
-   "status": "error",
-   "detail": "0 ok, 10 failed (see Actions log)"
+   "status": "partial",
+   "detail": "9 ok, 1 failed (see Actions log)"
   },
   {
-   "started_at": "2026-11-26T06:25:24+00:00",
-   "step": "prices",
+   "started_at": "2026-11-26T07:33:47+00:00",
+   "step": "pick",
    "status": "ok",
-   "detail": "11 ok"
+   "detail": "10 found"
   },
   {
-   "started_at": "2026-11-26T06:24:10+00:00",
-   "step": "predict",
+   "started_at": "2026-11-26T07:33:47+00:00",
+   "step": "prices_shortlist",
    "status": "ok",
-   "detail": "0"
+   "detail": "20 ok"
   },
   {
-   "started_at": "2026-11-26T06:24:10+00:00",
-   "step": "resolve",
+   "started_at": "2026-11-26T07:33:43+00:00",
+   "step": "scan",
    "status": "ok",
-   "detail": "0"
+   "detail": "493 found"
   },
   {
-   "started_at": "2026-11-26T06:24:10+00:00",
-   "step": "google_trends",
+   "started_at": "2026-11-26T07:33:18+00:00",
+   "step": "reddit_mentions",
    "status": "ok",
-   "detail": "10 ok"
+   "detail": "300 stocks"
   },
   {
-   "started_at": "2026-11-26T06:23:45+00:00",
-   "step": "short_interest",
+   "started_at": "2026-11-26T07:33:17+00:00",
+   "step": "yahoo_screener",
    "status": "ok",
-   "detail": ""
+   "detail": "500 stocks"
   }
  ],
  "simulation": null
