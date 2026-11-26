@@ -22,7 +22,13 @@ log = logging.getLogger("tracker")
 def _step(conn, name, fn, *a):
     try:
         out = fn(*a)
-        db.log_run(conn, name, "ok", "" if out is None else out)
+        if isinstance(out, tuple) and len(out) == 2:
+            good, bad = out
+            status = "ok" if bad == 0 else ("partial" if good else "error")
+            db.log_run(conn, name, status, f"{good} ok, {bad} failed (see Actions log)" if bad
+                       else f"{good} ok")
+        else:
+            db.log_run(conn, name, "ok", "" if out is None else out)
         return out
     except Exception as e:  # one bad source should not stop the rest
         log.exception("%s failed", name)

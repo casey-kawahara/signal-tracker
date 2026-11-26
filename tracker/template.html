@@ -59,6 +59,7 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
     <div>
       <h1>Signal Tracker</h1>
       <div class="sub" id="meta"></div>
+      <div class="sub" id="sources" style="margin-top:6px"></div>
     </div>
     <div class="tabs" id="htabs"></div>
   </div>
@@ -85,8 +86,8 @@ details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
     close higher or lower than its last close, one trading day and one week (five trading days) ahead.</p>
     <p>Every prediction is locked the moment it is made: the database refuses edits and deletes, each row
     is chained to the one before it with a hash, and the daily commit on GitHub timestamps it publicly.
-    The scorecard compares the hit rate against two baselines that need no skill: always predicting
-    "up", and predicting each stock will move the same way the overall market (SPY) just did.</p>
+    The scorecard compares the hit rate against baselines that need no skill: always predicting
+    "up", always predicting "down", and predicting each stock will move the same way the overall market (SPY) just did.</p>
     <p>This is an experiment, not investment advice. Small samples swing a lot, so give it a few weeks
     before reading much into the numbers.</p>
   </div>
@@ -108,6 +109,9 @@ function meta() {
                      : `<span class="badge bad">Lock chain broken at #${c.count + 1}</span>`;
   document.getElementById("meta").innerHTML =
     `Updated ${new Date(D.generated_at).toLocaleString()} · data through ${esc(D.latest_as_of || "–")} · ${chain}`;
+  const names = { prices: "Prices", sec: "SEC filings", reddit: "Reddit", finra_short_volume: "Short volume", short_interest: "Short interest", google_trends: "Google Trends" };
+  document.getElementById("sources").innerHTML = (D.sources || []).filter(s => names[s.step]).map(s =>
+    `<span class="badge ${s.status === "ok" ? "ok" : s.status === "partial" ? "warn" : "bad"}" title="${esc(s.detail)}">${names[s.step]} ${s.status === "ok" ? "✓" : s.status === "partial" ? "partial" : "failing"}</span>`).join(" ");
   const t = document.getElementById("htabs");
   t.innerHTML = Object.entries(H).map(([k, v]) => `<button data-h="${k}" class="${k === hz ? "on" : ""}">${v}</button>`).join("");
   t.querySelectorAll("button").forEach(b => b.onclick = () => { hz = b.dataset.h; render(); });
@@ -145,10 +149,10 @@ function score() {
       The first results arrive after ${hz === "1d" ? "the next trading day" : "five trading days"}.</div>`;
     return;
   }
-  const edge = s.hit_rate - s.always_up;
+  const edge = s.hit_rate - Math.max(s.always_up, s.always_down ?? 0);
   el.innerHTML = `<div class="kpis">
     ${kpi("Hit rate", pct(s.hit_rate), `${s.n} calls scored · last 20 days ${pct(s.hit_rate_recent)}`)}
-    ${kpi('vs always "up"', spct(edge), `baseline ${pct(s.always_up)}`, cls(edge))}
+    ${kpi("vs best simple guess", spct(edge), `always "up" ${pct(s.always_up)} · always "down" ${pct(s.always_down)}`, cls(edge))}
     ${kpi("vs follow the market", spct(s.follow_market == null ? null : s.hit_rate - s.follow_market), `baseline ${pct(s.follow_market)}`, cls(s.follow_market == null ? null : s.hit_rate - s.follow_market))}
     ${kpi("Avg return following calls", spct(s.strategy_avg_return, 2), `buy and hold ${spct(s.buy_hold_avg_return, 2)} · SPY ${spct(s.market_avg_return, 2)}`, cls(s.strategy_avg_return))}
     ${kpi("Move size", pct(s.avg_move_right), `avg move when right · ${pct(s.avg_move_wrong)} when wrong`)}
@@ -205,7 +209,7 @@ function backtest() {
   el.innerHTML = `<div class="sub" style="margin-bottom:8px">${esc(b.start)} to ${esc(b.end)} · ${s.n.toLocaleString()} simulated calls.
     Uses prices, volume and SEC filings only (no free history for Reddit or short volume), and today's watchlist, so stocks that died are missing.</div>
   <div class="kpis">
-    ${kpi("Hit rate", pct(s.hit_rate), `always "up" ${pct(s.always_up)} · follow market ${pct(s.follow_market)}`, cls(s.hit_rate - Math.max(s.always_up, s.follow_market || 0)))}
+    ${kpi("Hit rate", pct(s.hit_rate), `always "up" ${pct(s.always_up)} · always "down" ${pct(s.always_down)} · follow market ${pct(s.follow_market)}`, cls(s.hit_rate - Math.max(s.always_up, s.always_down ?? 0, s.follow_market || 0)))}
     ${kpi("Avg return following calls", spct(s.strategy_avg_return, 2), `buy and hold ${spct(s.buy_hold_avg_return, 2)}`, cls(s.strategy_avg_return))}
     ${kpi("Pump flags", s.pump_flags, s.pump_then_down == null ? "none" : `${pct(s.pump_then_down)} fell over the next ${hz === "1d" ? "day" : "week"}`)}
   </div>

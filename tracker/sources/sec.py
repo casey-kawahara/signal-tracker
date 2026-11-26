@@ -62,15 +62,18 @@ def fetch(conn, tickers, lookback_days=1100):
         return synthetic.filings(conn, tickers)
     since = (date.today() - timedelta(days=lookback_days)).isoformat()
     form4_since = (date.today() - timedelta(days=120)).isoformat()
+    ok = failed = 0
     for t in tickers:
         try:
             cik = cik_for(t)
             if not cik:
                 log.warning("no SEC CIK for %s", t)
+                failed += 1
                 continue
             sub = _get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json").json()
         except Exception as e:
             log.warning("SEC %s failed: %s", t, e)
+            failed += 1
             continue
         recent = sub.get("filings", {}).get("recent", {})
         n = len(recent.get("accessionNumber", []))
@@ -92,3 +95,5 @@ def fetch(conn, tickers, lookback_days=1100):
             added += 1
         conn.commit()
         log.info("SEC %s: %d new filings", t, added)
+        ok += 1
+    return ok, failed

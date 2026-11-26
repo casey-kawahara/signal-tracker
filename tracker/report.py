@@ -54,6 +54,7 @@ def live_stats(conn):
             "hit_rate": float(g["correct"].mean()),
             "hit_rate_recent": float(last20["correct"].mean()),
             "always_up": float((g["actual_return"] > 0).mean()),
+            "always_down": float((g["actual_return"] < 0).mean()),
             "follow_market": _f(((g.loc[follow, "actual_return"] > 0) ==
                                  (g.loc[follow, "mkt_prev"] > 0)).mean()) if follow.any() else None,
             "strategy_avg_return": float((sign * g["actual_return"]).mean()),
@@ -98,7 +99,10 @@ def build(conn):
     pending = conn.execute("SELECT COUNT(*) FROM predictions p LEFT JOIN outcomes o "
                            "ON o.prediction_id=p.id WHERE o.prediction_id IS NULL").fetchone()[0]
     runs = _rows(conn, "SELECT started_at, step, status, detail FROM runs ORDER BY id DESC LIMIT 12")
+    sources = _rows(conn, "SELECT step, status, detail, started_at FROM runs r WHERE id = "
+                          "(SELECT MAX(id) FROM runs WHERE step = r.step) ORDER BY id")
     data = {
+        "sources": sources,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "watchlist": config.WATCHLIST,
         "latest_as_of": latest,

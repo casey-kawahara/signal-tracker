@@ -55,9 +55,10 @@ def fetch(conn, tickers, today):
         s, base = _session()
     except Exception as e:
         log.warning("reddit auth failed: %s", e)
-        return
+        return 0, len(tickers)
     cutoff = datetime.now(timezone.utc).timestamp() - 86400
     subs = "+".join(config.REDDIT_SUBS)
+    ok = failed = 0
     for t in tickers:
         try:
             r = s.get(f"{base}/r/{subs}/search.json",
@@ -67,6 +68,7 @@ def fetch(conn, tickers, today):
             posts = [c["data"] for c in r.json()["data"]["children"]]
         except Exception as e:
             log.warning("reddit %s failed: %s", t, e)
+            failed += 1
             continue
         posts = [p for p in posts if p.get("created_utc", 0) >= cutoff
                  and _mentions_text(p.get("title", "") + " " + p.get("selftext", ""), t)]
@@ -75,5 +77,7 @@ def fetch(conn, tickers, today):
         avg = sum(sents) / len(sents) if sents else 0.0
         conn.execute("INSERT OR REPLACE INTO reddit_daily VALUES (?,?,?,?,?)",
                      (t, today, len(posts), score, avg))
+        ok += 1
         time.sleep(1.2)
     conn.commit()
+    return ok, failed

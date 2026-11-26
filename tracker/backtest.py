@@ -82,6 +82,7 @@ def run(conn, tickers=None):
             "n": int(len(g)),
             "hit_rate": float(hit.mean()),
             "always_up": float((g["ret"] > 0).mean()),
+            "always_down": float((g["ret"] < 0).mean()),
             "follow_market": float(((g.loc[follow, "ret"] > 0) ==
                                     (g.loc[follow, "mkt_prev"] > 0)).mean()) if follow.any() else None,
             "strategy_avg_return": float((sign * g["ret"]).mean()),
