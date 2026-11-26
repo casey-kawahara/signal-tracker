@@ -92,3 +92,28 @@ def test_demo_end_to_end(tmp_path):
     out = demo.simulate(days=12, out_dir=tmp_path)
     html = out.read_text()
     assert "Stock Signals" in html and "/*__DATA__*/null" not in html
+
+
+def test_scanner_score_and_reasons():
+    from tracker import scanner
+    quiet = {"vol_ratio": 1.0, "mentions": 2, "mentions_prev": 2, "change": 0.01}
+    hot = {"vol_ratio": 6.0, "mentions": 80, "mentions_prev": 5, "change": 0.25}
+    assert scanner.score(hot) > scanner.score(quiet)
+    why = scanner.reasons(hot)
+    assert any("trading volume" in w for w in why) and any("Reddit" in w for w in why)
+    assert scanner.reasons(quiet) == ["One of the most actively traded small stocks yesterday"]
+
+
+def test_picks_are_locked_and_fill_from_backup(conn, monkeypatch):
+    from tracker import scanner
+    monkeypatch.setattr(config, "WATCHLIST", ["AAA"])
+    last = conn.execute("SELECT MAX(date) FROM prices").fetchone()[0]
+    ranked = [{"ticker": "NOPE", "score": 9.0, "vol_ratio": 5}]  # no price history -> skipped
+    picks = scanner.lock_picks(conn, last, ranked, lambda t: t == "AAA", n=2)
+    assert picks == ["AAA"]
+    row = conn.execute("SELECT reasons FROM selections").fetchone()
+    assert "backup" in row[0]
+    # same day again returns the locked picks, even with a different scan
+    assert scanner.lock_picks(conn, last, [{"ticker": "AAA", "score": 1}], lambda t: True) == ["AAA"]
+    with pytest.raises(sqlite3.DatabaseError, match="locked"):
+        conn.execute("DELETE FROM selections")

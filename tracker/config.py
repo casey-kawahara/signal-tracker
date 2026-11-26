@@ -6,11 +6,25 @@ ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = Path(os.environ.get("TRACKER_DB", ROOT / "data" / "tracker.db"))
 DOCS_DIR = ROOT / "docs"
 
-# About 10 small-cap / penny stocks that tend to trade on attention, not fundamentals.
-# Tickers that stop trading are skipped with a warning; swap them out here.
+# Stocks are picked automatically each morning (see tracker/scanner.py). This list is only a
+# backup, used when the scan finds fewer than PICKS_PER_DAY stocks.
 WATCHLIST = [
     "SNDL", "BBAI", "PLUG", "OPEN", "TLRY",
     "CLOV", "FCEL", "MVIS", "KOSS", "ACHR",
+]
+PICKS_PER_DAY = 10
+MIN_PRICE = 0.20             # dollars; below this, quotes get unreliable
+MIN_MARKET_CAP = 20e6        # $20M
+MAX_MARKET_CAP = 2e9         # $2B: the usual cutoff for "small cap"
+MIN_VOLUME = 300_000         # shares a day, so the stock is actually tradable
+MIN_HISTORY_DAYS = 30        # trading days of prices needed to make a call
+
+# Stocks used by the practice-run replay, which can't scan the past. A mix of well-known
+# small and penny stocks; ones that stopped trading are skipped.
+REPLAY_POOL = WATCHLIST + [
+    "AMC", "BB", "SENS", "OCGN", "WKHS", "SPCE", "BYND", "QS", "CHPT", "BLNK",
+    "TELL", "JOBY", "LUNR", "DNA", "RIG", "CIFR", "WULF", "HIVE", "BITF", "GPRO",
+    "FUBO", "NKTR", "AEHR", "SOUN", "QUBT", "RGTI", "LCID", "RUN", "SIRI", "NIO",
 ]
 MARKET_TICKER = "SPY"  # used for the "overall market" baseline
 

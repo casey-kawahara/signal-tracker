@@ -25,7 +25,8 @@ def _get(s, k):
 def is_pump(s):
     """A buzz or volume spike with a big price jump and no filing behind it."""
     buzz = any((_get(s, k) or 0) > 2 for k in ("mentions_z", "trends_z")) or \
-        (_get(s, "volume_z") or 0) > 3
+        (_get(s, "volume_z") or 0) > 3 or \
+        ((_get(s, "mention_jump") or 0) > 3 and (_get(s, "mentions") or 0) >= 10)
     jump = (_get(s, "ret_1d") or 0) > 0.10 or (_get(s, "ret_5d") or 0) > 0.30
     no_news = (_get(s, "filings_3d") or 0) == 0
     return buzz and jump and no_news
@@ -55,7 +56,7 @@ RULES = [
     ("overbought", "RSI above 80",
      lambda s: _ok(_get(s, "rsi14")) and _get(s, "rsi14") > 80, -0.2, -0.25),
     ("buzz_with_news", "Reddit buzz rising with positive tone and a fresh filing behind it",
-     lambda s: (_get(s, "mentions_z") or 0) > 1.5 and (_get(s, "sentiment") or 0) > 0.2
+     lambda s: max(_get(s, "mentions_z") or 0, (_get(s, "mention_jump") or 0) - 0.5) > 1.5 and (_get(s, "sentiment") or 0) > 0.2
      and (_get(s, "filings_3d") or 0) > 0, 0.2, 0.1),
     ("short_pressure", "Short-sale share of volume spiking while the price rises",
      lambda s: (_get(s, "short_ratio_z") or 0) > 2 and (_get(s, "ret_1d") or 0) > 0, 0.15, 0.1),
@@ -63,7 +64,7 @@ RULES = [
 
 SIGNAL_KEYS = ["close", "ret_1d", "ret_5d", "ret_20d", "dist_ma20", "rsi14", "volume_z",
                "filings_3d", "dilution_30d", "insider_net_30d", "reverse_split_60d",
-               "mentions", "mentions_z", "sentiment", "trends_z", "short_ratio",
+               "mentions", "mentions_z", "mention_jump", "sentiment", "trends_z", "short_ratio",
                "short_ratio_z", "short_pct_float"]
 
 

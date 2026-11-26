@@ -57,6 +57,9 @@ h2 { font-size: 19px; margin: 40px 0 4px; letter-spacing: -0.01em; }
 .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
 .dots i.on { background: var(--ink); }
 .why { font-size: 15px; margin: 0; }
+.name { color: var(--muted); font-size: 13px; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.picked { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--muted); }
+.picked b { color: var(--ink); font-weight: 600; }
 .more { color: var(--accent); font-size: 13px; margin-top: 10px; display: inline-block; }
 .card[open] .more .o { display: none; } .card:not([open]) .more .c { display: none; }
 .hype { display: inline-block; background: var(--warn-bg); color: var(--warn); border-radius: 6px; padding: 1px 7px;
@@ -136,7 +139,11 @@ svg text { fill: var(--faint); font-size: 11px; }
   <details class="sec"><summary><span>Testing on past data<span class="s" id="btSum"></span></span></summary><div class="secbody" id="backtest"></div></details>
   <details class="sec"><summary><span>How this works<span class="s">Where the data comes from and how calls are kept honest</span></span></summary>
     <div class="secbody note">
-      <p>Every weekday before the market opens, the tracker gathers fresh information on each stock: its price and trading
+      <p><b>How stocks are picked.</b> Every weekday before the market opens, the tracker scans US stocks worth
+      $20 million to $2 billion that trade at least 300,000 shares a day. It ranks them by how much unusual attention
+      they're getting: trading volume compared with normal, the jump in Reddit mentions, and the size of yesterday's
+      price move. The top 10 are locked in before any call is made, so every pick counts toward the score.</p>
+      <p>Then it gathers fresh information on each pick: its price and trading
       activity, company filings with the SEC (such as plans to sell new shares, or insiders buying), Reddit chatter,
       Google searches, and how much of the trading was people betting against it (short selling).</p>
       <p>A short list of simple rules turns that into a call: will the stock close higher or lower than yesterday,
@@ -204,7 +211,7 @@ function tabs() {
 function header() {
   document.getElementById("simbanner").innerHTML = D.simulation ?
     `<div class="sim"><b>Practice run.</b> ${esc(D.simulation)} <a href="../">See the real record</a>.</div>` : "";
-  document.getElementById("lede").textContent = `Daily up-or-down calls for ${D.watchlist.length} small, fast-moving stocks, and an honest count of how often they're right.`;
+  document.getElementById("lede").textContent = "Each morning we find the small stocks getting the most unusual attention, call whether each will go up or down, and keep an honest count of how often we're right.";
   document.getElementById("foot").textContent = `Updated ${new Date(D.generated_at).toLocaleString()} · ${D.chain.count} calls locked${D.chain.ok ? " and verified unchanged" : " · WARNING: lock check failed"} · Not investment advice`;
 }
 
@@ -231,7 +238,7 @@ function facts(sg) {
   if (sg.ret_20d != null) add("Price change, past month", "", `<span class="${cls(sg.ret_20d)}">${spct(sg.ret_20d)}</span>`);
   if (sg.volume_z != null) add("Trading activity", "Compared with a normal day", sg.volume_z > 2 ? "Much higher" : sg.volume_z > 0.75 ? "Higher" : sg.volume_z < -0.75 ? "Lower" : "Normal");
   if (sg.trends_z != null) add("Google searches", "Compared with recent weeks", sg.trends_z > 2 ? "Spiking" : sg.trends_z > 0.75 ? "Rising" : sg.trends_z < -0.75 ? "Falling" : "Normal");
-  if (sg.mentions != null) add("Reddit posts, past day", "Across stock-picking subreddits", sg.mentions.toFixed(0));
+  if (sg.mentions != null) add("Reddit mentions, past day", "Across stock-picking subreddits", sg.mentions.toFixed(0) + (sg.mention_jump > 1.8 ? ' <span class="up">rising</span>' : ""));
   if (sg.short_ratio != null) add("Short selling", "Share of trades betting it will fall", pct(sg.short_ratio));
   add("Plans to sell new shares", "SEC filings in the past 30 days", sg.dilution_30d ? '<span class="down">Yes</span>' : "None found");
   add("Insiders buying", "Company leaders, past 30 days", sg.insider_net_30d > 0 ? '<span class="up">Yes</span>' : "No");
@@ -248,12 +255,16 @@ function card(t, p, other) {
   return `<details class="card"><summary>
       <div class="row1"><span class="tk">${esc(t)}${p.pump_flag ? '<span class="hype" title="Hype with no news behind it">Hype warning</span>' : ""}</span>
         <span class="px">$${(+p.base_close).toFixed(2)}${p.signals && p.signals.ret_5d != null ? ` · <span class="${cls(p.signals.ret_5d)}">${spct(p.signals.ret_5d, 0)}</span> this week` : ""}</span></div>
+      ${p.picked_detail && p.picked_detail.name ? `<div class="name">${esc(p.picked_detail.name)}</div>` : ""}
       <div class="call"><span class="pill ${up ? "up" : "down"}">${up ? "▲ Likely up" : "▼ Likely down"}</span>${confHtml(p.confidence)}</div>
       <p class="why">${esc(headline(p))}</p>
+      ${p.picked_why ? `<div class="picked"><b>Why it's on the list:</b> ${esc(p.picked_why[0])}${p.picked_why.length > 1 ? ` · ${esc(p.picked_why[1])}` : ""}</div>` : ""}
       <span class="more"><span class="o">Why this call ›</span><span class="c">Hide details</span></span>
     </summary>
     <div class="detail">
-      <h4>Everything that went into it</h4>
+      ${p.picked_why ? `<h4>Why it's on today's list</h4><ul class="reasons">${p.picked_why.map(w => `<li class="pos" style="list-style:none">${esc(w)}</li>`).join("")}</ul>
+        <p class="sub" style="margin:4px 0 0">${p.picked_rank ? `Ranked #${p.picked_rank} for unusual attention this morning. ` : ""}Getting attention doesn't mean the stock will go up; the call below is separate.</p>` : ""}
+      <h4>Everything that went into the call</h4>
       ${reasons ? `<ul class="reasons">${reasons}</ul>` : `<p style="margin:0">${NONE}</p>`}
       <p class="sub" style="margin:8px 0 0">The signals add up to a ${pct(p.prob_up)} chance of closing higher ${H[hz].by}. ${otherTxt}</p>
       <h4>What we looked at</h4>
@@ -269,7 +280,8 @@ function cards() {
   document.getElementById("callsTitle").textContent = D.simulation ? "Latest calls in this practice run" : "Today's calls";
   if (!D.today.length) { el.innerHTML = `<div class="panel empty" style="grid-column:1/-1">No calls yet. They appear after the first morning run.</div>`; document.getElementById("callsSub").textContent = ""; return; }
   const next = (() => { const d = new Date(D.latest_as_of + "T12:00:00"); do { d.setDate(d.getDate() + 1); } while ([0, 6].includes(d.getDay())); return d.toISOString().slice(0, 10); })();
-  document.getElementById("callsSub").textContent = `Will each stock close higher or lower ${H[hz].by}? Made before the market opened on ${fmtDate(next)}, using prices through ${shortDate(D.latest_as_of)}. Tap a stock to see why.`;
+  const scanned = D.scanned && !D.simulation ? `Picked from ${D.scanned.toLocaleString()} small stocks scanned this morning. ` : "";
+  document.getElementById("callsSub").textContent = `${scanned}Will each one close higher or lower ${H[hz].by}? Calls made before the market opened on ${fmtDate(next)}, using prices through ${shortDate(D.latest_as_of)}. Tap a stock to see why.`;
   const by = {};
   D.today.forEach(p => { (by[p.ticker] = by[p.ticker] || {})[p.horizon] = p; });
   const otherH = hz === "1d" ? "1w" : "1d";
@@ -357,10 +369,10 @@ function backtest() {
 }
 
 function sources() {
-  const names = { prices: "Prices", sec: "SEC filings", reddit: "Reddit", finra_short_volume: "Short selling", short_interest: "Short interest", google_trends: "Google searches" };
+  const names = { yahoo_screener: "Stock scan", reddit_mentions: "Reddit mentions", reddit_tone: "Reddit tone", prices: "Prices", sec: "SEC filings", finra_short_volume: "Short selling", short_interest: "Short interest", google_trends: "Google searches" };
   const list = (D.sources || []).filter(s => names[s.step]);
   document.getElementById("sources").innerHTML = list.length ? `<div class="sub" style="margin-bottom:6px">Data sources on the last run</div>` + list.map(s =>
-    `<span class="badge ${s.status === "ok" ? "ok" : s.status === "partial" ? "warn" : "bad"}" title="${esc(s.detail)}">${names[s.step]} ${s.status === "ok" ? "✓" : s.status === "partial" ? "partly working" : "not working"}</span>`).join(" ") : "";
+    `<span class="badge ${s.status === "ok" ? "ok" : s.status === "partial" ? "warn" : s.status === "skipped" ? "" : "bad"}" title="${esc(s.detail)}">${names[s.step]} ${s.status === "ok" ? "✓" : s.status === "partial" ? "partly working" : s.status === "skipped" ? "not set up" : "not working"}</span>`).join(" ") : "";
   document.getElementById("runs").innerHTML = D.runs.length ? `<div class="sub" style="margin-bottom:6px">Recent run log</div><table class="data"><tr><th>Time (UTC)</th><th>Step</th><th>Status</th><th>Detail</th></tr>
     ${D.runs.map(r => `<tr><td>${esc(r.started_at)}</td><td>${esc(r.step)}</td><td>${esc(r.status)}</td><td class="sub">${esc(r.detail)}</td></tr>`).join("")}</table>` : "";
 }

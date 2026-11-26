@@ -95,3 +95,30 @@ def short_volume(conn, tickers):
         conn.executemany("INSERT OR REPLACE INTO short_volume VALUES (?,?,?,?)",
                          [(t, d.isoformat(), rng.uniform(2e5, 2e6), 4e6) for d in days])
     conn.commit()
+
+
+def scan(conn, as_of):
+    """Fake scan: score every synthetic ticker by yesterday's volume spike and move."""
+    from .. import config, scanner
+    if not conn.execute("SELECT 1 FROM prices WHERE ticker=? LIMIT 1", (config.REPLAY_POOL[-1],)).fetchone():
+        prices(conn, config.REPLAY_POOL)
+    out = []
+    pool = [r[0] for r in conn.execute("SELECT DISTINCT ticker FROM prices WHERE ticker != 'SPY'")]
+    for t in pool:
+        rows = conn.execute("SELECT close, volume FROM prices WHERE ticker=? AND date<=? "
+                            "ORDER BY date DESC LIMIT 21", (t, as_of)).fetchall()
+        if len(rows) < 21:
+            continue
+        avg = sum(r[1] for r in rows[1:]) / 20
+        rng = random.Random(t + as_of)
+        m0 = int(rng.expovariate(1 / 8))
+        m = m0 * rng.choice([1, 1, 1, 2, 5]) + rng.randint(0, 5)
+        c = {"ticker": t, "price": rows[0][0], "volume": rows[0][1], "avg_volume": avg,
+             "vol_ratio": rows[0][1] / avg, "change": rows[0][0] / rows[1][0] - 1,
+             "mentions": m, "mentions_prev": m0}
+        c["score"] = scanner.score(c)
+        conn.execute("INSERT OR REPLACE INTO buzz VALUES (?,?,?,?,?,?)", (t, as_of, m, m0, 0, 0))
+        out.append(c)
+    conn.commit()
+    out.sort(key=lambda c: -c["score"])
+    return out

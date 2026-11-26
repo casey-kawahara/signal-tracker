@@ -57,6 +57,25 @@ CREATE TABLE IF NOT EXISTS outcomes (
     market_return REAL,
     correct INTEGER NOT NULL
 );
+CREATE TABLE IF NOT EXISTS buzz (
+    ticker TEXT, date TEXT, mentions INTEGER, mentions_prev INTEGER, upvotes INTEGER, rank INTEGER,
+    PRIMARY KEY (ticker, date)
+);
+CREATE TABLE IF NOT EXISTS selections (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_at TEXT NOT NULL,
+    as_of TEXT NOT NULL,
+    ticker TEXT NOT NULL,
+    rank INTEGER NOT NULL,
+    score REAL NOT NULL,
+    reasons TEXT NOT NULL,   -- JSON list of plain-English reasons it was picked
+    detail TEXT NOT NULL,    -- JSON: the numbers behind the pick
+    UNIQUE (as_of, ticker)
+);
+CREATE TRIGGER IF NOT EXISTS selections_no_update BEFORE UPDATE ON selections
+BEGIN SELECT RAISE(ABORT, 'picks are locked and cannot be edited'); END;
+CREATE TRIGGER IF NOT EXISTS selections_no_delete BEFORE DELETE ON selections
+BEGIN SELECT RAISE(ABORT, 'picks are locked and cannot be deleted'); END;
 CREATE TABLE IF NOT EXISTS runs (
     id INTEGER PRIMARY KEY AUTOINCREMENT, started_at TEXT, step TEXT, status TEXT, detail TEXT
 );

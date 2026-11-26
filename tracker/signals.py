@@ -92,16 +92,20 @@ def build(conn, ticker):
     f["reverse_split_60d"] = _window_count(idx, rs_events, 60)
     f["charter_change_60d"] = _window_count(idx, rs_8k, 60)
 
-    # Reddit buzz (only exists from the day collection started)
-    rd = _series(conn, "SELECT date, mentions, sentiment FROM reddit_daily WHERE ticker=?",
-                 ticker, ["mentions", "sentiment"])
-    if not rd.empty:
-        rd = rd.reindex(idx)
-        f["mentions"] = rd["mentions"]
-        f["mentions_z"] = _zscore(rd["mentions"].astype(float), min_periods=5)
-        f["sentiment"] = rd["sentiment"]
+    # Reddit buzz from ApeWisdom (only exists from the day collection started)
+    bz = _series(conn, "SELECT date, mentions, mentions_prev FROM buzz WHERE ticker=?",
+                 ticker, ["mentions", "mentions_prev"])
+    if not bz.empty:
+        bz = bz.reindex(idx)
+        f["mentions"] = bz["mentions"]
+        f["mentions_z"] = _zscore(bz["mentions"].astype(float), min_periods=5)
+        f["mention_jump"] = (bz["mentions"] + 3) / (bz["mentions_prev"] + 3)
     else:
-        f["mentions"] = f["mentions_z"] = f["sentiment"] = np.nan
+        f["mentions"] = f["mentions_z"] = f["mention_jump"] = np.nan
+    # Tone of Reddit posts (needs the optional Reddit app keys)
+    rd = _series(conn, "SELECT date, sentiment FROM reddit_daily WHERE ticker=?", ticker,
+                 ["sentiment"])
+    f["sentiment"] = rd["sentiment"].reindex(idx) if not rd.empty else np.nan
 
     # Google Trends
     tr = _series(conn, "SELECT date, interest FROM trends_daily WHERE ticker=?", ticker,

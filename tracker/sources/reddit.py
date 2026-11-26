@@ -48,9 +48,13 @@ def _mentions_text(text, ticker):
 
 
 def fetch(conn, tickers, today):
+    """Tone of recent posts. Mention counts come from ApeWisdom (see scanner.py)."""
     if config.OFFLINE:
         from . import synthetic
         return synthetic.reddit(conn, tickers, today)
+    if not (config.REDDIT_CLIENT_ID and config.REDDIT_CLIENT_SECRET):
+        log.info("no Reddit app keys; skipping post tone")
+        return "skipped"
     try:
         s, base = _session()
     except Exception as e:

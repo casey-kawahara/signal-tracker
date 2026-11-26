@@ -87,9 +87,18 @@ def _rows(conn, sql, params=()):
 
 def build(conn):
     latest = conn.execute("SELECT MAX(as_of) FROM predictions").fetchone()[0]
-    today = _rows(conn, "SELECT p.*, o.actual_return, o.correct FROM predictions p "
-                        "LEFT JOIN outcomes o ON o.prediction_id=p.id WHERE as_of=? "
-                        "ORDER BY ticker, horizon", (latest,)) if latest else []
+    today = _rows(conn, "SELECT p.*, o.actual_return, o.correct, s.reasons AS picked_why, "
+                        "s.detail AS picked_detail, s.rank AS picked_rank FROM predictions p "
+                        "LEFT JOIN outcomes o ON o.prediction_id=p.id "
+                        "LEFT JOIN selections s ON s.as_of=p.as_of AND s.ticker=p.ticker "
+                        "WHERE p.as_of=? ORDER BY p.ticker, p.horizon", (latest,)) if latest else []
+    if any(r.get("picked_why") for r in today):  # show only the day's picks as cards
+        today = [r for r in today if r.get("picked_why")]
+    for r in today:
+        for k in ("picked_why", "picked_detail"):
+            r[k] = json.loads(r[k]) if r.get(k) else None
+    scan_run = conn.execute("SELECT detail FROM runs WHERE step='scan' AND status='ok' "
+                            "ORDER BY id DESC LIMIT 1").fetchone()
     recent = _rows(conn, "SELECT p.id, p.created_at, p.as_of, p.ticker, p.horizon, p.direction, "
                          "p.confidence, p.pump_flag, o.target_date, o.actual_return, o.correct "
                          "FROM predictions p JOIN outcomes o ON o.prediction_id=p.id "
@@ -106,6 +115,7 @@ def build(conn):
                           "(SELECT MAX(id) FROM runs WHERE step = r.step) ORDER BY id")
     data = {
         "sources": sources,
+        "scanned": int(scan_run[0].split()[0]) if scan_run and scan_run[0].split()[0].isdigit() else None,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "watchlist": config.WATCHLIST,
         "latest_as_of": latest,

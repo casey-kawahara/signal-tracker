@@ -13,7 +13,7 @@ import logging
 import sys
 from datetime import date
 
-from . import backtest, config, db, predict, report
+from . import backtest, config, db, predict, report, scanner
 from .sources import finra, prices, reddit, sec, trends
 
 log = logging.getLogger("tracker")
@@ -27,6 +27,10 @@ def _step(conn, name, fn, *a):
             status = "ok" if bad == 0 else ("partial" if good else "error")
             db.log_run(conn, name, status, f"{good} ok, {bad} failed (see Actions log)" if bad
                        else f"{good} ok")
+        elif out == "skipped":
+            db.log_run(conn, name, "skipped", "not set up")
+        elif isinstance(out, list):
+            db.log_run(conn, name, "ok" if out else "error", f"{len(out)} found")
         else:
             db.log_run(conn, name, "ok", "" if out is None else out)
         return out
@@ -36,16 +40,54 @@ def _step(conn, name, fn, *a):
         return None
 
 
+def pending_tickers(conn):
+    return [r[0] for r in conn.execute(
+        "SELECT DISTINCT p.ticker FROM predictions p LEFT JOIN outcomes o "
+        "ON o.prediction_id = p.id WHERE o.prediction_id IS NULL")]
+
+
+def has_history(conn, as_of):
+    def check(t):
+        r = conn.execute("SELECT COUNT(*), MAX(date) FROM prices WHERE ticker=?", (t,)).fetchone()
+        return r[0] >= config.MIN_HISTORY_DAYS and r[1] == as_of
+    return check
+
+
 def collect(conn):
-    tickers = config.WATCHLIST
-    _step(conn, "prices", prices.fetch, conn, tickers + [config.MARKET_TICKER])
-    last = conn.execute("SELECT MAX(date) FROM prices WHERE ticker=?",
-                        (config.MARKET_TICKER,)).fetchone()[0] or date.today().isoformat()
-    _step(conn, "sec", sec.fetch, conn, tickers)
-    _step(conn, "reddit", reddit.fetch, conn, tickers, last)
-    _step(conn, "finra_short_volume", finra.fetch, conn, tickers)
-    _step(conn, "short_interest", prices.short_interest, conn, tickers, last)
-    _step(conn, "google_trends", trends.fetch, conn, tickers)
+    """Pull data, then pick and lock today's stocks. Returns today's picks."""
+    # 1. Market + stocks still waiting to be scored
+    _step(conn, "prices", prices.fetch, conn, [config.MARKET_TICKER] + pending_tickers(conn))
+    as_of = conn.execute("SELECT MAX(date) FROM prices WHERE ticker=?",
+                         (config.MARKET_TICKER,)).fetchone()[0]
+    if not as_of:
+        log.error("no market data; stopping")
+        return []
+    # 2. Scan for the stocks getting the most unusual attention
+    ranked = _step(conn, "scan", scanner.scan, conn, as_of) or []
+    shortlist = [c["ticker"] for c in ranked[:config.PICKS_PER_DAY * 2]]
+    _step(conn, "prices_shortlist", prices.fetch, conn,
+          [t for t in shortlist + config.WATCHLIST if t not in pending_tickers(conn)])
+    # 3. Lock today's picks before predicting anything
+    picks = _step(conn, "pick", scanner.lock_picks, conn, as_of, ranked,
+                  has_history(conn, as_of)) or []
+    # 4. Extra signals for today's picks
+    _step(conn, "sec", sec.fetch, conn, picks)
+    _step(conn, "reddit_tone", reddit.fetch, conn, picks, as_of)
+    _step(conn, "finra_short_volume", finra.fetch, conn, picks)
+    _step(conn, "short_interest", prices.short_interest, conn, picks, as_of)
+    _step(conn, "google_trends", trends.fetch, conn, picks)
+    return picks
+
+
+def todays_picks(conn):
+    as_of = conn.execute("SELECT MAX(as_of) FROM selections").fetchone()[0]
+    return [r[0] for r in conn.execute("SELECT ticker FROM selections WHERE as_of=? ORDER BY rank",
+                                       (as_of,))]
+
+
+def _recent_picks(conn, days=60):
+    return [r[0] for r in conn.execute(
+        "SELECT DISTINCT ticker FROM selections WHERE as_of >= date('now', ?)", (f"-{days} days",))]
 
 
 def main(argv=None):
@@ -62,9 +104,9 @@ def main(argv=None):
     if cmd in ("daily", "resolve"):
         _step(conn, "resolve", predict.resolve, conn)
     if cmd in ("daily", "predict"):
-        _step(conn, "predict", predict.make_predictions, conn)
+        _step(conn, "predict", predict.make_predictions, conn, todays_picks(conn) or None)
     if cmd in ("backtest", "daily"):  # takes seconds, so refresh it every run
-        s = backtest.run(conn)
+        s = backtest.run(conn, sorted(set(todays_picks(conn)) | set(_recent_picks(conn))) or None)
         if s:
             for h, v in s["horizons"].items():
                 log.info("backtest %s: hit %.1f%% vs always-up %.1f%% (n=%d)", h,
