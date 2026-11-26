@@ -48,11 +48,11 @@ h2 { font-size: 19px; margin: 40px 0 4px; letter-spacing: -0.01em; }
 .card[open] summary { border-bottom: 1px solid var(--line); }
 .row1 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .tk { font-weight: 700; font-size: 18px; }
-.px { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
-.call { display: flex; align-items: center; gap: 10px; margin: 10px 0 8px; }
-.pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-weight: 650; font-size: 15px; }
+.px { white-space: nowrap; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.call { display: flex; align-items: center; gap: 6px 10px; margin: 10px 0 8px; flex-wrap: wrap; }
+.pill { white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-weight: 650; font-size: 15px; }
 .pill.up { background: var(--up-bg); } .pill.down { background: var(--down-bg); }
-.conf { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+.conf { white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
 .dots { display: inline-flex; gap: 3px; }
 .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
 .dots i.on { background: var(--ink); }
@@ -279,9 +279,9 @@ function cards() {
   const el = document.getElementById("cards");
   document.getElementById("callsTitle").textContent = D.simulation ? "Latest calls in this practice run" : "Today's calls";
   if (!D.today.length) { el.innerHTML = `<div class="panel empty" style="grid-column:1/-1">No calls yet. They appear after the first morning run.</div>`; document.getElementById("callsSub").textContent = ""; return; }
-  const next = (() => { const d = new Date(D.latest_as_of + "T12:00:00"); do { d.setDate(d.getDate() + 1); } while ([0, 6].includes(d.getDay())); return d.toISOString().slice(0, 10); })();
+  const made = new Date(D.today[0].created_at).toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
   const scanned = D.scanned && !D.simulation ? `Picked from ${D.scanned.toLocaleString()} small stocks scanned this morning. ` : "";
-  document.getElementById("callsSub").textContent = `${scanned}Will each one close higher or lower ${H[hz].by}? Calls made before the market opened on ${fmtDate(next)}, using prices through ${shortDate(D.latest_as_of)}. Tap a stock to see why.`;
+  document.getElementById("callsSub").textContent = `${scanned}Will each one close higher or lower ${H[hz].by}? Calls locked ${D.simulation ? "the next morning" : made}, before the next market open, using prices through ${shortDate(D.latest_as_of)}. Tap a stock to see why.`;
   const by = {};
   D.today.forEach(p => { (by[p.ticker] = by[p.ticker] || {})[p.horizon] = p; });
   const otherH = hz === "1d" ? "1w" : "1d";
@@ -327,7 +327,7 @@ function score() {
 
 function pumps() {
   const el = document.getElementById("pumps");
-  document.getElementById("pumpSum").textContent = D.pumps.length ? `${D.pumps.length} times a stock jumped on hype with no news behind it` : "None flagged yet";
+  document.getElementById("pumpSum").textContent = D.pumps.length ? `${D.pumps.length} ${D.pumps.length === 1 ? "time" : "times"} a stock jumped on hype with no news behind it` : "None flagged yet";
   if (!D.pumps.length) { el.innerHTML = `<div class="empty">A hype warning means a stock jumped on a spike in online buzz or trading, with no company news or filing to explain it. None so far.</div>`; return; }
   const done = D.pumps.filter(p => p.actual_return != null);
   const fell = done.filter(p => p.actual_return < 0).length;
