@@ -57,9 +57,11 @@ h2 .sub { font-weight: 400; }
 .card { padding: 14px 14px 12px; cursor: pointer; text-align: left; font: inherit; color: inherit; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s, transform .15s; }
 .card:hover { border-color: var(--faint); transform: translateY(-1px); }
 .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card .hd > div { min-width: 0; }
+.card .hd .pill { flex: none; }
 .card .hd { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
 .tk { font-weight: 750; font-size: 17px; letter-spacing: .01em; }
-.name { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px; }
+.name { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pill { white-space: nowrap; display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; font-weight: 650; font-size: 13px; }
 .pill.up { background: var(--up-bg); } .pill.down { background: var(--down-bg); }
 .pxrow { display: flex; justify-content: space-between; align-items: baseline; font-variant-numeric: tabular-nums; }
@@ -444,7 +446,9 @@ function deeper() {
   const s = D.live[hz] || { n: 0 }, p = D.portfolio, b = D.backtest, bs = b && b.horizons[hz];
   const recent = D.recent.filter(r => r.horizon === hz).slice(0, 40).reverse();
   const done = D.pumps.filter(x => x.actual_return != null), fell = done.filter(x => x.actual_return < 0).length;
-  const okSources = (D.sources || []).filter(x => x.status === "ok").length, allSources = (D.sources || []).filter(x => !["scan", "pick", "resolve", "predict", "prices_shortlist", "demo", "replay"].includes(x.step)).length;
+  const SRC = ["yahoo_screener", "reddit_mentions", "reddit_tone", "prices", "sec", "finra_short_volume", "short_interest", "google_trends"];
+  const srcs = (D.sources || []).filter(x => SRC.includes(x.step) && x.status !== "skipped");
+  const okSources = srcs.filter(x => x.status === "ok").length, allSources = srcs.length;
   const tiles = [
     { id: "score", title: "Track record", fn: scoreDetail, body: s.n ? `<div class="big">${pct(s.hit_rate)}</div><div class="note">right, vs ${pct(Math.max(s.always_up, s.always_down ?? 0))} for simple guessing</div>${lineChart(s.series, [{ key: "model", label: "Our calls", color: "var(--accent)" }], { height: 40, axis: false, base: 0.5, fmt: v => pct(v) })}` : `<div class="note">Results show up once the first calls are checked.</div>` },
     { id: "vs", title: "Vs. the S&P 500", fn: vsDetail, body: p && p.days ? `<div class="pair"><div class="ours">Our picks<b>${money(p.up)}</b></div><div>S&amp;P 500<b>${money(p.market)}</b></div><div>Every call<b style="color:var(--warn)">${money(p.both)}</b></div></div><div class="note">from $1,000 on ${esc(shortDate(p.start_date))}</div>` : `<div class="note">What $1,000 following the picks would be worth vs the index.</div>` },
