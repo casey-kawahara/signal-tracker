@@ -10,83 +10,83 @@
    "step": "prices",
    "status": "ok",
    "detail": "31 ok",
-   "started_at": "2026-11-28T09:17:48+00:00"
+   "started_at": "2026-11-28T09:20:30+00:00"
   },
   {
    "step": "yahoo_screener",
    "status": "ok",
    "detail": "500 stocks",
-   "started_at": "2026-11-28T09:17:48+00:00"
+   "started_at": "2026-11-28T09:20:30+00:00"
   },
   {
    "step": "reddit_mentions",
    "status": "ok",
    "detail": "300 stocks",
-   "started_at": "2026-11-28T09:17:49+00:00"
+   "started_at": "2026-11-28T09:20:31+00:00"
   },
   {
    "step": "scan",
    "status": "ok",
    "detail": "491 found",
-   "started_at": "2026-11-28T09:17:57+00:00"
+   "started_at": "2026-11-28T09:20:43+00:00"
   },
   {
    "step": "prices_shortlist",
    "status": "ok",
    "detail": "7 ok",
-   "started_at": "2026-11-28T09:17:58+00:00"
+   "started_at": "2026-11-28T09:20:44+00:00"
   },
   {
    "step": "pick",
    "status": "ok",
    "detail": "10 found",
-   "started_at": "2026-11-28T09:17:58+00:00"
+   "started_at": "2026-11-28T09:20:44+00:00"
   },
   {
    "step": "sec",
    "status": "ok",
    "detail": "10 ok",
-   "started_at": "2026-11-28T09:18:00+00:00"
+   "started_at": "2026-11-28T09:20:47+00:00"
   },
   {
    "step": "reddit_tone",
    "status": "skipped",
    "detail": "not set up",
-   "started_at": "2026-11-28T09:18:00+00:00"
+   "started_at": "2026-11-28T09:20:47+00:00"
   },
   {
    "step": "finra_short_volume",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-28T09:18:00+00:00"
+   "started_at": "2026-11-28T09:20:48+00:00"
   },
   {
    "step": "short_interest",
    "status": "ok",
    "detail": "",
-   "started_at": "2026-11-28T09:18:02+00:00"
+   "started_at": "2026-11-28T09:20:50+00:00"
   },
   {
    "step": "google_trends",
    "status": "ok",
    "detail": "10 ok",
-   "started_at": "2026-11-28T09:18:25+00:00"
+   "started_at": "2026-11-28T09:21:14+00:00"
   },
   {
    "step": "resolve",
    "status": "ok",
-   "detail": "1",
-   "started_at": "2026-11-28T09:18:25+00:00"
+   "detail": "0",
+   "started_at": "2026-11-28T09:21:14+00:00"
   },
   {
    "step": "predict",
    "status": "ok",
    "detail": "0",
-   "started_at": "2026-11-28T09:18:25+00:00"
+   "started_at": "2026-11-28T09:21:14+00:00"
   }
  ],
  "scanned": 491,
- "generated_at": "2026-11-28T09:18:29+00:00",
+ "generated_at": "2026-11-28T09:21:18+00:00",
  "watchlist": [
   "SNDL",
   "BBAI",
@@ -2644,7 +2644,7 @@
   }
  ],
  "backtest": {
-  "created_at": "2026-11-28T09:18:29+00:00",
+  "created_at": "2026-11-28T09:21:17+00:00",
   "tickers": [
    "AACI",
    "AEHL",
@@ -2678,16 +2678,16 @@
     "follow_market": 0.4924119789558883,
     "strategy_avg_return": -0.0007370159654614693,
     "buy_hold_avg_return": 0.0014490734861616632,
-    "pump_flags": 92,
-    "pump_then_down": 0.6086956521739131,
+    "pump_flags": 90,
+    "pump_then_down": 0.6333333333333333,
     "rules": [
      {
       "rule": "pump_pattern",
       "why": "Buzz or volume spike plus a price jump with no news or filing behind it",
-      "fired": 92,
+      "fired": 90,
       "says": "down",
-      "hit_rate": 0.6086956521739131,
-      "avg_return": -0.007479847059800994
+      "hit_rate": 0.6333333333333333,
+      "avg_return": -0.012944200454452104
      },
      {
       "rule": "overextended",
@@ -2775,23 +2775,23 @@
     "confidence": [
      {
       "range": "0.00-0.10",
-      "n": 7796,
-      "hit_rate": 0.5030785017957927
+      "n": 7797,
+      "hit_rate": 0.5030139797357959
      },
      {
       "range": "0.10-0.25",
-      "n": 1909,
-      "hit_rate": 0.5646935568360398
+      "n": 1908,
+      "hit_rate": 0.5644654088050315
      },
      {
       "range": "0.25-0.50",
-      "n": 173,
-      "hit_rate": 0.6127167630057804
+      "n": 175,
+      "hit_rate": 0.6114285714285714
      },
      {
       "range": "0.50-1.00",
-      "n": 6,
-      "hit_rate": 0.5
+      "n": 4,
+      "hit_rate": 0.75
      }
     ]
    },
@@ -2803,16 +2803,16 @@
     "follow_market": 0.4745997232654675,
     "strategy_avg_return": -0.008993758315475237,
     "buy_hold_avg_return": 0.006300643973575857,
-    "pump_flags": 85,
-    "pump_then_down": 0.6470588235294118,
+    "pump_flags": 86,
+    "pump_then_down": 0.6395348837209303,
     "rules": [
      {
       "rule": "pump_pattern",
       "why": "Buzz or volume spike plus a price jump with no news or filing behind it",
-      "fired": 85,
+      "fired": 86,
       "says": "down",
-      "hit_rate": 0.6470588235294118,
-      "avg_return": 0.010236308268367127
+      "hit_rate": 0.6395348837209303,
+      "avg_return": 0.014513197552373654
      },
      {
       "rule": "overextended",
@@ -2910,13 +2910,13 @@
      },
      {
       "range": "0.25-0.50",
-      "n": 1936,
-      "hit_rate": 0.6079545454545454
+      "n": 1935,
+      "hit_rate": 0.6082687338501293
      },
      {
       "range": "0.50-1.00",
-      "n": 145,
-      "hit_rate": 0.6275862068965518
+      "n": 146,
+      "hit_rate": 0.6232876712328768
      }
     ]
    }
@@ -2929,73 +2929,73 @@
  },
  "runs": [
   {
-   "started_at": "2026-11-28T09:18:25+00:00",
+   "started_at": "2026-11-28T09:21:14+00:00",
    "step": "predict",
    "status": "ok",
    "detail": "0"
   },
   {
-   "started_at": "2026-11-28T09:18:25+00:00",
+   "started_at": "2026-11-28T09:21:14+00:00",
    "step": "resolve",
    "status": "ok",
-   "detail": "1"
+   "detail": "0"
   },
   {
-   "started_at": "2026-11-28T09:18:25+00:00",
+   "started_at": "2026-11-28T09:21:14+00:00",
    "step": "google_trends",
    "status": "ok",
    "detail": "10 ok"
   },
   {
-   "started_at": "2026-11-28T09:18:02+00:00",
+   "started_at": "2026-11-28T09:20:50+00:00",
    "step": "short_interest",
    "status": "ok",
    "detail": ""
   },
   {
-   "started_at": "2026-11-28T09:18:00+00:00",
+   "started_at": "2026-11-28T09:20:48+00:00",
    "step": "finra_short_volume",
    "status": "ok",
    "detail": ""
   },
   {
-   "started_at": "2026-11-28T09:18:00+00:00",
+   "started_at": "2026-11-28T09:20:47+00:00",
    "step": "reddit_tone",
    "status": "skipped",
    "detail": "not set up"
   },
   {
-   "started_at": "2026-11-28T09:18:00+00:00",
+   "started_at": "2026-11-28T09:20:47+00:00",
    "step": "sec",
    "status": "ok",
    "detail": "10 ok"
   },
   {
-   "started_at": "2026-11-28T09:17:58+00:00",
+   "started_at": "2026-11-28T09:20:44+00:00",
    "step": "pick",
    "status": "ok",
    "detail": "10 found"
   },
   {
-   "started_at": "2026-11-28T09:17:58+00:00",
+   "started_at": "2026-11-28T09:20:44+00:00",
    "step": "prices_shortlist",
    "status": "ok",
    "detail": "7 ok"
   },
   {
-   "started_at": "2026-11-28T09:17:57+00:00",
+   "started_at": "2026-11-28T09:20:43+00:00",
    "step": "scan",
    "status": "ok",
    "detail": "491 found"
   },
   {
-   "started_at": "2026-11-28T09:17:49+00:00",
+   "started_at": "2026-11-28T09:20:31+00:00",
    "step": "reddit_mentions",
    "status": "ok",
    "detail": "300 stocks"
   },
   {
-   "started_at": "2026-11-28T09:17:48+00:00",
+   "started_at": "2026-11-28T09:20:30+00:00",
    "step": "yahoo_screener",
    "status": "ok",
    "detail": "500 stocks"
