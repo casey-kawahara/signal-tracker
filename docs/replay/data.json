@@ -4,11 +4,11 @@
    "step": "replay",
    "status": "ok",
    "detail": "30 trading days replayed",
-   "started_at": "2026-11-26T07:51:20+00:00"
+   "started_at": "2026-11-28T09:17:20+00:00"
   }
  ],
  "scanned": null,
- "generated_at": "2026-11-26T07:51:20+00:00",
+ "generated_at": "2026-11-28T09:17:20+00:00",
  "watchlist": [
   "SNDL",
   "BBAI",
@@ -21,166 +21,38 @@
   "KOSS",
   "ACHR"
  ],
- "latest_as_of": "2026-11-18",
+ "latest_as_of": "2026-11-19",
  "today": [
   {
-   "id": 587,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "ACHR",
-   "horizon": "1d",
-   "direction": "up",
-   "prob_up": 0.525,
-   "confidence": 0.05,
-   "base_close": 3.23,
-   "signals": {
-    "close": 3.23,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.21943,
-    "filings_3d": 0.0,
-    "insider_net_30d": -122248.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.08239,
-    "ret_20d": -0.16537,
-    "ret_5d": -0.33539,
-    "reverse_split_60d": 0.0,
-    "rsi14": 31.83053,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 1.53658
-   },
-   "reasons": [
-    {
-     "rule": "capitulation",
-     "why": "Down more than 25% in 5 days on heavy volume",
-     "weight": 0.3
-    },
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "668cb508d2c25bd303da4d64592ceb70b86d7cd74a9a0114e7e3af9ddd49fee1",
-   "hash": "39bf021e496f9229cff070ebf005dd57e793f5a335352143efe33f0001596721",
-   "actual_return": -0.009287910933834076,
-   "correct": 0,
-   "picked_why": [
-    "Price fell 8% in one day"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 3.2300000190734863,
-    "market_cap": null,
-    "volume": 38247500.0,
-    "avg_volume": 24889310.0,
-    "vol_ratio": 1.5367039102329474,
-    "change": -0.08238635324557453,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 4
-  },
-  {
-   "id": 588,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "ACHR",
-   "horizon": "1w",
-   "direction": "up",
-   "prob_up": 0.5125,
-   "confidence": 0.025,
-   "base_close": 3.23,
-   "signals": {
-    "close": 3.23,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.21943,
-    "filings_3d": 0.0,
-    "insider_net_30d": -122248.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.08239,
-    "ret_20d": -0.16537,
-    "ret_5d": -0.33539,
-    "reverse_split_60d": 0.0,
-    "rsi14": 31.83053,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 1.53658
-   },
-   "reasons": [
-    {
-     "rule": "capitulation",
-     "why": "Down more than 25% in 5 days on heavy volume",
-     "weight": 0.3
-    },
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "39bf021e496f9229cff070ebf005dd57e793f5a335352143efe33f0001596721",
-   "hash": "daccb5e40b314986505870ae2f9c5a68175f1547e5c4c91ee423d80af883c66a",
-   "actual_return": -0.058823541221972975,
-   "correct": 0,
-   "picked_why": [
-    "Price fell 8% in one day"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 3.2300000190734863,
-    "market_cap": null,
-    "volume": 38247500.0,
-    "avg_volume": 24889310.0,
-    "vol_ratio": 1.5367039102329474,
-    "change": -0.08238635324557453,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 4
-  },
-  {
-   "id": 581,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 585,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "CLOV",
    "horizon": "1d",
    "direction": "down",
    "prob_up": 0.4502,
    "confidence": 0.0997,
-   "base_close": 4.17,
+   "base_close": 3.77,
    "signals": {
-    "close": 4.17,
+    "close": 3.77,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.10668,
-    "filings_3d": 1.0,
-    "insider_net_30d": -45440.0,
+    "dist_ma20": -0.18398,
+    "filings_3d": 0.0,
+    "insider_net_30d": -22099.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.11839,
-    "ret_20d": -0.12762,
-    "ret_5d": -0.16097,
+    "ret_1d": -0.09592,
+    "ret_20d": -0.20296,
+    "ret_5d": -0.22746,
     "reverse_split_60d": 0.0,
-    "rsi14": 37.60804,
+    "rsi14": 31.3425,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.74469
+    "volume_z": 1.6278
    },
    "reasons": [
     {
@@ -190,56 +62,88 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "a5f3746b43f535b8899b21c42b101058ac2f3a9af50b16173839eb313352b813",
-   "hash": "1cfaaa81940cce7ca9e5a79d6687e227ea4db91d518a9b0536be9cbb0e1a9a00",
-   "actual_return": -0.09592326596486478,
+   "prev_hash": "64c1a0bef17dd4925013fdb501eafe35e3e4ab567cce19d8f8dd284d013be1ad",
+   "hash": "2c40c5aa8ac951fe0cb12ed951cfdefd78e53de8eb899751720223cecf5fcd73",
+   "actual_return": -0.010610074516316681,
    "correct": 1,
    "picked_why": [
-    "Price fell 12% in one day"
+    "Price fell 10% in one day"
    ],
    "picked_detail": {
     "name": null,
-    "price": 4.170000076293945,
+    "price": 3.7699999809265137,
     "market_cap": null,
-    "volume": 8072500.0,
-    "avg_volume": 4648190.0,
-    "vol_ratio": 1.736697510213653,
-    "change": -0.1183932220975411,
+    "volume": 8344300.0,
+    "avg_volume": 4892930.0,
+    "vol_ratio": 1.7053789855975867,
+    "change": -0.0959232825057712,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 1
+   "picked_rank": 3,
+   "spark": [
+    4.79,
+    4.78,
+    4.81,
+    4.79,
+    4.68,
+    4.48,
+    4.44,
+    4.8,
+    4.78,
+    4.73,
+    4.6,
+    4.56,
+    4.63,
+    4.79,
+    4.58,
+    4.46,
+    4.31,
+    4.29,
+    4.69,
+    4.48,
+    4.82,
+    4.83,
+    4.93,
+    4.97,
+    4.88,
+    4.96,
+    4.95,
+    4.73,
+    4.17,
+    3.77
+   ]
   },
   {
-   "id": 582,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 586,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "CLOV",
    "horizon": "1w",
    "direction": "down",
    "prob_up": 0.4378,
    "confidence": 0.1244,
-   "base_close": 4.17,
+   "base_close": 3.77,
    "signals": {
-    "close": 4.17,
+    "close": 3.77,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.10668,
-    "filings_3d": 1.0,
-    "insider_net_30d": -45440.0,
+    "dist_ma20": -0.18398,
+    "filings_3d": 0.0,
+    "insider_net_30d": -22099.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.11839,
-    "ret_20d": -0.12762,
-    "ret_5d": -0.16097,
+    "ret_1d": -0.09592,
+    "ret_20d": -0.20296,
+    "ret_5d": -0.22746,
     "reverse_split_60d": 0.0,
-    "rsi14": 37.60804,
+    "rsi14": 31.3425,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.74469
+    "volume_z": 1.6278
    },
    "reasons": [
     {
@@ -249,56 +153,88 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "1cfaaa81940cce7ca9e5a79d6687e227ea4db91d518a9b0536be9cbb0e1a9a00",
-   "hash": "44357d0257d64271298401d45a9eb5848fa6c5dd0f2194b6da9900953668d055",
-   "actual_return": -0.09832134521264824,
+   "prev_hash": "2c40c5aa8ac951fe0cb12ed951cfdefd78e53de8eb899751720223cecf5fcd73",
+   "hash": "3c55b2d554af15c8d5c1694e7571dba297566cf492e799b4005764777611a263",
+   "actual_return": -0.010610074516316681,
    "correct": 1,
    "picked_why": [
-    "Price fell 12% in one day"
+    "Price fell 10% in one day"
    ],
    "picked_detail": {
     "name": null,
-    "price": 4.170000076293945,
+    "price": 3.7699999809265137,
     "market_cap": null,
-    "volume": 8072500.0,
-    "avg_volume": 4648190.0,
-    "vol_ratio": 1.736697510213653,
-    "change": -0.1183932220975411,
+    "volume": 8344300.0,
+    "avg_volume": 4892930.0,
+    "vol_ratio": 1.7053789855975867,
+    "change": -0.0959232825057712,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 1
+   "picked_rank": 3,
+   "spark": [
+    4.79,
+    4.78,
+    4.81,
+    4.79,
+    4.68,
+    4.48,
+    4.44,
+    4.8,
+    4.78,
+    4.73,
+    4.6,
+    4.56,
+    4.63,
+    4.79,
+    4.58,
+    4.46,
+    4.31,
+    4.29,
+    4.69,
+    4.48,
+    4.82,
+    4.83,
+    4.93,
+    4.97,
+    4.88,
+    4.96,
+    4.95,
+    4.73,
+    4.17,
+    3.77
+   ]
   },
   {
-   "id": 583,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 589,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "FUBO",
    "horizon": "1d",
    "direction": "down",
    "prob_up": 0.3775,
    "confidence": 0.2449,
-   "base_close": 6.73,
+   "base_close": 6.28,
    "signals": {
-    "close": 6.73,
+    "close": 6.28,
     "dilution_30d": 1.0,
-    "dist_ma20": -0.12597,
+    "dist_ma20": -0.17434,
     "filings_3d": 2.0,
     "insider_net_30d": 0.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.02038,
-    "ret_20d": -0.17118,
-    "ret_5d": -0.14485,
+    "ret_1d": -0.06686,
+    "ret_20d": -0.23039,
+    "ret_5d": -0.18123,
     "reverse_split_60d": 0.0,
-    "rsi14": 29.59722,
+    "rsi14": 25.61148,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 2.60717
+    "volume_z": 1.28368
    },
    "reasons": [
     {
@@ -313,56 +249,88 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "44357d0257d64271298401d45a9eb5848fa6c5dd0f2194b6da9900953668d055",
-   "hash": "a67e71e06b8f0d14916629c10ad39ff8ed05161c26776371612118cdd1051769",
-   "actual_return": -0.06686475337171627,
+   "prev_hash": "a1879f1f91ae3b6898ebc2c87179b8ec972b8992e54a5e9529155890886c207d",
+   "hash": "c3c5817388ac47c09b33eee7ab7995d8a124dbef2206d7000ae557cef586ce2c",
+   "actual_return": -0.1194267181833839,
    "correct": 1,
    "picked_why": [
-    "Much heavier trading than usual"
+    "One of the most actively traded small stocks yesterday"
    ],
    "picked_detail": {
     "name": null,
-    "price": 6.730000019073486,
+    "price": 6.28000020980835,
     "market_cap": null,
-    "volume": 3076400.0,
-    "avg_volume": 1274675.0,
-    "vol_ratio": 2.413477945358621,
-    "change": -0.020378437964734042,
+    "volume": 2144800.0,
+    "avg_volume": 1385010.0,
+    "vol_ratio": 1.5485808766723705,
+    "change": -0.06686475601631392,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 2
+   "picked_rank": 5,
+   "spark": [
+    8.84,
+    8.74,
+    8.19,
+    8.26,
+    8.42,
+    8.0,
+    8.05,
+    8.22,
+    8.12,
+    8.16,
+    7.93,
+    7.79,
+    7.8,
+    7.98,
+    7.96,
+    7.62,
+    7.61,
+    7.64,
+    8.23,
+    7.69,
+    7.6,
+    8.04,
+    7.85,
+    7.87,
+    7.67,
+    7.57,
+    7.39,
+    6.87,
+    6.73,
+    6.28
+   ]
   },
   {
-   "id": 584,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 590,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "FUBO",
    "horizon": "1w",
    "direction": "down",
    "prob_up": 0.3208,
    "confidence": 0.3584,
-   "base_close": 6.73,
+   "base_close": 6.28,
    "signals": {
-    "close": 6.73,
+    "close": 6.28,
     "dilution_30d": 1.0,
-    "dist_ma20": -0.12597,
+    "dist_ma20": -0.17434,
     "filings_3d": 2.0,
     "insider_net_30d": 0.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.02038,
-    "ret_20d": -0.17118,
-    "ret_5d": -0.14485,
+    "ret_1d": -0.06686,
+    "ret_20d": -0.23039,
+    "ret_5d": -0.18123,
     "reverse_split_60d": 0.0,
-    "rsi14": 29.59722,
+    "rsi14": 25.61148,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 2.60717
+    "volume_z": 1.28368
    },
    "reasons": [
     {
@@ -377,489 +345,543 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "a67e71e06b8f0d14916629c10ad39ff8ed05161c26776371612118cdd1051769",
-   "hash": "7c99c08dd18fb2f8cdc5406cc76270b100b0180334330c6657dd4b3a69ad2ccd",
-   "actual_return": -0.20802378548201272,
+   "prev_hash": "c3c5817388ac47c09b33eee7ab7995d8a124dbef2206d7000ae557cef586ce2c",
+   "hash": "61028bc6f211c60cac080368a9517704c1c23af8bac115d457345495c08367ff",
+   "actual_return": -0.1640127388535032,
+   "correct": 1,
+   "picked_why": [
+    "One of the most actively traded small stocks yesterday"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 6.28000020980835,
+    "market_cap": null,
+    "volume": 2144800.0,
+    "avg_volume": 1385010.0,
+    "vol_ratio": 1.5485808766723705,
+    "change": -0.06686475601631392,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 5,
+   "spark": [
+    8.84,
+    8.74,
+    8.19,
+    8.26,
+    8.42,
+    8.0,
+    8.05,
+    8.22,
+    8.12,
+    8.16,
+    7.93,
+    7.79,
+    7.8,
+    7.98,
+    7.96,
+    7.62,
+    7.61,
+    7.64,
+    8.23,
+    7.69,
+    7.6,
+    8.04,
+    7.85,
+    7.87,
+    7.67,
+    7.57,
+    7.39,
+    6.87,
+    6.73,
+    6.28
+   ]
+  },
+  {
+   "id": 597,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "JOBY",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 3.93,
+   "signals": {
+    "close": 3.93,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.2224,
+    "filings_3d": 0.0,
+    "insider_net_30d": -62500.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.06205,
+    "ret_20d": -0.16383,
+    "ret_5d": -0.26404,
+    "reverse_split_60d": 0.0,
+    "rsi14": 29.54244,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 0.75586
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "9a6981633a8c600961305fe715e7e83a07ce61c9f9045c5262f0d5ffb14b0630",
+   "hash": "a3a77cf5040269c48f04ce9cfc66246f8faa3ed047acf1bb7ce29786e92a10de",
+   "actual_return": -0.083969489915377,
+   "correct": 1,
+   "picked_why": [
+    "One of the most actively traded small stocks yesterday"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 3.930000066757202,
+    "market_cap": null,
+    "volume": 25035100.0,
+    "avg_volume": 20764890.0,
+    "vol_ratio": 1.205645683651587,
+    "change": -0.06205250284309882,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 9,
+   "spark": [
+    5.44,
+    5.14,
+    4.95,
+    4.61,
+    4.81,
+    4.66,
+    4.61,
+    4.65,
+    4.64,
+    4.7,
+    4.76,
+    4.69,
+    5.01,
+    5.08,
+    5.08,
+    4.9,
+    4.81,
+    4.85,
+    5.05,
+    5.3,
+    5.93,
+    6.18,
+    5.92,
+    5.88,
+    5.34,
+    5.08,
+    4.72,
+    4.38,
+    4.19,
+    3.93
+   ]
+  },
+  {
+   "id": 598,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "JOBY",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4378,
+   "confidence": 0.1244,
+   "base_close": 3.93,
+   "signals": {
+    "close": 3.93,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.2224,
+    "filings_3d": 0.0,
+    "insider_net_30d": -62500.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.06205,
+    "ret_20d": -0.16383,
+    "ret_5d": -0.26404,
+    "reverse_split_60d": 0.0,
+    "rsi14": 29.54244,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 0.75586
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "a3a77cf5040269c48f04ce9cfc66246f8faa3ed047acf1bb7ce29786e92a10de",
+   "hash": "93f00f4d043db4b60ac6f05223cbcd8541f00ecd891304ae16092b0b194efc6d",
+   "actual_return": 0.030534399678082247,
+   "correct": 0,
+   "picked_why": [
+    "One of the most actively traded small stocks yesterday"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 3.930000066757202,
+    "market_cap": null,
+    "volume": 25035100.0,
+    "avg_volume": 20764890.0,
+    "vol_ratio": 1.205645683651587,
+    "change": -0.06205250284309882,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 9,
+   "spark": [
+    5.44,
+    5.14,
+    4.95,
+    4.61,
+    4.81,
+    4.66,
+    4.61,
+    4.65,
+    4.64,
+    4.7,
+    4.76,
+    4.69,
+    5.01,
+    5.08,
+    5.08,
+    4.9,
+    4.81,
+    4.85,
+    5.05,
+    5.3,
+    5.93,
+    6.18,
+    5.92,
+    5.88,
+    5.34,
+    5.08,
+    4.72,
+    4.38,
+    4.19,
+    3.93
+   ]
+  },
+  {
+   "id": 581,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "KOSS",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 3.25,
+   "signals": {
+    "close": 3.25,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.00353,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.03503,
+    "ret_20d": -0.06609,
+    "ret_5d": 0.0,
+    "reverse_split_60d": 0.0,
+    "rsi14": 45.97121,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 1.93964
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "11ecd47a6ab49e8c81cb5fae7e07bcc5d73226129b2c812359b69b620c59c588",
+   "hash": "d9a623b40479ea007c1d4c88c13c1b8c537301c6f05b3d38cf40886e4ff21c61",
+   "actual_return": -0.07999999706561745,
+   "correct": 1,
+   "picked_why": [
+    "About 3\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 3.25,
+    "market_cap": null,
+    "volume": 82900.0,
+    "avg_volume": 27150.0,
+    "vol_ratio": 3.0534069981583793,
+    "change": 0.03503181255440824,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 1,
+   "spark": [
+    3.84,
+    3.84,
+    3.83,
+    3.79,
+    3.74,
+    3.66,
+    3.56,
+    3.56,
+    3.47,
+    3.48,
+    3.46,
+    3.4,
+    3.43,
+    3.43,
+    3.41,
+    3.39,
+    3.13,
+    3.13,
+    3.28,
+    3.03,
+    3.16,
+    3.3,
+    3.25,
+    3.31,
+    3.25,
+    3.23,
+    3.2,
+    3.05,
+    3.14,
+    3.25
+   ]
+  },
+  {
+   "id": 582,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "KOSS",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4378,
+   "confidence": 0.1244,
+   "base_close": 3.25,
+   "signals": {
+    "close": 3.25,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.00353,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": 0.03503,
+    "ret_20d": -0.06609,
+    "ret_5d": 0.0,
+    "reverse_split_60d": 0.0,
+    "rsi14": 45.97121,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 1.93964
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "d9a623b40479ea007c1d4c88c13c1b8c537301c6f05b3d38cf40886e4ff21c61",
+   "hash": "b303e9ac30b2b70c38abcb471d9711aa9f7630e9abcc89e4ac541adcd202e599",
+   "actual_return": 0.08307691720815802,
+   "correct": 0,
+   "picked_why": [
+    "About 3\u00d7 its usual trading volume"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 3.25,
+    "market_cap": null,
+    "volume": 82900.0,
+    "avg_volume": 27150.0,
+    "vol_ratio": 3.0534069981583793,
+    "change": 0.03503181255440824,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 1,
+   "spark": [
+    3.84,
+    3.84,
+    3.83,
+    3.79,
+    3.74,
+    3.66,
+    3.56,
+    3.56,
+    3.47,
+    3.48,
+    3.46,
+    3.4,
+    3.43,
+    3.43,
+    3.41,
+    3.39,
+    3.13,
+    3.13,
+    3.28,
+    3.03,
+    3.16,
+    3.3,
+    3.25,
+    3.31,
+    3.25,
+    3.23,
+    3.2,
+    3.05,
+    3.14,
+    3.25
+   ]
+  },
+  {
+   "id": 591,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "MVIS",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 0.86,
+   "signals": {
+    "close": 0.86,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.26053,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.01149,
+    "ret_20d": -0.24561,
+    "ret_5d": -0.21101,
+    "reverse_split_60d": 0.0,
+    "rsi14": 28.42029,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 1.7346
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "61028bc6f211c60cac080368a9517704c1c23af8bac115d457345495c08367ff",
+   "hash": "75a46cbb597fcf9ce6dd13d8202bc54e2cc3bf98bb292f54ad232d17f300e927",
+   "actual_return": -0.03488374033639596,
    "correct": 1,
    "picked_why": [
     "Much heavier trading than usual"
    ],
    "picked_detail": {
     "name": null,
-    "price": 6.730000019073486,
+    "price": 0.8600000143051147,
     "market_cap": null,
-    "volume": 3076400.0,
-    "avg_volume": 1274675.0,
-    "vol_ratio": 2.413477945358621,
-    "change": -0.020378437964734042,
+    "volume": 1860700.0,
+    "avg_volume": 1009260.0,
+    "vol_ratio": 1.8436280046766937,
+    "change": -0.011494241848790776,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 2
-  },
-  {
-   "id": 597,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "GPRO",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4256,
-   "confidence": 0.1489,
-   "base_close": 0.581,
-   "signals": {
-    "close": 0.581,
-    "dilution_30d": 2.0,
-    "dist_ma20": -0.32375,
-    "filings_3d": 1.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.0491,
-    "ret_20d": -0.45446,
-    "ret_5d": -0.15552,
-    "reverse_split_60d": 0.0,
-    "rsi14": 19.38892,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 0.49148
-   },
-   "reasons": [
-    {
-     "rule": "dilution",
-     "why": "Offering or share-sale filing in the last 30 days",
-     "weight": -0.3
-    },
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    },
-    {
-     "rule": "oversold",
-     "why": "RSI below 25",
-     "weight": 0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "489e6c5b4b235bc5fcefa6cdadd3bc264319c2fbd593184093c06e22b0364309",
-   "hash": "ef35a3cc9ef329a0bd3d57ae06b22dcc4bc693418e3f650c9fd62734b7ada8ce",
-   "actual_return": -0.07745264483400949,
-   "correct": 1,
-   "picked_why": [
-    "One of the most actively traded small stocks yesterday"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 0.5809999704360962,
-    "market_cap": null,
-    "volume": 7204400.0,
-    "avg_volume": 6334010.0,
-    "vol_ratio": 1.137415318258102,
-    "change": -0.049099886946280424,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 9
-  },
-  {
-   "id": 598,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "GPRO",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.3543,
-   "confidence": 0.2913,
-   "base_close": 0.581,
-   "signals": {
-    "close": 0.581,
-    "dilution_30d": 2.0,
-    "dist_ma20": -0.32375,
-    "filings_3d": 1.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.0491,
-    "ret_20d": -0.45446,
-    "ret_5d": -0.15552,
-    "reverse_split_60d": 0.0,
-    "rsi14": 19.38892,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 0.49148
-   },
-   "reasons": [
-    {
-     "rule": "dilution",
-     "why": "Offering or share-sale filing in the last 30 days",
-     "weight": -0.5
-    },
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    },
-    {
-     "rule": "oversold",
-     "why": "RSI below 25",
-     "weight": 0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "ef35a3cc9ef329a0bd3d57ae06b22dcc4bc693418e3f650c9fd62734b7ada8ce",
-   "hash": "6e3fd8bd96fea196c9a320d8caa3a0cd59abb17b766f7e82d9248986acd65974",
-   "actual_return": -0.05851980905319443,
-   "correct": 1,
-   "picked_why": [
-    "One of the most actively traded small stocks yesterday"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 0.5809999704360962,
-    "market_cap": null,
-    "volume": 7204400.0,
-    "avg_volume": 6334010.0,
-    "vol_ratio": 1.137415318258102,
-    "change": -0.049099886946280424,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 9
-  },
-  {
-   "id": 593,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "KOSS",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 3.14,
-   "signals": {
-    "close": 3.14,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.04064,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.02951,
-    "ret_20d": -0.0951,
-    "ret_5d": -0.05136,
-    "reverse_split_60d": 0.0,
-    "rsi14": 40.32134,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 0.8087
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "bf3b4a53e967385547e855f07a001f5d65a5b90a2f19321bf0210f4ddf0f95b7",
-   "hash": "1555220f09b98f4ad805b4f5de4e45f7920683fcd253b76948750513845c1dae",
-   "actual_return": 0.03503184713375784,
-   "correct": 0,
-   "picked_why": [
-    "One of the most actively traded small stocks yesterday"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 3.140000104904175,
-    "market_cap": null,
-    "volume": 38000.0,
-    "avg_volume": 26675.0,
-    "vol_ratio": 1.4245548266166823,
-    "change": 0.02950824721146006,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 7
-  },
-  {
-   "id": 594,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "KOSS",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 3.14,
-   "signals": {
-    "close": 3.14,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.04064,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": 0.02951,
-    "ret_20d": -0.0951,
-    "ret_5d": -0.05136,
-    "reverse_split_60d": 0.0,
-    "rsi14": 40.32134,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 0.8087
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "1555220f09b98f4ad805b4f5de4e45f7920683fcd253b76948750513845c1dae",
-   "hash": "41d3380a0ff4cd5c04d56c434f867ad9b0ebe76765dbee3a505d5a6712116ffd",
-   "actual_return": 0.07643315746526036,
-   "correct": 0,
-   "picked_why": [
-    "One of the most actively traded small stocks yesterday"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 3.140000104904175,
-    "market_cap": null,
-    "volume": 38000.0,
-    "avg_volume": 26675.0,
-    "vol_ratio": 1.4245548266166823,
-    "change": 0.02950824721146006,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 7
-  },
-  {
-   "id": 599,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "LUNR",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 10.12,
-   "signals": {
-    "close": 10.12,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.08526,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.08375,
-    "ret_20d": -0.07241,
-    "ret_5d": -0.16913,
-    "reverse_split_60d": 0.0,
-    "rsi14": 41.55572,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": -0.08022
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "6e3fd8bd96fea196c9a320d8caa3a0cd59abb17b766f7e82d9248986acd65974",
-   "hash": "c0bc1de4249afbc7cea916cbdcb173bbff1f195711c67c6865491f1fc95a6471",
-   "actual_return": -0.033596864330909915,
-   "correct": 1,
-   "picked_why": [
-    "Price fell 8% in one day"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 10.119999885559082,
-    "market_cap": null,
-    "volume": 8108600.0,
-    "avg_volume": 9360625.0,
-    "vol_ratio": 0.8662455765507111,
-    "change": -0.08374831908966718,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 10
-  },
-  {
-   "id": 600,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "LUNR",
-   "horizon": "1w",
-   "direction": "down",
-   "prob_up": 0.4378,
-   "confidence": 0.1244,
-   "base_close": 10.12,
-   "signals": {
-    "close": 10.12,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.08526,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.08375,
-    "ret_20d": -0.07241,
-    "ret_5d": -0.16913,
-    "reverse_split_60d": 0.0,
-    "rsi14": 41.55572,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": -0.08022
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.2
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "c0bc1de4249afbc7cea916cbdcb173bbff1f195711c67c6865491f1fc95a6471",
-   "hash": "20748f110ead71ce632aba1a45cd892bfc93106d7a983e9e3513112ce6f32450",
-   "actual_return": -0.09683791073885828,
-   "correct": 1,
-   "picked_why": [
-    "Price fell 8% in one day"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 10.119999885559082,
-    "market_cap": null,
-    "volume": 8108600.0,
-    "avg_volume": 9360625.0,
-    "vol_ratio": 0.8662455765507111,
-    "change": -0.08374831908966718,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 10
-  },
-  {
-   "id": 591,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "MVIS",
-   "horizon": "1d",
-   "direction": "down",
-   "prob_up": 0.4502,
-   "confidence": 0.0997,
-   "base_close": 0.87,
-   "signals": {
-    "close": 0.87,
-    "dilution_30d": 0.0,
-    "dist_ma20": -0.26083,
-    "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
-    "mention_jump": null,
-    "mentions": null,
-    "mentions_z": null,
-    "ret_1d": -0.10309,
-    "ret_20d": -0.275,
-    "ret_5d": -0.23684,
-    "reverse_split_60d": 0.0,
-    "rsi14": 28.77847,
-    "sentiment": null,
-    "short_pct_float": null,
-    "short_ratio": null,
-    "short_ratio_z": null,
-    "trends_z": null,
-    "volume_z": 0.69843
-   },
-   "reasons": [
-    {
-     "rule": "downtrend",
-     "why": "Below its 20-day average and down over 20 days",
-     "weight": -0.15
-    }
-   ],
-   "pump_flag": 0,
-   "prev_hash": "643e87e6ff0bf51bbd1207bf5c3b8552d3e17f182f60645529af29e93aadeb3b",
-   "hash": "fe6590d3477e97c84bd40c693334eddcfc478878572026cb111a069f7c835724",
-   "actual_return": -0.011494236430902638,
-   "correct": 1,
-   "picked_why": [
-    "Price fell 10% in one day"
-   ],
-   "picked_detail": {
-    "name": null,
-    "price": 0.8700000047683716,
-    "market_cap": null,
-    "volume": 1209200.0,
-    "avg_volume": 991035.0,
-    "vol_ratio": 1.2201385420292925,
-    "change": -0.10309280504365892,
-    "mentions": null,
-    "mentions_prev": null
-   },
-   "picked_rank": 6
+   "picked_rank": 6,
+   "spark": [
+    1.2,
+    1.2,
+    1.18,
+    1.17,
+    1.23,
+    1.13,
+    1.2,
+    1.16,
+    1.2,
+    1.14,
+    1.18,
+    1.26,
+    1.24,
+    1.3,
+    1.44,
+    1.35,
+    1.26,
+    1.29,
+    1.24,
+    1.14,
+    1.16,
+    1.24,
+    1.15,
+    1.14,
+    1.09,
+    1.05,
+    1.03,
+    0.97,
+    0.87,
+    0.86
+   ]
   },
   {
    "id": 592,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "MVIS",
    "horizon": "1w",
    "direction": "down",
    "prob_up": 0.4378,
    "confidence": 0.1244,
-   "base_close": 0.87,
+   "base_close": 0.86,
    "signals": {
-    "close": 0.87,
+    "close": 0.86,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.26083,
+    "dist_ma20": -0.26053,
     "filings_3d": 0.0,
     "insider_net_30d": 0.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.10309,
-    "ret_20d": -0.275,
-    "ret_5d": -0.23684,
+    "ret_1d": -0.01149,
+    "ret_20d": -0.24561,
+    "ret_5d": -0.21101,
     "reverse_split_60d": 0.0,
-    "rsi14": 28.77847,
+    "rsi14": 28.42029,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 0.69843
+    "volume_z": 1.7346
    },
    "reasons": [
     {
@@ -869,56 +891,88 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "fe6590d3477e97c84bd40c693334eddcfc478878572026cb111a069f7c835724",
-   "hash": "bf3b4a53e967385547e855f07a001f5d65a5b90a2f19321bf0210f4ddf0f95b7",
-   "actual_return": 5.480886855480094e-09,
+   "prev_hash": "75a46cbb597fcf9ce6dd13d8202bc54e2cc3bf98bb292f54ad232d17f300e927",
+   "hash": "9e591c99432167ef5c09a0771ea2ed04df69a79c0a596abd90a2aee315087d56",
+   "actual_return": 0.023255808408870315,
    "correct": 0,
    "picked_why": [
-    "Price fell 10% in one day"
+    "Much heavier trading than usual"
    ],
    "picked_detail": {
     "name": null,
-    "price": 0.8700000047683716,
+    "price": 0.8600000143051147,
     "market_cap": null,
-    "volume": 1209200.0,
-    "avg_volume": 991035.0,
-    "vol_ratio": 1.2201385420292925,
-    "change": -0.10309280504365892,
+    "volume": 1860700.0,
+    "avg_volume": 1009260.0,
+    "vol_ratio": 1.8436280046766937,
+    "change": -0.011494241848790776,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 6
+   "picked_rank": 6,
+   "spark": [
+    1.2,
+    1.2,
+    1.18,
+    1.17,
+    1.23,
+    1.13,
+    1.2,
+    1.16,
+    1.2,
+    1.14,
+    1.18,
+    1.26,
+    1.24,
+    1.3,
+    1.44,
+    1.35,
+    1.26,
+    1.29,
+    1.24,
+    1.14,
+    1.16,
+    1.24,
+    1.15,
+    1.14,
+    1.09,
+    1.05,
+    1.03,
+    0.97,
+    0.87,
+    0.86
+   ]
   },
   {
-   "id": 595,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 593,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "NKTR",
    "horizon": "1d",
    "direction": "down",
    "prob_up": 0.4502,
    "confidence": 0.0997,
-   "base_close": 34.419998,
+   "base_close": 32.540001,
    "signals": {
-    "close": 34.42,
+    "close": 32.54,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.08193,
+    "dist_ma20": -0.12494,
     "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
+    "insider_net_30d": -621.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.04149,
-    "ret_20d": -0.1006,
-    "ret_5d": -0.10458,
+    "ret_1d": -0.05462,
+    "ret_20d": -0.15809,
+    "ret_5d": -0.12644,
     "reverse_split_60d": 0.0,
-    "rsi14": 30.96642,
+    "rsi14": 27.23777,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.12374
+    "volume_z": 1.31126
    },
    "reasons": [
     {
@@ -928,56 +982,88 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "41d3380a0ff4cd5c04d56c434f867ad9b0ebe76765dbee3a505d5a6712116ffd",
-   "hash": "28ad6a484a75da13370ba778a5704123f67a6af3969fd05c678d1f51beee3314",
-   "actual_return": -0.05461932579056672,
+   "prev_hash": "9e591c99432167ef5c09a0771ea2ed04df69a79c0a596abd90a2aee315087d56",
+   "hash": "081a9693a6d6d65dff88a28f999faf7e45e075f3ecfe7ee90f595c5ebe72e592",
+   "actual_return": -0.07191149862166701,
    "correct": 1,
    "picked_why": [
     "One of the most actively traded small stocks yesterday"
    ],
    "picked_detail": {
     "name": null,
-    "price": 34.41999816894531,
+    "price": 32.540000915527344,
     "market_cap": null,
-    "volume": 811300.0,
-    "avg_volume": 626480.0,
-    "vol_ratio": 1.2950134082492657,
-    "change": -0.04149266735722845,
+    "volume": 872300.0,
+    "avg_volume": 636075.0,
+    "vol_ratio": 1.3713791612624298,
+    "change": -0.054619330430823676,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 8
+   "picked_rank": 7,
+   "spark": [
+    41.17,
+    39.84,
+    37.92,
+    36.89,
+    37.72,
+    35.78,
+    36.64,
+    39.22,
+    38.27,
+    38.65,
+    37.22,
+    37.45,
+    37.97,
+    38.55,
+    39.18,
+    38.87,
+    36.95,
+    37.76,
+    38.48,
+    36.15,
+    37.26,
+    37.83,
+    37.78,
+    38.44,
+    37.25,
+    37.27,
+    36.44,
+    35.91,
+    34.42,
+    32.54
+   ]
   },
   {
-   "id": 596,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 594,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "NKTR",
    "horizon": "1w",
    "direction": "down",
    "prob_up": 0.4378,
    "confidence": 0.1244,
-   "base_close": 34.419998,
+   "base_close": 32.540001,
    "signals": {
-    "close": 34.42,
+    "close": 32.54,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.08193,
+    "dist_ma20": -0.12494,
     "filings_3d": 0.0,
-    "insider_net_30d": 0.0,
+    "insider_net_30d": -621.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.04149,
-    "ret_20d": -0.1006,
-    "ret_5d": -0.10458,
+    "ret_1d": -0.05462,
+    "ret_20d": -0.15809,
+    "ret_5d": -0.12644,
     "reverse_split_60d": 0.0,
-    "rsi14": 30.96642,
+    "rsi14": 27.23777,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.12374
+    "volume_z": 1.31126
    },
    "reasons": [
     {
@@ -987,56 +1073,88 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "28ad6a484a75da13370ba778a5704123f67a6af3969fd05c678d1f51beee3314",
-   "hash": "489e6c5b4b235bc5fcefa6cdadd3bc264319c2fbd593184093c06e22b0364309",
-   "actual_return": -0.05229515318726152,
-   "correct": 1,
+   "prev_hash": "081a9693a6d6d65dff88a28f999faf7e45e075f3ecfe7ee90f595c5ebe72e592",
+   "hash": "c3ce9dd2504a2d8493139926b868a4e48c27080bb0cb22e498f197855655445e",
+   "actual_return": 0.002458448968233551,
+   "correct": 0,
    "picked_why": [
     "One of the most actively traded small stocks yesterday"
    ],
    "picked_detail": {
     "name": null,
-    "price": 34.41999816894531,
+    "price": 32.540000915527344,
     "market_cap": null,
-    "volume": 811300.0,
-    "avg_volume": 626480.0,
-    "vol_ratio": 1.2950134082492657,
-    "change": -0.04149266735722845,
+    "volume": 872300.0,
+    "avg_volume": 636075.0,
+    "vol_ratio": 1.3713791612624298,
+    "change": -0.054619330430823676,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 8
+   "picked_rank": 7,
+   "spark": [
+    41.17,
+    39.84,
+    37.92,
+    36.89,
+    37.72,
+    35.78,
+    36.64,
+    39.22,
+    38.27,
+    38.65,
+    37.22,
+    37.45,
+    37.97,
+    38.55,
+    39.18,
+    38.87,
+    36.95,
+    37.76,
+    38.48,
+    36.15,
+    37.26,
+    37.83,
+    37.78,
+    38.44,
+    37.25,
+    37.27,
+    36.44,
+    35.91,
+    34.42,
+    32.54
+   ]
   },
   {
-   "id": 589,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 583,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "OPEN",
    "horizon": "1d",
    "direction": "up",
    "prob_up": 0.5,
    "confidence": 0.0,
-   "base_close": 1.27,
+   "base_close": 1.46,
    "signals": {
-    "close": 1.27,
+    "close": 1.46,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.2124,
+    "dist_ma20": -0.07857,
     "filings_3d": 0.0,
     "insider_net_30d": 200000.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": 0.07627,
-    "ret_20d": -0.34872,
-    "ret_5d": -0.0696,
+    "ret_1d": 0.14961,
+    "ret_20d": -0.27723,
+    "ret_5d": 0.18219,
     "reverse_split_60d": 0.0,
-    "rsi14": 32.004,
+    "rsi14": 41.47234,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.31399
+    "volume_z": 2.27856
    },
    "reasons": [
     {
@@ -1051,56 +1169,89 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "daccb5e40b314986505870ae2f9c5a68175f1547e5c4c91ee423d80af883c66a",
-   "hash": "695af70d3d5675709b8b79a0309eca6531b1ba3408d99f3c572bad78bf8e4cef",
-   "actual_return": 0.14960632924958484,
-   "correct": 1,
+   "prev_hash": "b303e9ac30b2b70c38abcb471d9711aa9f7630e9abcc89e4ac541adcd202e599",
+   "hash": "040679e60fe2ff56d37ef1a60f6788cfdb2803bdc6df92f7ac2584ecd3b22240",
+   "actual_return": -0.10616441948773103,
+   "correct": 0,
    "picked_why": [
-    "One of the most actively traded small stocks yesterday"
+    "Much heavier trading than usual",
+    "Price jumped 15% in one day"
    ],
    "picked_detail": {
     "name": null,
-    "price": 1.2699999809265137,
+    "price": 1.4600000381469727,
     "market_cap": null,
-    "volume": 50620400.0,
-    "avg_volume": 36516680.0,
-    "vol_ratio": 1.3862267873202054,
-    "change": 0.0762712181179539,
+    "volume": 69026800.0,
+    "avg_volume": 37657355.0,
+    "vol_ratio": 1.8330230575142625,
+    "change": 0.14960634651493976,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 5
+   "picked_rank": 2,
+   "spark": [
+    2.22,
+    2.09,
+    2.11,
+    1.99,
+    2.32,
+    2.115,
+    2.05,
+    2.06,
+    1.95,
+    2.02,
+    1.98,
+    1.93,
+    1.91,
+    1.91,
+    1.9,
+    1.8,
+    1.8,
+    1.74,
+    1.98,
+    1.79,
+    1.4,
+    1.41,
+    1.31,
+    1.365,
+    1.235,
+    1.19,
+    1.13,
+    1.18,
+    1.27,
+    1.46
+   ]
   },
   {
-   "id": 590,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
+   "id": 584,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
    "ticker": "OPEN",
    "horizon": "1w",
    "direction": "up",
    "prob_up": 0.5374,
    "confidence": 0.0749,
-   "base_close": 1.27,
+   "base_close": 1.46,
    "signals": {
-    "close": 1.27,
+    "close": 1.46,
     "dilution_30d": 0.0,
-    "dist_ma20": -0.2124,
+    "dist_ma20": -0.07857,
     "filings_3d": 0.0,
     "insider_net_30d": 200000.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": 0.07627,
-    "ret_20d": -0.34872,
-    "ret_5d": -0.0696,
+    "ret_1d": 0.14961,
+    "ret_20d": -0.27723,
+    "ret_5d": 0.18219,
     "reverse_split_60d": 0.0,
-    "rsi14": 32.004,
+    "rsi14": 41.47234,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.31399
+    "volume_z": 2.27856
    },
    "reasons": [
     {
@@ -1115,68 +1266,455 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "695af70d3d5675709b8b79a0309eca6531b1ba3408d99f3c572bad78bf8e4cef",
-   "hash": "643e87e6ff0bf51bbd1207bf5c3b8552d3e17f182f60645529af29e93aadeb3b",
-   "actual_return": -0.007874023257278151,
+   "prev_hash": "040679e60fe2ff56d37ef1a60f6788cfdb2803bdc6df92f7ac2584ecd3b22240",
+   "hash": "64c1a0bef17dd4925013fdb501eafe35e3e4ab567cce19d8f8dd284d013be1ad",
+   "actual_return": -0.12328769082892432,
+   "correct": 0,
+   "picked_why": [
+    "Much heavier trading than usual",
+    "Price jumped 15% in one day"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 1.4600000381469727,
+    "market_cap": null,
+    "volume": 69026800.0,
+    "avg_volume": 37657355.0,
+    "vol_ratio": 1.8330230575142625,
+    "change": 0.14960634651493976,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 2,
+   "spark": [
+    2.22,
+    2.09,
+    2.11,
+    1.99,
+    2.32,
+    2.115,
+    2.05,
+    2.06,
+    1.95,
+    2.02,
+    1.98,
+    1.93,
+    1.91,
+    1.91,
+    1.9,
+    1.8,
+    1.8,
+    1.74,
+    1.98,
+    1.79,
+    1.4,
+    1.41,
+    1.31,
+    1.365,
+    1.235,
+    1.19,
+    1.13,
+    1.18,
+    1.27,
+    1.46
+   ]
+  },
+  {
+   "id": 595,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SENS",
+   "horizon": "1d",
+   "direction": "up",
+   "prob_up": 0.5374,
+   "confidence": 0.0749,
+   "base_close": 8.905,
+   "signals": {
+    "close": 8.905,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.04214,
+    "filings_3d": 0.0,
+    "insider_net_30d": 17040.7157,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.08573,
+    "ret_20d": 0.20338,
+    "ret_5d": -0.11305,
+    "reverse_split_60d": 0.0,
+    "rsi14": 46.33105,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 0.61888
+   },
+   "reasons": [
+    {
+     "rule": "insider_buying",
+     "why": "Insiders bought more shares than they sold in the last 30 days",
+     "weight": 0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "c3ce9dd2504a2d8493139926b868a4e48c27080bb0cb22e498f197855655445e",
+   "hash": "f3c1199bca5556cf23cc2342b2172032c93ae00ba5331ab964e92dfe3ce43064",
+   "actual_return": -0.09938231805012099,
+   "correct": 0,
+   "picked_why": [
+    "Price fell 9% in one day"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 8.904999732971191,
+    "market_cap": null,
+    "volume": 1325300.0,
+    "avg_volume": 1131905.0,
+    "vol_ratio": 1.1708579783639086,
+    "change": -0.08572895870315955,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 8,
+   "spark": [
+    8.98,
+    9.24,
+    8.92,
+    8.1,
+    8.23,
+    7.77,
+    8.015,
+    8.21,
+    7.97,
+    7.4,
+    7.51,
+    7.48,
+    8.33,
+    9.34,
+    9.75,
+    9.51,
+    8.98,
+    8.86,
+    9.02,
+    7.99,
+    8.59,
+    9.8,
+    10.03,
+    10.42,
+    10.04,
+    10.58,
+    10.9,
+    10.16,
+    9.74,
+    8.905
+   ]
+  },
+  {
+   "id": 596,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SENS",
+   "horizon": "1w",
+   "direction": "up",
+   "prob_up": 0.5866,
+   "confidence": 0.1732,
+   "base_close": 8.905,
+   "signals": {
+    "close": 8.905,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.04214,
+    "filings_3d": 0.0,
+    "insider_net_30d": 17040.7157,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.08573,
+    "ret_20d": 0.20338,
+    "ret_5d": -0.11305,
+    "reverse_split_60d": 0.0,
+    "rsi14": 46.33105,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 0.61888
+   },
+   "reasons": [
+    {
+     "rule": "insider_buying",
+     "why": "Insiders bought more shares than they sold in the last 30 days",
+     "weight": 0.4
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "f3c1199bca5556cf23cc2342b2172032c93ae00ba5331ab964e92dfe3ce43064",
+   "hash": "9a6981633a8c600961305fe715e7e83a07ce61c9f9045c5262f0d5ffb14b0630",
+   "actual_return": -0.00617626260867743,
+   "correct": 0,
+   "picked_why": [
+    "Price fell 9% in one day"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 8.904999732971191,
+    "market_cap": null,
+    "volume": 1325300.0,
+    "avg_volume": 1131905.0,
+    "vol_ratio": 1.1708579783639086,
+    "change": -0.08572895870315955,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 8,
+   "spark": [
+    8.98,
+    9.24,
+    8.92,
+    8.1,
+    8.23,
+    7.77,
+    8.015,
+    8.21,
+    7.97,
+    7.4,
+    7.51,
+    7.48,
+    8.33,
+    9.34,
+    9.75,
+    9.51,
+    8.98,
+    8.86,
+    9.02,
+    7.99,
+    8.59,
+    9.8,
+    10.03,
+    10.42,
+    10.04,
+    10.58,
+    10.9,
+    10.16,
+    9.74,
+    8.905
+   ]
+  },
+  {
+   "id": 599,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SNDL",
+   "horizon": "1d",
+   "direction": "down",
+   "prob_up": 0.4502,
+   "confidence": 0.0997,
+   "base_close": 1.24,
+   "signals": {
+    "close": 1.24,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.07272,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.07463,
+    "ret_20d": -0.03876,
+    "ret_5d": -0.10791,
+    "reverse_split_60d": 0.0,
+    "rsi14": 38.38049,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 0.42515
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.15
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "93f00f4d043db4b60ac6f05223cbcd8541f00ecd891304ae16092b0b194efc6d",
+   "hash": "998c0c6a35e3f827437d15702c82c393f4d2af09b93667ac86f3352d84bd71e1",
+   "actual_return": -0.056451647512374414,
+   "correct": 1,
+   "picked_why": [
+    "One of the most actively traded small stocks yesterday"
+   ],
+   "picked_detail": {
+    "name": null,
+    "price": 1.2400000095367432,
+    "market_cap": null,
+    "volume": 1285500.0,
+    "avg_volume": 1172465.0,
+    "vol_ratio": 1.0964079951213896,
+    "change": -0.07462688160516195,
+    "mentions": null,
+    "mentions_prev": null
+   },
+   "picked_rank": 10,
+   "spark": [
+    1.22,
+    1.17,
+    1.16,
+    1.15,
+    1.21,
+    1.25,
+    1.255,
+    1.28,
+    1.28,
+    1.29,
+    1.29,
+    1.27,
+    1.3,
+    1.29,
+    1.3,
+    1.24,
+    1.27,
+    1.35,
+    1.41,
+    1.38,
+    1.415,
+    1.4,
+    1.39,
+    1.42,
+    1.39,
+    1.37,
+    1.34,
+    1.34,
+    1.34,
+    1.24
+   ]
+  },
+  {
+   "id": 600,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SNDL",
+   "horizon": "1w",
+   "direction": "down",
+   "prob_up": 0.4378,
+   "confidence": 0.1244,
+   "base_close": 1.24,
+   "signals": {
+    "close": 1.24,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.07272,
+    "filings_3d": 0.0,
+    "insider_net_30d": 0.0,
+    "mention_jump": null,
+    "mentions": null,
+    "mentions_z": null,
+    "ret_1d": -0.07463,
+    "ret_20d": -0.03876,
+    "ret_5d": -0.10791,
+    "reverse_split_60d": 0.0,
+    "rsi14": 38.38049,
+    "sentiment": null,
+    "short_pct_float": null,
+    "short_ratio": null,
+    "short_ratio_z": null,
+    "trends_z": null,
+    "volume_z": 0.42515
+   },
+   "reasons": [
+    {
+     "rule": "downtrend",
+     "why": "Below its 20-day average and down over 20 days",
+     "weight": -0.2
+    }
+   ],
+   "pump_flag": 0,
+   "prev_hash": "998c0c6a35e3f827437d15702c82c393f4d2af09b93667ac86f3352d84bd71e1",
+   "hash": "69f04d82f447104688ca1fc1e65c113031b3eb679faa5456c3548beabc96848b",
+   "actual_return": 0.0927419508657148,
    "correct": 0,
    "picked_why": [
     "One of the most actively traded small stocks yesterday"
    ],
    "picked_detail": {
     "name": null,
-    "price": 1.2699999809265137,
+    "price": 1.2400000095367432,
     "market_cap": null,
-    "volume": 50620400.0,
-    "avg_volume": 36516680.0,
-    "vol_ratio": 1.3862267873202054,
-    "change": 0.0762712181179539,
+    "volume": 1285500.0,
+    "avg_volume": 1172465.0,
+    "vol_ratio": 1.0964079951213896,
+    "change": -0.07462688160516195,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 5
+   "picked_rank": 10,
+   "spark": [
+    1.22,
+    1.17,
+    1.16,
+    1.15,
+    1.21,
+    1.25,
+    1.255,
+    1.28,
+    1.28,
+    1.29,
+    1.29,
+    1.27,
+    1.3,
+    1.29,
+    1.3,
+    1.24,
+    1.27,
+    1.35,
+    1.41,
+    1.38,
+    1.415,
+    1.4,
+    1.39,
+    1.42,
+    1.39,
+    1.37,
+    1.34,
+    1.34,
+    1.34,
+    1.24
+   ]
   },
   {
-   "id": 585,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "SPCE",
+   "id": 587,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "TLRY",
    "horizon": "1d",
    "direction": "up",
    "prob_up": 0.5,
    "confidence": 0.0,
-   "base_close": 1.2,
+   "base_close": 2.07,
    "signals": {
-    "close": 1.2,
-    "dilution_30d": 2.0,
-    "dist_ma20": -0.49822,
-    "filings_3d": 0.0,
+    "close": 2.07,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.20522,
+    "filings_3d": 1.0,
     "insider_net_30d": 0.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.07692,
-    "ret_20d": -0.5082,
-    "ret_5d": -0.58188,
+    "ret_1d": -0.08,
+    "ret_20d": -0.29352,
+    "ret_5d": -0.16867,
     "reverse_split_60d": 0.0,
-    "rsi14": 22.7416,
+    "rsi14": 23.47918,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.36352
+    "volume_z": 1.39919
    },
    "reasons": [
-    {
-     "rule": "capitulation",
-     "why": "Down more than 25% in 5 days on heavy volume",
-     "weight": 0.3
-    },
-    {
-     "rule": "dilution",
-     "why": "Offering or share-sale filing in the last 30 days",
-     "weight": -0.3
-    },
     {
      "rule": "downtrend",
      "why": "Below its 20-day average and down over 20 days",
@@ -1189,68 +1727,90 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "7c99c08dd18fb2f8cdc5406cc76270b100b0180334330c6657dd4b3a69ad2ccd",
-   "hash": "369f75e40733f8f0631dbd13660c0861f91a1e754b7008dae3cd8da36f359091",
-   "actual_return": -0.05833333730697632,
+   "prev_hash": "3c55b2d554af15c8d5c1694e7571dba297566cf492e799b4005764777611a263",
+   "hash": "760939804478bedeaaa3b044187a67f31ad62b29935e2eabdc3292263e3cfc08",
+   "actual_return": -0.08695652864981385,
    "correct": 0,
    "picked_why": [
-    "Much heavier trading than usual"
+    "Price fell 8% in one day"
    ],
    "picked_detail": {
     "name": null,
-    "price": 1.2000000476837158,
+    "price": 2.069999933242798,
     "market_cap": null,
-    "volume": 17353500.0,
-    "avg_volume": 9070505.0,
-    "vol_ratio": 1.9131790346843973,
-    "change": -0.07692300638503313,
+    "volume": 7869100.0,
+    "avg_volume": 4999855.0,
+    "vol_ratio": 1.573865642103621,
+    "change": -0.08000002966986763,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 3
+   "picked_rank": 4,
+   "spark": [
+    3.54,
+    3.36,
+    3.27,
+    3.14,
+    3.21,
+    3.04,
+    3.03,
+    3.03,
+    2.92,
+    2.93,
+    2.81,
+    2.72,
+    2.77,
+    2.69,
+    2.64,
+    2.53,
+    2.55,
+    2.65,
+    2.96,
+    2.81,
+    2.92,
+    2.85,
+    2.65,
+    2.61,
+    2.49,
+    2.43,
+    2.34,
+    2.35,
+    2.25,
+    2.07
+   ]
   },
   {
-   "id": 586,
-   "created_at": "2026-11-26T07:51:16+00:00",
-   "as_of": "2026-11-18",
-   "ticker": "SPCE",
+   "id": 588,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "TLRY",
    "horizon": "1w",
    "direction": "down",
-   "prob_up": 0.4256,
-   "confidence": 0.1489,
-   "base_close": 1.2,
+   "prob_up": 0.475,
+   "confidence": 0.05,
+   "base_close": 2.07,
    "signals": {
-    "close": 1.2,
-    "dilution_30d": 2.0,
-    "dist_ma20": -0.49822,
-    "filings_3d": 0.0,
+    "close": 2.07,
+    "dilution_30d": 0.0,
+    "dist_ma20": -0.20522,
+    "filings_3d": 1.0,
     "insider_net_30d": 0.0,
     "mention_jump": null,
     "mentions": null,
     "mentions_z": null,
-    "ret_1d": -0.07692,
-    "ret_20d": -0.5082,
-    "ret_5d": -0.58188,
+    "ret_1d": -0.08,
+    "ret_20d": -0.29352,
+    "ret_5d": -0.16867,
     "reverse_split_60d": 0.0,
-    "rsi14": 22.7416,
+    "rsi14": 23.47918,
     "sentiment": null,
     "short_pct_float": null,
     "short_ratio": null,
     "short_ratio_z": null,
     "trends_z": null,
-    "volume_z": 1.36352
+    "volume_z": 1.39919
    },
    "reasons": [
-    {
-     "rule": "capitulation",
-     "why": "Down more than 25% in 5 days on heavy volume",
-     "weight": 0.3
-    },
-    {
-     "rule": "dilution",
-     "why": "Offering or share-sale filing in the last 30 days",
-     "weight": -0.5
-    },
     {
      "rule": "downtrend",
      "why": "Below its 20-day average and down over 20 days",
@@ -1263,25 +1823,57 @@
     }
    ],
    "pump_flag": 0,
-   "prev_hash": "369f75e40733f8f0631dbd13660c0861f91a1e754b7008dae3cd8da36f359091",
-   "hash": "668cb508d2c25bd303da4d64592ceb70b86d7cd74a9a0114e7e3af9ddd49fee1",
-   "actual_return": -0.09166663885116577,
+   "prev_hash": "760939804478bedeaaa3b044187a67f31ad62b29935e2eabdc3292263e3cfc08",
+   "hash": "a1879f1f91ae3b6898ebc2c87179b8ec972b8992e54a5e9529155890886c207d",
+   "actual_return": -0.08212561538253993,
    "correct": 1,
    "picked_why": [
-    "Much heavier trading than usual"
+    "Price fell 8% in one day"
    ],
    "picked_detail": {
     "name": null,
-    "price": 1.2000000476837158,
+    "price": 2.069999933242798,
     "market_cap": null,
-    "volume": 17353500.0,
-    "avg_volume": 9070505.0,
-    "vol_ratio": 1.9131790346843973,
-    "change": -0.07692300638503313,
+    "volume": 7869100.0,
+    "avg_volume": 4999855.0,
+    "vol_ratio": 1.573865642103621,
+    "change": -0.08000002966986763,
     "mentions": null,
     "mentions_prev": null
    },
-   "picked_rank": 3
+   "picked_rank": 4,
+   "spark": [
+    3.54,
+    3.36,
+    3.27,
+    3.14,
+    3.21,
+    3.04,
+    3.03,
+    3.03,
+    2.92,
+    2.93,
+    2.81,
+    2.72,
+    2.77,
+    2.69,
+    2.64,
+    2.53,
+    2.55,
+    2.65,
+    2.96,
+    2.81,
+    2.92,
+    2.85,
+    2.65,
+    2.61,
+    2.49,
+    2.43,
+    2.34,
+    2.35,
+    2.25,
+    2.07
+   ]
   }
  ],
  "live": {
@@ -1289,178 +1881,178 @@
    "n": 300,
    "hit_rate": 0.5966666666666667,
    "hit_rate_recent": 0.58,
-   "always_up": 0.39,
-   "always_down": 0.61,
-   "follow_market": 0.57,
-   "strategy_avg_return": 0.00965671587015192,
-   "buy_hold_avg_return": -0.009965616382164708,
-   "market_avg_return": -0.002517974632936648,
-   "avg_move_right": 0.05082308841783074,
-   "avg_move_wrong": 0.05124229806401757,
+   "always_up": 0.37666666666666665,
+   "always_down": 0.6233333333333333,
+   "follow_market": 0.5833333333333334,
+   "strategy_avg_return": 0.009732426758956313,
+   "buy_hold_avg_return": -0.012292798586286104,
+   "market_avg_return": -0.003931262888114262,
+   "avg_move_right": 0.05224817459130362,
+   "avg_move_wrong": 0.05316277044757401,
    "pump_flags": 3,
    "pump_then_down": 1.0,
    "series": [
     {
-     "date": "2026-10-08",
-     "model": 0.7,
-     "always_up": 0.4
-    },
-    {
      "date": "2026-10-09",
-     "model": 0.65,
-     "always_up": 0.35
+     "model": 0.6,
+     "always_up": 0.3
     },
     {
      "date": "2026-10-12",
-     "model": 0.6666666666666666,
-     "always_up": 0.23333333333333334
+     "model": 0.65,
+     "always_up": 0.15
     },
     {
      "date": "2026-10-13",
-     "model": 0.625,
-     "always_up": 0.2
+     "model": 0.6,
+     "always_up": 0.13333333333333333
     },
     {
      "date": "2026-10-14",
-     "model": 0.64,
-     "always_up": 0.32
+     "model": 0.625,
+     "always_up": 0.3
     },
     {
      "date": "2026-10-15",
-     "model": 0.6666666666666666,
-     "always_up": 0.26666666666666666
+     "model": 0.66,
+     "always_up": 0.24
     },
     {
      "date": "2026-10-16",
-     "model": 0.6571428571428571,
-     "always_up": 0.2857142857142857
+     "model": 0.65,
+     "always_up": 0.26666666666666666
     },
     {
      "date": "2026-10-19",
-     "model": 0.6375,
-     "always_up": 0.3125
+     "model": 0.6285714285714286,
+     "always_up": 0.3
     },
     {
      "date": "2026-10-20",
-     "model": 0.6333333333333333,
-     "always_up": 0.34444444444444444
+     "model": 0.625,
+     "always_up": 0.3375
     },
     {
      "date": "2026-10-21",
-     "model": 0.63,
-     "always_up": 0.34
+     "model": 0.6222222222222222,
+     "always_up": 0.3333333333333333
     },
     {
      "date": "2026-10-22",
-     "model": 0.6363636363636364,
-     "always_up": 0.32727272727272727
+     "model": 0.63,
+     "always_up": 0.32
     },
     {
      "date": "2026-10-23",
-     "model": 0.6166666666666667,
-     "always_up": 0.3416666666666667
+     "model": 0.6090909090909091,
+     "always_up": 0.33636363636363636
     },
     {
      "date": "2026-10-26",
-     "model": 0.6,
-     "always_up": 0.36923076923076925
+     "model": 0.5916666666666667,
+     "always_up": 0.36666666666666664
     },
     {
      "date": "2026-10-27",
-     "model": 0.5714285714285714,
-     "always_up": 0.40714285714285714
+     "model": 0.5615384615384615,
+     "always_up": 0.4076923076923077
     },
     {
      "date": "2026-10-28",
-     "model": 0.5733333333333334,
-     "always_up": 0.4066666666666667
+     "model": 0.5642857142857143,
+     "always_up": 0.40714285714285714
     },
     {
      "date": "2026-10-29",
-     "model": 0.59375,
-     "always_up": 0.39375
+     "model": 0.5866666666666667,
+     "always_up": 0.3933333333333333
     },
     {
      "date": "2026-10-30",
-     "model": 0.611764705882353,
-     "always_up": 0.38235294117647056
+     "model": 0.60625,
+     "always_up": 0.38125
     },
     {
      "date": "2026-11-02",
-     "model": 0.6,
-     "always_up": 0.40555555555555556
+     "model": 0.5941176470588235,
+     "always_up": 0.40588235294117647
     },
     {
      "date": "2026-11-03",
-     "model": 0.6157894736842106,
-     "always_up": 0.41578947368421054
+     "model": 0.6111111111111112,
+     "always_up": 0.4166666666666667
     },
     {
      "date": "2026-11-04",
-     "model": 0.625,
+     "model": 0.6210526315789474,
      "always_up": 0.4
     },
     {
      "date": "2026-11-05",
-     "model": 0.6095238095238096,
-     "always_up": 0.4238095238095238
+     "model": 0.605,
+     "always_up": 0.425
     },
     {
      "date": "2026-11-06",
-     "model": 0.5909090909090909,
-     "always_up": 0.45
+     "model": 0.5857142857142857,
+     "always_up": 0.4523809523809524
     },
     {
      "date": "2026-11-09",
-     "model": 0.591304347826087,
-     "always_up": 0.4434782608695652
+     "model": 0.5863636363636363,
+     "always_up": 0.44545454545454544
     },
     {
      "date": "2026-11-10",
-     "model": 0.5916666666666667,
-     "always_up": 0.45
+     "model": 0.5869565217391305,
+     "always_up": 0.45217391304347826
     },
     {
      "date": "2026-11-11",
-     "model": 0.588,
-     "always_up": 0.44
+     "model": 0.5833333333333334,
+     "always_up": 0.44166666666666665
     },
     {
      "date": "2026-11-12",
-     "model": 0.5923076923076923,
-     "always_up": 0.4230769230769231
+     "model": 0.588,
+     "always_up": 0.424
     },
     {
      "date": "2026-11-13",
-     "model": 0.6,
-     "always_up": 0.4111111111111111
+     "model": 0.5961538461538461,
+     "always_up": 0.4115384615384615
     },
     {
      "date": "2026-11-16",
-     "model": 0.6,
-     "always_up": 0.4035714285714286
+     "model": 0.5962962962962963,
+     "always_up": 0.40370370370370373
     },
     {
      "date": "2026-11-17",
-     "model": 0.593103448275862,
-     "always_up": 0.39655172413793105
+     "model": 0.5892857142857143,
+     "always_up": 0.3964285714285714
     },
     {
      "date": "2026-11-18",
+     "model": 0.593103448275862,
+     "always_up": 0.3896551724137931
+    },
+    {
+     "date": "2026-11-19",
      "model": 0.5966666666666667,
-     "always_up": 0.39
+     "always_up": 0.37666666666666665
     }
    ],
    "confidence": [
     {
      "bucket": "Low",
-     "n": 269,
-     "hit_rate": 0.5799256505576208
+     "n": 270,
+     "hit_rate": 0.5814814814814815
     },
     {
      "bucket": "Medium",
-     "n": 29,
-     "hit_rate": 0.7241379310344828
+     "n": 28,
+     "hit_rate": 0.7142857142857143
     },
     {
      "bucket": "High",
@@ -1487,12 +2079,12 @@
      "right": 2
     },
     "BBAI": {
-     "n": 8,
-     "right": 4
+     "n": 7,
+     "right": 3
     },
     "BLNK": {
-     "n": 9,
-     "right": 6
+     "n": 8,
+     "right": 5
     },
     "BYND": {
      "n": 6,
@@ -1503,24 +2095,24 @@
      "right": 4
     },
     "CIFR": {
-     "n": 16,
+     "n": 15,
      "right": 9
     },
     "CLOV": {
-     "n": 6,
-     "right": 5
+     "n": 7,
+     "right": 6
     },
     "DNA": {
      "n": 10,
      "right": 4
     },
     "FCEL": {
-     "n": 7,
-     "right": 3
+     "n": 6,
+     "right": 2
     },
     "FUBO": {
-     "n": 5,
-     "right": 4
+     "n": 6,
+     "right": 5
     },
     "GPRO": {
      "n": 9,
@@ -1531,12 +2123,12 @@
      "right": 4
     },
     "JOBY": {
-     "n": 3,
-     "right": 2
+     "n": 4,
+     "right": 3
     },
     "KOSS": {
-     "n": 6,
-     "right": 2
+     "n": 7,
+     "right": 3
     },
     "LCID": {
      "n": 13,
@@ -1551,19 +2143,19 @@
      "right": 6
     },
     "NIO": {
-     "n": 8,
+     "n": 7,
      "right": 6
     },
     "NKTR": {
-     "n": 3,
-     "right": 2
+     "n": 4,
+     "right": 3
     },
     "OCGN": {
-     "n": 9,
-     "right": 6
+     "n": 8,
+     "right": 5
     },
     "OPEN": {
-     "n": 10,
+     "n": 11,
      "right": 7
     },
     "PLUG": {
@@ -1571,8 +2163,8 @@
      "right": 4
     },
     "QS": {
-     "n": 8,
-     "right": 5
+     "n": 7,
+     "right": 4
     },
     "QUBT": {
      "n": 7,
@@ -1591,7 +2183,7 @@
      "right": 5
     },
     "SENS": {
-     "n": 9,
+     "n": 10,
      "right": 4
     },
     "SIRI": {
@@ -1599,8 +2191,8 @@
      "right": 5
     },
     "SNDL": {
-     "n": 5,
-     "right": 3
+     "n": 6,
+     "right": 4
     },
     "SOUN": {
      "n": 4,
@@ -1612,38 +2204,33 @@
     },
     "TLRY": {
      "n": 7,
-     "right": 4
+     "right": 3
     },
     "WKHS": {
      "n": 5,
      "right": 2
     },
     "WULF": {
-     "n": 15,
+     "n": 14,
      "right": 8
     }
    }
   },
   "1w": {
    "n": 300,
-   "hit_rate": 0.6033333333333334,
+   "hit_rate": 0.5866666666666667,
    "hit_rate_recent": 0.595,
-   "always_up": 0.33,
-   "always_down": 0.67,
-   "follow_market": 0.48333333333333334,
-   "strategy_avg_return": 0.028394369837992327,
-   "buy_hold_avg_return": -0.05896226982831242,
-   "market_avg_return": -0.013775652719271397,
-   "avg_move_right": 0.11886887829714354,
-   "avg_move_wrong": 0.10921811781836373,
+   "always_up": 0.3433333333333333,
+   "always_down": 0.6566666666666666,
+   "follow_market": 0.49666666666666665,
+   "strategy_avg_return": 0.025909037995104064,
+   "buy_hold_avg_return": -0.056118775028665316,
+   "market_avg_return": -0.013103767056031642,
+   "avg_move_right": 0.11887282692417558,
+   "avg_move_wrong": 0.10603956564615875,
    "pump_flags": 3,
    "pump_then_down": 1.0,
    "series": [
-    {
-     "date": "2026-10-08",
-     "model": 0.8,
-     "always_up": 0.1
-    },
     {
      "date": "2026-10-09",
      "model": 0.8,
@@ -1651,155 +2238,160 @@
     },
     {
      "date": "2026-10-12",
-     "model": 0.7666666666666667,
+     "model": 0.75,
      "always_up": 0.1
     },
     {
      "date": "2026-10-13",
-     "model": 0.7,
-     "always_up": 0.125
+     "model": 0.6666666666666666,
+     "always_up": 0.13333333333333333
     },
     {
      "date": "2026-10-14",
-     "model": 0.68,
-     "always_up": 0.16
+     "model": 0.65,
+     "always_up": 0.175
     },
     {
      "date": "2026-10-15",
-     "model": 0.6833333333333333,
-     "always_up": 0.15
+     "model": 0.66,
+     "always_up": 0.16
     },
     {
      "date": "2026-10-16",
-     "model": 0.6857142857142857,
-     "always_up": 0.15714285714285714
+     "model": 0.6666666666666666,
+     "always_up": 0.16666666666666666
     },
     {
      "date": "2026-10-19",
-     "model": 0.6625,
-     "always_up": 0.2125
+     "model": 0.6428571428571429,
+     "always_up": 0.22857142857142856
     },
     {
      "date": "2026-10-20",
-     "model": 0.6555555555555556,
-     "always_up": 0.24444444444444444
+     "model": 0.6375,
+     "always_up": 0.2625
     },
     {
      "date": "2026-10-21",
-     "model": 0.62,
-     "always_up": 0.28
+     "model": 0.6,
+     "always_up": 0.3
     },
     {
      "date": "2026-10-22",
-     "model": 0.5909090909090909,
-     "always_up": 0.32727272727272727
+     "model": 0.57,
+     "always_up": 0.35
     },
     {
      "date": "2026-10-23",
-     "model": 0.5833333333333334,
-     "always_up": 0.3416666666666667
+     "model": 0.5636363636363636,
+     "always_up": 0.36363636363636365
     },
     {
      "date": "2026-10-26",
-     "model": 0.5846153846153846,
-     "always_up": 0.3384615384615385
+     "model": 0.5666666666666667,
+     "always_up": 0.35833333333333334
     },
     {
      "date": "2026-10-27",
-     "model": 0.5928571428571429,
-     "always_up": 0.34285714285714286
-    },
-    {
-     "date": "2026-10-28",
-     "model": 0.5933333333333334,
-     "always_up": 0.35333333333333333
-    },
-    {
-     "date": "2026-10-29",
-     "model": 0.6125,
-     "always_up": 0.34375
-    },
-    {
-     "date": "2026-10-30",
-     "model": 0.6176470588235294,
-     "always_up": 0.34705882352941175
-    },
-    {
-     "date": "2026-11-02",
-     "model": 0.6055555555555555,
-     "always_up": 0.37222222222222223
-    },
-    {
-     "date": "2026-11-03",
-     "model": 0.6157894736842106,
-     "always_up": 0.3894736842105263
-    },
-    {
-     "date": "2026-11-04",
-     "model": 0.605,
-     "always_up": 0.395
-    },
-    {
-     "date": "2026-11-05",
-     "model": 0.5952380952380952,
-     "always_up": 0.4142857142857143
-    },
-    {
-     "date": "2026-11-06",
-     "model": 0.5954545454545455,
-     "always_up": 0.41363636363636364
-    },
-    {
-     "date": "2026-11-09",
-     "model": 0.591304347826087,
-     "always_up": 0.4043478260869565
-    },
-    {
-     "date": "2026-11-10",
-     "model": 0.5958333333333333,
-     "always_up": 0.39166666666666666
-    },
-    {
-     "date": "2026-11-11",
-     "model": 0.596,
-     "always_up": 0.376
-    },
-    {
-     "date": "2026-11-12",
-     "model": 0.6038461538461538,
+     "model": 0.5769230769230769,
      "always_up": 0.36153846153846153
     },
     {
+     "date": "2026-10-28",
+     "model": 0.5785714285714286,
+     "always_up": 0.37142857142857144
+    },
+    {
+     "date": "2026-10-29",
+     "model": 0.6,
+     "always_up": 0.36
+    },
+    {
+     "date": "2026-10-30",
+     "model": 0.60625,
+     "always_up": 0.3625
+    },
+    {
+     "date": "2026-11-02",
+     "model": 0.5941176470588235,
+     "always_up": 0.38823529411764707
+    },
+    {
+     "date": "2026-11-03",
+     "model": 0.6055555555555555,
+     "always_up": 0.40555555555555556
+    },
+    {
+     "date": "2026-11-04",
+     "model": 0.5947368421052631,
+     "always_up": 0.4105263157894737
+    },
+    {
+     "date": "2026-11-05",
+     "model": 0.585,
+     "always_up": 0.43
+    },
+    {
+     "date": "2026-11-06",
+     "model": 0.5857142857142857,
+     "always_up": 0.42857142857142855
+    },
+    {
+     "date": "2026-11-09",
+     "model": 0.5818181818181818,
+     "always_up": 0.41818181818181815
+    },
+    {
+     "date": "2026-11-10",
+     "model": 0.5869565217391305,
+     "always_up": 0.4043478260869565
+    },
+    {
+     "date": "2026-11-11",
+     "model": 0.5875,
+     "always_up": 0.3875
+    },
+    {
+     "date": "2026-11-12",
+     "model": 0.596,
+     "always_up": 0.372
+    },
+    {
      "date": "2026-11-13",
-     "model": 0.6074074074074074,
-     "always_up": 0.34814814814814815
+     "model": 0.6,
+     "always_up": 0.3576923076923077
     },
     {
      "date": "2026-11-16",
-     "model": 0.6035714285714285,
-     "always_up": 0.34285714285714286
+     "model": 0.5962962962962963,
+     "always_up": 0.35185185185185186
     },
     {
      "date": "2026-11-17",
-     "model": 0.603448275862069,
-     "always_up": 0.33448275862068966
+     "model": 0.5964285714285714,
+     "always_up": 0.34285714285714286
     },
     {
      "date": "2026-11-18",
-     "model": 0.6033333333333334,
-     "always_up": 0.33
+     "model": 0.596551724137931,
+     "always_up": 0.33793103448275863
+    },
+    {
+     "date": "2026-11-19",
+     "model": 0.5866666666666667,
+     "always_up": 0.3433333333333333
     }
    ],
    "confidence": [
     {
      "bucket": "Low",
-     "n": 108,
-     "hit_rate": 0.5092592592592593
+     "n": 110,
+     "hit_rate": 0.509090909090909
     },
     {
      "bucket": "Medium",
-     "n": 176,
-     "hit_rate": 0.6477272727272727
+     "n": 174,
+     "hit_rate": 0.6206896551724138
     },
     {
      "bucket": "High",
@@ -1807,7 +2399,7 @@
      "hit_rate": 0.75
     }
    ],
-   "right": 181,
+   "right": 176,
    "per_ticker": {
     "ACHR": {
      "n": 10,
@@ -1826,12 +2418,12 @@
      "right": 1
     },
     "BBAI": {
-     "n": 8,
-     "right": 4
+     "n": 7,
+     "right": 3
     },
     "BLNK": {
-     "n": 9,
-     "right": 5
+     "n": 8,
+     "right": 4
     },
     "BYND": {
      "n": 6,
@@ -1842,24 +2434,24 @@
      "right": 3
     },
     "CIFR": {
-     "n": 16,
-     "right": 11
+     "n": 15,
+     "right": 10
     },
     "CLOV": {
-     "n": 6,
-     "right": 5
+     "n": 7,
+     "right": 6
     },
     "DNA": {
      "n": 10,
      "right": 4
     },
     "FCEL": {
-     "n": 7,
+     "n": 6,
      "right": 1
     },
     "FUBO": {
-     "n": 5,
-     "right": 4
+     "n": 6,
+     "right": 5
     },
     "GPRO": {
      "n": 9,
@@ -1870,11 +2462,11 @@
      "right": 2
     },
     "JOBY": {
-     "n": 3,
+     "n": 4,
      "right": 1
     },
     "KOSS": {
-     "n": 6,
+     "n": 7,
      "right": 1
     },
     "LCID": {
@@ -1887,22 +2479,22 @@
     },
     "MVIS": {
      "n": 8,
-     "right": 5
+     "right": 4
     },
     "NIO": {
-     "n": 8,
+     "n": 7,
      "right": 7
     },
     "NKTR": {
-     "n": 3,
+     "n": 4,
      "right": 2
     },
     "OCGN": {
-     "n": 9,
-     "right": 5
+     "n": 8,
+     "right": 4
     },
     "OPEN": {
-     "n": 10,
+     "n": 11,
      "right": 8
     },
     "PLUG": {
@@ -1910,8 +2502,8 @@
      "right": 7
     },
     "QS": {
-     "n": 8,
-     "right": 5
+     "n": 7,
+     "right": 4
     },
     "QUBT": {
      "n": 7,
@@ -1930,7 +2522,7 @@
      "right": 5
     },
     "SENS": {
-     "n": 9,
+     "n": 10,
      "right": 4
     },
     "SIRI": {
@@ -1938,7 +2530,7 @@
      "right": 5
     },
     "SNDL": {
-     "n": 5,
+     "n": 6,
      "right": 2
     },
     "SOUN": {
@@ -1958,29 +2550,17 @@
      "right": 2
     },
     "WULF": {
-     "n": 15,
-     "right": 8
+     "n": 14,
+     "right": 7
     }
    }
   }
  },
  "portfolio": {
   "start_value": 1000.0,
-  "start_date": "2026-10-08",
+  "start_date": "2026-10-09",
   "days": 30,
   "series": [
-   {
-    "date": "2026-10-09",
-    "made": "2026-10-08",
-    "ups": 1,
-    "picks": 10,
-    "r_up": 0.04521743110988452,
-    "r_both": 0.014203663332214844,
-    "r_mkt": 0.005995393242733904,
-    "up": 1045.22,
-    "both": 1014.2,
-    "market": 1006.0
-   },
    {
     "date": "2026-10-12",
     "made": "2026-10-09",
@@ -1989,9 +2569,9 @@
     "r_up": -0.09307692601130557,
     "r_both": 0.007355093717121786,
     "r_mkt": -0.0006037115915840108,
-    "up": 947.93,
-    "both": 1021.66,
-    "market": 1005.39
+    "up": 906.92,
+    "both": 1007.36,
+    "market": 999.4
    },
    {
     "date": "2026-10-13",
@@ -2001,9 +2581,9 @@
     "r_up": -0.024599731784350525,
     "r_both": 0.0025050843312396155,
     "r_mkt": -0.00011562244330465266,
-    "up": 924.61,
-    "both": 1024.22,
-    "market": 1005.27
+    "up": 884.61,
+    "both": 1009.88,
+    "market": 999.28
    },
    {
     "date": "2026-10-14",
@@ -2013,9 +2593,9 @@
     "r_up": -0.10171015549162682,
     "r_both": -0.014371527441906473,
     "r_mkt": -0.010809673492788385,
-    "up": 830.57,
-    "both": 1009.5,
-    "market": 994.41
+    "up": 794.64,
+    "both": 995.37,
+    "market": 988.48
    },
    {
     "date": "2026-10-15",
@@ -2025,9 +2605,9 @@
     "r_up": 0.06246930245138195,
     "r_both": 0.035046114261229014,
     "r_mkt": 0.00284563735821175,
-    "up": 882.46,
-    "both": 1044.88,
-    "market": 997.23
+    "up": 844.28,
+    "both": 1030.25,
+    "market": 991.29
    },
    {
     "date": "2026-10-16",
@@ -2037,9 +2617,9 @@
     "r_up": -0.09003132759379551,
     "r_both": 0.037627681326713645,
     "r_mkt": -0.011065157971047346,
-    "up": 803.01,
-    "both": 1084.2,
-    "market": 986.2
+    "up": 768.27,
+    "both": 1069.01,
+    "market": 980.32
    },
    {
     "date": "2026-10-19",
@@ -2049,9 +2629,9 @@
     "r_up": 0.018901598149875687,
     "r_both": 0.006906057204801297,
     "r_mkt": 0.004231877456600142,
-    "up": 818.19,
-    "both": 1091.69,
-    "market": 990.37
+    "up": 782.79,
+    "both": 1076.4,
+    "market": 984.47
    },
    {
     "date": "2026-10-20",
@@ -2061,9 +2641,9 @@
     "r_up": 0.00046797148689708967,
     "r_both": -0.022173503919468974,
     "r_mkt": 0.0033529999343844263,
-    "up": 818.57,
-    "both": 1067.48,
-    "market": 993.69
+    "up": 783.16,
+    "both": 1052.53,
+    "market": 987.77
    },
    {
     "date": "2026-10-21",
@@ -2073,9 +2653,9 @@
     "r_up": 0.029941480008196797,
     "r_both": 0.008787700052799996,
     "r_mkt": 0.005253285386680906,
-    "up": 843.08,
-    "both": 1076.86,
-    "market": 998.91
+    "up": 806.6,
+    "both": 1061.78,
+    "market": 992.96
    },
    {
     "date": "2026-10-22",
@@ -2085,9 +2665,9 @@
     "r_up": -0.08714132278555897,
     "r_both": 0.010141423268664107,
     "r_mkt": -0.011809756387556325,
-    "up": 769.61,
-    "both": 1087.78,
-    "market": 987.12
+    "up": 736.32,
+    "both": 1072.55,
+    "market": 981.23
    },
    {
     "date": "2026-10-23",
@@ -2097,9 +2677,9 @@
     "r_up": 0.0010214008697934096,
     "r_both": 0.011075325132239433,
     "r_mkt": -0.005222853493339064,
-    "up": 770.4,
-    "both": 1099.83,
-    "market": 981.96
+    "up": 737.07,
+    "both": 1084.43,
+    "market": 976.11
    },
    {
     "date": "2026-10-26",
@@ -2109,9 +2689,9 @@
     "r_up": -0.007874179764687694,
     "r_both": -0.009822839044075804,
     "r_mkt": 0.007105576038835215,
-    "up": 764.33,
-    "both": 1089.03,
-    "market": 988.94
+    "up": 731.26,
+    "both": 1073.77,
+    "market": 983.05
    },
    {
     "date": "2026-10-27",
@@ -2121,9 +2701,9 @@
     "r_up": 0.029716560621310523,
     "r_both": -0.012103970632420847,
     "r_mkt": 0.005605103485520013,
-    "up": 787.04,
-    "both": 1075.84,
-    "market": 994.48
+    "up": 752.99,
+    "both": 1060.78,
+    "market": 988.56
    },
    {
     "date": "2026-10-28",
@@ -2133,9 +2713,9 @@
     "r_up": 0.0025687961403382253,
     "r_both": -0.04135136906056379,
     "r_mkt": 0.003443110602771249,
-    "up": 789.07,
-    "both": 1031.36,
-    "market": 997.91
+    "up": 754.93,
+    "both": 1016.91,
+    "market": 991.96
    },
    {
     "date": "2026-10-29",
@@ -2145,9 +2725,9 @@
     "r_up": 0.015413514829153985,
     "r_both": 0.01237533569462903,
     "r_mkt": -0.0038197255200072,
-    "up": 801.23,
-    "both": 1044.12,
-    "market": 994.1
+    "up": 766.57,
+    "both": 1029.5,
+    "market": 988.17
    },
    {
     "date": "2026-10-30",
@@ -2157,9 +2737,9 @@
     "r_up": 0.011859094136094761,
     "r_both": 0.03731012451849751,
     "r_mkt": -0.01772904090171079,
-    "up": 810.73,
-    "both": 1083.08,
-    "market": 976.47
+    "up": 775.66,
+    "both": 1067.91,
+    "market": 970.65
    },
    {
     "date": "2026-11-02",
@@ -2169,9 +2749,9 @@
     "r_up": 0.019303677863640623,
     "r_both": 0.05143458358716894,
     "r_mkt": -0.004790127636589259,
-    "up": 826.38,
-    "both": 1138.78,
-    "market": 971.79
+    "up": 790.63,
+    "both": 1122.83,
+    "market": 966.0
    },
    {
     "date": "2026-11-03",
@@ -2181,9 +2761,9 @@
     "r_up": 0.029867544621156678,
     "r_both": -0.030348057698817498,
     "r_mkt": 0.0029916235514395595,
-    "up": 851.06,
-    "both": 1104.22,
-    "market": 974.7
+    "up": 814.24,
+    "both": 1088.76,
+    "market": 968.89
    },
    {
     "date": "2026-11-04",
@@ -2193,9 +2773,9 @@
     "r_up": 0.054432843795633,
     "r_both": 0.05752802182775606,
     "r_mkt": 0.016517561312278106,
-    "up": 897.39,
-    "both": 1167.75,
-    "market": 990.8
+    "up": 858.56,
+    "both": 1151.39,
+    "market": 984.9
    },
    {
     "date": "2026-11-05",
@@ -2205,9 +2785,9 @@
     "r_up": -0.002507461687442462,
     "r_both": 0.064789940725521,
     "r_mkt": -0.044091753715052806,
-    "up": 895.14,
-    "both": 1243.41,
-    "market": 947.11
+    "up": 856.41,
+    "both": 1225.99,
+    "market": 941.47
    },
    {
     "date": "2026-11-06",
@@ -2217,9 +2797,9 @@
     "r_up": 0.1170488769458432,
     "r_both": -0.04700805481035465,
     "r_mkt": 0.0031241173633611563,
-    "up": 999.91,
-    "both": 1184.96,
-    "market": 950.07
+    "up": 956.65,
+    "both": 1168.36,
+    "market": 944.41
    },
    {
     "date": "2026-11-09",
@@ -2229,9 +2809,9 @@
     "r_up": 0.022116580020170806,
     "r_both": -0.04725278602147276,
     "r_mkt": 0.02366416642960889,
-    "up": 1022.03,
-    "both": 1128.96,
-    "market": 972.56
+    "up": 977.81,
+    "both": 1113.15,
+    "market": 966.76
    },
    {
     "date": "2026-11-10",
@@ -2241,9 +2821,9 @@
     "r_up": -0.005633287993137781,
     "r_both": 0.012524712392194538,
     "r_mkt": -0.0036801598563356297,
-    "up": 1016.27,
-    "both": 1143.1,
-    "market": 968.98
+    "up": 972.3,
+    "both": 1127.09,
+    "market": 963.2
    },
    {
     "date": "2026-11-11",
@@ -2253,9 +2833,9 @@
     "r_up": 0.021384277112062783,
     "r_both": 0.011541792536453533,
     "r_mkt": 0.013188093228371,
-    "up": 1038.0,
-    "both": 1156.3,
-    "market": 981.76
+    "up": 993.1,
+    "both": 1140.1,
+    "market": 975.9
    },
    {
     "date": "2026-11-12",
@@ -2265,9 +2845,9 @@
     "r_up": -0.03605657428248239,
     "r_both": 0.0004284884093890606,
     "r_mkt": -0.003540361998459751,
-    "up": 1000.57,
-    "both": 1156.79,
-    "market": 978.28
+    "up": 957.29,
+    "both": 1140.59,
+    "market": 972.45
    },
    {
     "date": "2026-11-13",
@@ -2277,9 +2857,9 @@
     "r_up": -0.04873238237223306,
     "r_both": 0.048381495239384106,
     "r_mkt": -0.0036321851459943932,
-    "up": 951.81,
-    "both": 1212.76,
-    "market": 974.73
+    "up": 910.64,
+    "both": 1195.77,
+    "market": 968.92
    },
    {
     "date": "2026-11-16",
@@ -2289,9 +2869,9 @@
     "r_up": -0.04462391691271724,
     "r_both": 0.03299484243333486,
     "r_mkt": -0.019115265723043784,
-    "up": 909.34,
-    "both": 1252.77,
-    "market": 956.09
+    "up": 870.0,
+    "both": 1235.23,
+    "market": 950.4
    },
    {
     "date": "2026-11-17",
@@ -2301,9 +2881,9 @@
     "r_up": -0.019497358537033938,
     "r_both": 0.02559815857994411,
     "r_mkt": -0.010149347444734946,
-    "up": 891.61,
-    "both": 1284.84,
-    "market": 946.39
+    "up": 853.04,
+    "both": 1266.85,
+    "market": 940.75
    },
    {
     "date": "2026-11-18",
@@ -2313,9 +2893,9 @@
     "r_up": -0.054003610736051116,
     "r_both": -0.013112486297456738,
     "r_mkt": -0.0030582576414567297,
-    "up": 843.46,
-    "both": 1268.0,
-    "market": 943.5
+    "up": 806.97,
+    "both": 1250.24,
+    "market": 937.87
    },
    {
     "date": "2026-11-19",
@@ -2325,20 +2905,162 @@
     "r_up": 0.027328360336258146,
     "r_both": 0.03869043245979864,
     "r_mkt": -0.01962478341589069,
-    "up": 866.51,
-    "both": 1317.05,
-    "market": 924.98
+    "up": 829.02,
+    "both": 1298.61,
+    "market": 919.47
+   },
+   {
+    "date": "2026-11-20",
+    "made": "2026-11-19",
+    "ups": 3,
+    "picks": 10,
+    "r_up": -0.09750108872922196,
+    "r_both": 0.016474989996346657,
+    "r_mkt": -0.03640325441259451,
+    "up": 748.19,
+    "both": 1320.0,
+    "market": 886.0
    }
   ],
-  "up": 866.51,
-  "both": 1317.05,
-  "market": 924.98,
-  "beat_days": 15
+  "up": 748.19,
+  "both": 1320.0,
+  "market": 886.0,
+  "beat_days": 14
  },
  "recent": [
   {
+   "id": 586,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "CLOV",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.1244,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": -0.010610074516316681,
+   "correct": 1
+  },
+  {
+   "id": 590,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "FUBO",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.3584,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": -0.1640127388535032,
+   "correct": 1
+  },
+  {
+   "id": 598,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "JOBY",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.1244,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": 0.030534399678082247,
+   "correct": 0
+  },
+  {
+   "id": 582,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "KOSS",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.1244,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": 0.08307691720815802,
+   "correct": 0
+  },
+  {
+   "id": 592,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "MVIS",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.1244,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": 0.023255808408870315,
+   "correct": 0
+  },
+  {
+   "id": 594,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "NKTR",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.1244,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": 0.002458448968233551,
+   "correct": 0
+  },
+  {
+   "id": 584,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "OPEN",
+   "horizon": "1w",
+   "direction": "up",
+   "confidence": 0.0749,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": -0.12328769082892432,
+   "correct": 0
+  },
+  {
+   "id": 596,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SENS",
+   "horizon": "1w",
+   "direction": "up",
+   "confidence": 0.1732,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": -0.00617626260867743,
+   "correct": 0
+  },
+  {
+   "id": 600,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SNDL",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.1244,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": 0.0927419508657148,
+   "correct": 0
+  },
+  {
    "id": 588,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "TLRY",
+   "horizon": "1w",
+   "direction": "down",
+   "confidence": 0.05,
+   "pump_flag": 0,
+   "target_date": "2026-11-27",
+   "actual_return": -0.08212561538253993,
+   "correct": 1
+  },
+  {
+   "id": 568,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -2350,8 +3072,8 @@
    "correct": 0
   },
   {
-   "id": 582,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 562,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "CLOV",
    "horizon": "1w",
@@ -2363,8 +3085,8 @@
    "correct": 1
   },
   {
-   "id": 584,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 564,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "FUBO",
    "horizon": "1w",
@@ -2376,8 +3098,8 @@
    "correct": 1
   },
   {
-   "id": 598,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 578,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "GPRO",
    "horizon": "1w",
@@ -2389,8 +3111,8 @@
    "correct": 1
   },
   {
-   "id": 594,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 574,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "KOSS",
    "horizon": "1w",
@@ -2402,8 +3124,8 @@
    "correct": 0
   },
   {
-   "id": 600,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 580,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -2415,8 +3137,8 @@
    "correct": 1
   },
   {
-   "id": 592,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 572,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "MVIS",
    "horizon": "1w",
@@ -2428,8 +3150,8 @@
    "correct": 0
   },
   {
-   "id": 596,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 576,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "NKTR",
    "horizon": "1w",
@@ -2441,8 +3163,8 @@
    "correct": 1
   },
   {
-   "id": 590,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 570,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "OPEN",
    "horizon": "1w",
@@ -2454,8 +3176,8 @@
    "correct": 0
   },
   {
-   "id": 586,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 566,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -2467,8 +3189,8 @@
    "correct": 1
   },
   {
-   "id": 572,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 552,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -2480,8 +3202,8 @@
    "correct": 0
   },
   {
-   "id": 564,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 544,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "FUBO",
    "horizon": "1w",
@@ -2493,8 +3215,8 @@
    "correct": 1
   },
   {
-   "id": 570,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 550,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "KOSS",
    "horizon": "1w",
@@ -2506,8 +3228,8 @@
    "correct": 0
   },
   {
-   "id": 580,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 560,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "MVIS",
    "horizon": "1w",
@@ -2519,8 +3241,8 @@
    "correct": 1
   },
   {
-   "id": 574,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 554,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "NIO",
    "horizon": "1w",
@@ -2532,8 +3254,8 @@
    "correct": 1
   },
   {
-   "id": 578,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 558,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "PLUG",
    "horizon": "1w",
@@ -2545,8 +3267,8 @@
    "correct": 1
   },
   {
-   "id": 576,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 556,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -2558,8 +3280,8 @@
    "correct": 0
   },
   {
-   "id": 568,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 548,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "SENS",
    "horizon": "1w",
@@ -2571,8 +3293,8 @@
    "correct": 0
   },
   {
-   "id": 562,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 542,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -2584,8 +3306,8 @@
    "correct": 1
   },
   {
-   "id": 566,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 546,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "WKHS",
    "horizon": "1w",
@@ -2597,8 +3319,8 @@
    "correct": 1
   },
   {
-   "id": 556,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 536,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -2610,8 +3332,8 @@
    "correct": 1
   },
   {
-   "id": 552,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 532,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "BYND",
    "horizon": "1w",
@@ -2623,8 +3345,8 @@
    "correct": 1
   },
   {
-   "id": 554,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 534,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "CHPT",
    "horizon": "1w",
@@ -2636,8 +3358,8 @@
    "correct": 0
   },
   {
-   "id": 550,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 530,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "DNA",
    "horizon": "1w",
@@ -2649,8 +3371,8 @@
    "correct": 0
   },
   {
-   "id": 548,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 528,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "FUBO",
    "horizon": "1w",
@@ -2662,8 +3384,8 @@
    "correct": 1
   },
   {
-   "id": 546,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 526,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "NIO",
    "horizon": "1w",
@@ -2675,8 +3397,8 @@
    "correct": 1
   },
   {
-   "id": 558,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 538,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "OCGN",
    "horizon": "1w",
@@ -2688,8 +3410,8 @@
    "correct": 0
   },
   {
-   "id": 560,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 540,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "OPEN",
    "horizon": "1w",
@@ -2701,8 +3423,8 @@
    "correct": 0
   },
   {
-   "id": 544,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 524,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "SENS",
    "horizon": "1w",
@@ -2714,8 +3436,8 @@
    "correct": 0
   },
   {
-   "id": 542,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 522,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -2727,8 +3449,8 @@
    "correct": 1
   },
   {
-   "id": 530,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 510,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "BBAI",
    "horizon": "1w",
@@ -2740,8 +3462,60 @@
    "correct": 1
   },
   {
-   "id": 528,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 585,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "CLOV",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.0997,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.010610074516316681,
+   "correct": 1
+  },
+  {
+   "id": 589,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "FUBO",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.2449,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.1194267181833839,
+   "correct": 1
+  },
+  {
+   "id": 597,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "JOBY",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.0997,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.083969489915377,
+   "correct": 1
+  },
+  {
+   "id": 581,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "KOSS",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.0997,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.07999999706561745,
+   "correct": 1
+  },
+  {
+   "id": 508,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "LCID",
    "horizon": "1w",
@@ -2753,8 +3527,8 @@
    "correct": 1
   },
   {
-   "id": 540,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 520,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -2766,8 +3540,21 @@
    "correct": 0
   },
   {
-   "id": 526,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 591,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "MVIS",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.0997,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.03488374033639596,
+   "correct": 1
+  },
+  {
+   "id": 506,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "NIO",
    "horizon": "1w",
@@ -2779,8 +3566,21 @@
    "correct": 1
   },
   {
-   "id": 524,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 593,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "NKTR",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.0997,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.07191149862166701,
+   "correct": 1
+  },
+  {
+   "id": 504,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "OCGN",
    "horizon": "1w",
@@ -2792,8 +3592,21 @@
    "correct": 0
   },
   {
-   "id": 534,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 583,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "OPEN",
+   "horizon": "1d",
+   "direction": "up",
+   "confidence": 0.0,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.10616441948773103,
+   "correct": 0
+  },
+  {
+   "id": 514,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "PLUG",
    "horizon": "1w",
@@ -2805,8 +3618,8 @@
    "correct": 1
   },
   {
-   "id": 536,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 516,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "QUBT",
    "horizon": "1w",
@@ -2818,8 +3631,8 @@
    "correct": 1
   },
   {
-   "id": 538,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 518,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -2831,8 +3644,8 @@
    "correct": 1
   },
   {
-   "id": 532,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 512,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "SENS",
    "horizon": "1w",
@@ -2844,8 +3657,34 @@
    "correct": 0
   },
   {
-   "id": 522,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 595,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SENS",
+   "horizon": "1d",
+   "direction": "up",
+   "confidence": 0.0749,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.09938231805012099,
+   "correct": 0
+  },
+  {
+   "id": 599,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "SNDL",
+   "horizon": "1d",
+   "direction": "down",
+   "confidence": 0.0997,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.056451647512374414,
+   "correct": 1
+  },
+  {
+   "id": 502,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -2857,8 +3696,21 @@
    "correct": 1
   },
   {
-   "id": 516,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 587,
+   "created_at": "2026-11-28T09:17:16+00:00",
+   "as_of": "2026-11-19",
+   "ticker": "TLRY",
+   "horizon": "1d",
+   "direction": "up",
+   "confidence": 0.0,
+   "pump_flag": 0,
+   "target_date": "2026-11-20",
+   "actual_return": -0.08695652864981385,
+   "correct": 0
+  },
+  {
+   "id": 496,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -2870,8 +3722,8 @@
    "correct": 0
   },
   {
-   "id": 587,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 567,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -2883,8 +3735,8 @@
    "correct": 0
   },
   {
-   "id": 581,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 561,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "CLOV",
    "horizon": "1d",
@@ -2896,8 +3748,8 @@
    "correct": 1
   },
   {
-   "id": 583,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 563,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "FUBO",
    "horizon": "1d",
@@ -2909,8 +3761,8 @@
    "correct": 1
   },
   {
-   "id": 512,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 492,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "GPRO",
    "horizon": "1w",
@@ -2922,8 +3774,8 @@
    "correct": 1
   },
   {
-   "id": 597,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 577,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "GPRO",
    "horizon": "1d",
@@ -2935,8 +3787,8 @@
    "correct": 1
   },
   {
-   "id": 593,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 573,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "KOSS",
    "horizon": "1d",
@@ -2948,8 +3800,8 @@
    "correct": 0
   },
   {
-   "id": 514,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 494,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "LCID",
    "horizon": "1w",
@@ -2961,8 +3813,8 @@
    "correct": 1
   },
   {
-   "id": 502,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 482,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -2974,8 +3826,8 @@
    "correct": 1
   },
   {
-   "id": 599,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 579,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -2987,8 +3839,8 @@
    "correct": 1
   },
   {
-   "id": 591,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 571,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "MVIS",
    "horizon": "1d",
@@ -3000,8 +3852,8 @@
    "correct": 1
   },
   {
-   "id": 504,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 484,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "NIO",
    "horizon": "1w",
@@ -3013,8 +3865,8 @@
    "correct": 1
   },
   {
-   "id": 595,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 575,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "NKTR",
    "horizon": "1d",
@@ -3026,8 +3878,8 @@
    "correct": 1
   },
   {
-   "id": 589,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 569,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "OPEN",
    "horizon": "1d",
@@ -3039,8 +3891,8 @@
    "correct": 1
   },
   {
-   "id": 506,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 486,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "QS",
    "horizon": "1w",
@@ -3052,8 +3904,8 @@
    "correct": 1
   },
   {
-   "id": 520,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 500,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -3065,8 +3917,8 @@
    "correct": 1
   },
   {
-   "id": 508,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 488,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "SOUN",
    "horizon": "1w",
@@ -3078,8 +3930,8 @@
    "correct": 1
   },
   {
-   "id": 518,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 498,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -3091,8 +3943,8 @@
    "correct": 1
   },
   {
-   "id": 585,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 565,
+   "created_at": "2026-11-28T09:17:16+00:00",
    "as_of": "2026-11-18",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -3104,8 +3956,8 @@
    "correct": 0
   },
   {
-   "id": 510,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 490,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "WKHS",
    "horizon": "1w",
@@ -3117,8 +3969,8 @@
    "correct": 0
   },
   {
-   "id": 500,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 480,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -3130,8 +3982,8 @@
    "correct": 0
   },
   {
-   "id": 571,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 551,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -3143,8 +3995,8 @@
    "correct": 0
   },
   {
-   "id": 494,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 474,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "AEHR",
    "horizon": "1w",
@@ -3156,8 +4008,8 @@
    "correct": 1
   },
   {
-   "id": 498,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 478,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -3169,8 +4021,8 @@
    "correct": 1
   },
   {
-   "id": 488,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 468,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "DNA",
    "horizon": "1w",
@@ -3182,8 +4034,8 @@
    "correct": 1
   },
   {
-   "id": 563,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 543,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "FUBO",
    "horizon": "1d",
@@ -3195,8 +4047,8 @@
    "correct": 1
   },
   {
-   "id": 482,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 462,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "GPRO",
    "horizon": "1w",
@@ -3208,8 +4060,8 @@
    "correct": 1
   },
   {
-   "id": 569,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 549,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "KOSS",
    "horizon": "1d",
@@ -3221,8 +4073,8 @@
    "correct": 0
   },
   {
-   "id": 496,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 476,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -3234,8 +4086,8 @@
    "correct": 0
   },
   {
-   "id": 579,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 559,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "MVIS",
    "horizon": "1d",
@@ -3247,8 +4099,8 @@
    "correct": 1
   },
   {
-   "id": 573,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 553,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "NIO",
    "horizon": "1d",
@@ -3260,8 +4112,8 @@
    "correct": 1
   },
   {
-   "id": 577,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 557,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "PLUG",
    "horizon": "1d",
@@ -3273,8 +4125,8 @@
    "correct": 0
   },
   {
-   "id": 486,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 466,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "QS",
    "horizon": "1w",
@@ -3286,8 +4138,8 @@
    "correct": 0
   },
   {
-   "id": 484,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 464,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -3299,8 +4151,8 @@
    "correct": 1
   },
   {
-   "id": 575,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 555,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -3312,8 +4164,8 @@
    "correct": 0
   },
   {
-   "id": 490,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 470,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "SENS",
    "horizon": "1w",
@@ -3325,8 +4177,8 @@
    "correct": 0
   },
   {
-   "id": 567,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 547,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "SENS",
    "horizon": "1d",
@@ -3338,8 +4190,8 @@
    "correct": 0
   },
   {
-   "id": 561,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 541,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -3351,8 +4203,8 @@
    "correct": 0
   },
   {
-   "id": 492,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 472,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "TLRY",
    "horizon": "1w",
@@ -3364,8 +4216,8 @@
    "correct": 1
   },
   {
-   "id": 565,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 545,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-17",
    "ticker": "WKHS",
    "horizon": "1d",
@@ -3377,8 +4229,8 @@
    "correct": 1
   },
   {
-   "id": 466,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 446,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -3390,8 +4242,8 @@
    "correct": 0
   },
   {
-   "id": 555,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 535,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -3403,8 +4255,8 @@
    "correct": 1
   },
   {
-   "id": 551,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 531,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "BYND",
    "horizon": "1d",
@@ -3416,8 +4268,8 @@
    "correct": 1
   },
   {
-   "id": 553,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 533,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "CHPT",
    "horizon": "1d",
@@ -3429,8 +4281,8 @@
    "correct": 0
   },
   {
-   "id": 549,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 529,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "DNA",
    "horizon": "1d",
@@ -3442,8 +4294,8 @@
    "correct": 0
   },
   {
-   "id": 547,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 527,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "FUBO",
    "horizon": "1d",
@@ -3455,8 +4307,8 @@
    "correct": 1
   },
   {
-   "id": 464,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 444,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "LCID",
    "horizon": "1w",
@@ -3468,8 +4320,8 @@
    "correct": 0
   },
   {
-   "id": 478,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 458,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -3481,8 +4333,8 @@
    "correct": 1
   },
   {
-   "id": 545,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 525,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "NIO",
    "horizon": "1d",
@@ -3494,8 +4346,8 @@
    "correct": 0
   },
   {
-   "id": 557,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 537,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "OCGN",
    "horizon": "1d",
@@ -3507,8 +4359,8 @@
    "correct": 1
   },
   {
-   "id": 474,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 454,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "OPEN",
    "horizon": "1w",
@@ -3520,8 +4372,8 @@
    "correct": 1
   },
   {
-   "id": 559,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 539,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "OPEN",
    "horizon": "1d",
@@ -3533,8 +4385,8 @@
    "correct": 1
   },
   {
-   "id": 480,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 460,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "PLUG",
    "horizon": "1w",
@@ -3546,8 +4398,8 @@
    "correct": 1
   },
   {
-   "id": 468,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 448,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "QUBT",
    "horizon": "1w",
@@ -3559,8 +4411,8 @@
    "correct": 1
   },
   {
-   "id": 476,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 456,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -3572,8 +4424,8 @@
    "correct": 1
   },
   {
-   "id": 470,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 450,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "RUN",
    "horizon": "1w",
@@ -3585,8 +4437,8 @@
    "correct": 0
   },
   {
-   "id": 462,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 442,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "SENS",
    "horizon": "1w",
@@ -3598,8 +4450,8 @@
    "correct": 1
   },
   {
-   "id": 543,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 523,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "SENS",
    "horizon": "1d",
@@ -3611,8 +4463,8 @@
    "correct": 0
   },
   {
-   "id": 472,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 452,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "SOUN",
    "horizon": "1w",
@@ -3624,8 +4476,8 @@
    "correct": 1
   },
   {
-   "id": 541,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 521,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-16",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -3637,8 +4489,8 @@
    "correct": 1
   },
   {
-   "id": 446,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 426,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "ACHR",
    "horizon": "1w",
@@ -3650,8 +4502,8 @@
    "correct": 0
   },
   {
-   "id": 458,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 438,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "BBAI",
    "horizon": "1w",
@@ -3663,8 +4515,8 @@
    "correct": 0
   },
   {
-   "id": 529,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 509,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "BBAI",
    "horizon": "1d",
@@ -3676,8 +4528,8 @@
    "correct": 1
   },
   {
-   "id": 454,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 434,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "CLOV",
    "horizon": "1w",
@@ -3689,8 +4541,8 @@
    "correct": 1
   },
   {
-   "id": 460,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 440,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "DNA",
    "horizon": "1w",
@@ -3702,8 +4554,8 @@
    "correct": 0
   },
   {
-   "id": 450,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 430,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "LCID",
    "horizon": "1w",
@@ -3715,8 +4567,8 @@
    "correct": 0
   },
   {
-   "id": 527,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 507,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "LCID",
    "horizon": "1d",
@@ -3728,8 +4580,8 @@
    "correct": 1
   },
   {
-   "id": 442,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 422,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -3741,8 +4593,8 @@
    "correct": 1
   },
   {
-   "id": 539,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 519,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -3754,8 +4606,8 @@
    "correct": 0
   },
   {
-   "id": 525,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 505,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "NIO",
    "horizon": "1d",
@@ -3767,8 +4619,8 @@
    "correct": 1
   },
   {
-   "id": 523,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 503,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "OCGN",
    "horizon": "1d",
@@ -3780,8 +4632,8 @@
    "correct": 0
   },
   {
-   "id": 533,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 513,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "PLUG",
    "horizon": "1d",
@@ -3793,8 +4645,8 @@
    "correct": 1
   },
   {
-   "id": 452,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 432,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "QUBT",
    "horizon": "1w",
@@ -3806,8 +4658,8 @@
    "correct": 1
   },
   {
-   "id": 535,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 515,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "QUBT",
    "horizon": "1d",
@@ -3819,8 +4671,8 @@
    "correct": 1
   },
   {
-   "id": 448,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 428,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -3832,8 +4684,8 @@
    "correct": 1
   },
   {
-   "id": 537,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 517,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -3845,8 +4697,8 @@
    "correct": 1
   },
   {
-   "id": 444,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 424,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "SENS",
    "horizon": "1w",
@@ -3858,8 +4710,8 @@
    "correct": 1
   },
   {
-   "id": 531,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 511,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "SENS",
    "horizon": "1d",
@@ -3871,8 +4723,8 @@
    "correct": 1
   },
   {
-   "id": 456,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 436,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -3884,8 +4736,8 @@
    "correct": 0
   },
   {
-   "id": 521,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 501,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-13",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -3897,8 +4749,8 @@
    "correct": 1
   },
   {
-   "id": 515,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 495,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -3910,8 +4762,8 @@
    "correct": 0
   },
   {
-   "id": 422,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 402,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "BLNK",
    "horizon": "1w",
@@ -3923,8 +4775,8 @@
    "correct": 1
   },
   {
-   "id": 434,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 414,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -3936,8 +4788,8 @@
    "correct": 0
   },
   {
-   "id": 440,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 420,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "CLOV",
    "horizon": "1w",
@@ -3949,8 +4801,8 @@
    "correct": 1
   },
   {
-   "id": 511,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 491,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "GPRO",
    "horizon": "1d",
@@ -3962,8 +4814,8 @@
    "correct": 1
   },
   {
-   "id": 438,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 418,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "JOBY",
    "horizon": "1w",
@@ -3975,8 +4827,8 @@
    "correct": 0
   },
   {
-   "id": 513,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 493,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "LCID",
    "horizon": "1d",
@@ -3988,8 +4840,8 @@
    "correct": 1
   },
   {
-   "id": 432,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 412,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -4001,8 +4853,8 @@
    "correct": 0
   },
   {
-   "id": 501,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 481,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -4014,8 +4866,8 @@
    "correct": 1
   },
   {
-   "id": 503,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 483,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "NIO",
    "horizon": "1d",
@@ -4027,8 +4879,8 @@
    "correct": 1
   },
   {
-   "id": 424,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 404,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "OPEN",
    "horizon": "1w",
@@ -4040,8 +4892,8 @@
    "correct": 1
   },
   {
-   "id": 505,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 485,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "QS",
    "horizon": "1d",
@@ -4053,8 +4905,8 @@
    "correct": 1
   },
   {
-   "id": 436,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 416,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "QUBT",
    "horizon": "1w",
@@ -4066,8 +4918,8 @@
    "correct": 1
   },
   {
-   "id": 426,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 406,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -4079,8 +4931,8 @@
    "correct": 1
   },
   {
-   "id": 519,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 499,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -4092,8 +4944,8 @@
    "correct": 1
   },
   {
-   "id": 507,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 487,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "SOUN",
    "horizon": "1d",
@@ -4105,8 +4957,8 @@
    "correct": 0
   },
   {
-   "id": 428,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 408,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "SPCE",
    "horizon": "1w",
@@ -4118,8 +4970,8 @@
    "correct": 1
   },
   {
-   "id": 517,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 497,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -4131,8 +4983,8 @@
    "correct": 1
   },
   {
-   "id": 509,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 489,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-12",
    "ticker": "WKHS",
    "horizon": "1d",
@@ -4144,8 +4996,8 @@
    "correct": 0
   },
   {
-   "id": 430,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 410,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "WULF",
    "horizon": "1w",
@@ -4157,8 +5009,8 @@
    "correct": 0
   },
   {
-   "id": 499,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 479,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -4170,8 +5022,8 @@
    "correct": 0
   },
   {
-   "id": 410,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 390,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "AEHR",
    "horizon": "1w",
@@ -4183,8 +5035,8 @@
    "correct": 0
   },
   {
-   "id": 493,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 473,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "AEHR",
    "horizon": "1d",
@@ -4196,8 +5048,8 @@
    "correct": 1
   },
   {
-   "id": 412,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 392,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "AMC",
    "horizon": "1w",
@@ -4209,8 +5061,8 @@
    "correct": 1
   },
   {
-   "id": 420,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 400,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "BB",
    "horizon": "1w",
@@ -4222,8 +5074,8 @@
    "correct": 0
   },
   {
-   "id": 406,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 386,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "BYND",
    "horizon": "1w",
@@ -4235,8 +5087,8 @@
    "correct": 1
   },
   {
-   "id": 497,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 477,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "CIFR",
    "horizon": "1d",
@@ -4248,8 +5100,8 @@
    "correct": 0
   },
   {
-   "id": 487,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 467,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "DNA",
    "horizon": "1d",
@@ -4261,8 +5113,8 @@
    "correct": 1
   },
   {
-   "id": 481,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 461,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "GPRO",
    "horizon": "1d",
@@ -4274,8 +5126,8 @@
    "correct": 0
   },
   {
-   "id": 416,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 396,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "JOBY",
    "horizon": "1w",
@@ -4287,8 +5139,8 @@
    "correct": 0
   },
   {
-   "id": 414,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 394,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "LUNR",
    "horizon": "1w",
@@ -4300,8 +5152,8 @@
    "correct": 1
   },
   {
-   "id": 495,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 475,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -4313,8 +5165,8 @@
    "correct": 1
   },
   {
-   "id": 485,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 465,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "QS",
    "horizon": "1d",
@@ -4326,8 +5178,8 @@
    "correct": 0
   },
   {
-   "id": 404,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 384,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "QUBT",
    "horizon": "1w",
@@ -4339,8 +5191,8 @@
    "correct": 0
   },
   {
-   "id": 418,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 398,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "RGTI",
    "horizon": "1w",
@@ -4352,8 +5204,8 @@
    "correct": 0
   },
   {
-   "id": 483,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 463,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -4365,8 +5217,8 @@
    "correct": 1
   },
   {
-   "id": 402,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 382,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "RUN",
    "horizon": "1w",
@@ -4378,8 +5230,8 @@
    "correct": 1
   },
   {
-   "id": 489,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 469,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "SENS",
    "horizon": "1d",
@@ -4391,8 +5243,8 @@
    "correct": 0
   },
   {
-   "id": 491,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 471,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-11",
    "ticker": "TLRY",
    "horizon": "1d",
@@ -4404,8 +5256,8 @@
    "correct": 1
   },
   {
-   "id": 408,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 388,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "WULF",
    "horizon": "1w",
@@ -4417,8 +5269,8 @@
    "correct": 0
   },
   {
-   "id": 465,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 445,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -4430,8 +5282,8 @@
    "correct": 1
   },
   {
-   "id": 394,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 374,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "AMC",
    "horizon": "1w",
@@ -4443,8 +5295,8 @@
    "correct": 0
   },
   {
-   "id": 392,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 372,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "BLNK",
    "horizon": "1w",
@@ -4456,8 +5308,8 @@
    "correct": 0
   },
   {
-   "id": 384,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 364,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -4469,8 +5321,8 @@
    "correct": 0
   },
   {
-   "id": 390,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 370,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "KOSS",
    "horizon": "1w",
@@ -4482,8 +5334,8 @@
    "correct": 0
   },
   {
-   "id": 398,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 378,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "LCID",
    "horizon": "1w",
@@ -4495,8 +5347,8 @@
    "correct": 0
   },
   {
-   "id": 463,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 443,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "LCID",
    "horizon": "1d",
@@ -4508,8 +5360,8 @@
    "correct": 0
   },
   {
-   "id": 477,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 457,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -4521,8 +5373,8 @@
    "correct": 0
   },
   {
-   "id": 400,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 380,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "OPEN",
    "horizon": "1w",
@@ -4534,8 +5386,8 @@
    "correct": 1
   },
   {
-   "id": 473,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 453,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "OPEN",
    "horizon": "1d",
@@ -4547,8 +5399,8 @@
    "correct": 0
   },
   {
-   "id": 396,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 376,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "PLUG",
    "horizon": "1w",
@@ -4560,8 +5412,8 @@
    "correct": 1
   },
   {
-   "id": 479,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 459,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "PLUG",
    "horizon": "1d",
@@ -4573,8 +5425,8 @@
    "correct": 1
   },
   {
-   "id": 467,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 447,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "QUBT",
    "horizon": "1d",
@@ -4586,8 +5438,8 @@
    "correct": 1
   },
   {
-   "id": 475,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 455,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -4599,8 +5451,8 @@
    "correct": 1
   },
   {
-   "id": 386,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 366,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "RUN",
    "horizon": "1w",
@@ -4612,8 +5464,8 @@
    "correct": 1
   },
   {
-   "id": 469,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 449,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "RUN",
    "horizon": "1d",
@@ -4625,8 +5477,8 @@
    "correct": 1
   },
   {
-   "id": 461,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 441,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-10",
    "ticker": "SENS",
    "horizon": "1d",
@@ -4638,8 +5490,8 @@
    "correct": 1
   },
   {
-   "id": 388,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 368,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "SIRI",
    "horizon": "1w",
@@ -4651,8 +5503,8 @@
    "correct": 0
   },
   {
-   "id": 471,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 451,
+   "created_at": "2026-11-28T09:17:15+00:00",
    "as_of": "2026-11-10",
    "ticker": "SOUN",
    "horizon": "1d",
@@ -4664,8 +5516,8 @@
    "correct": 0
   },
   {
-   "id": 382,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 362,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "TLRY",
    "horizon": "1w",
@@ -4677,8 +5529,8 @@
    "correct": 1
   },
   {
-   "id": 445,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 425,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "ACHR",
    "horizon": "1d",
@@ -4690,8 +5542,8 @@
    "correct": 0
   },
   {
-   "id": 362,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 342,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "AEHR",
    "horizon": "1w",
@@ -4703,8 +5555,8 @@
    "correct": 1
   },
   {
-   "id": 380,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 360,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "AMC",
    "horizon": "1w",
@@ -4716,8 +5568,8 @@
    "correct": 1
   },
   {
-   "id": 457,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 437,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "BBAI",
    "horizon": "1d",
@@ -4729,8 +5581,8 @@
    "correct": 0
   },
   {
-   "id": 368,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 348,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "CHPT",
    "horizon": "1w",
@@ -4742,8 +5594,8 @@
    "correct": 1
   },
   {
-   "id": 364,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 344,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -4755,8 +5607,8 @@
    "correct": 1
   },
   {
-   "id": 453,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 433,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "CLOV",
    "horizon": "1d",
@@ -4768,8 +5620,8 @@
    "correct": 1
   },
   {
-   "id": 459,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 439,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "DNA",
    "horizon": "1d",
@@ -4781,8 +5633,8 @@
    "correct": 0
   },
   {
-   "id": 378,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 358,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "GPRO",
    "horizon": "1w",
@@ -4794,8 +5646,8 @@
    "correct": 1
   },
   {
-   "id": 370,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 350,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "KOSS",
    "horizon": "1w",
@@ -4807,8 +5659,8 @@
    "correct": 0
   },
   {
-   "id": 449,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 429,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "LCID",
    "horizon": "1d",
@@ -4820,8 +5672,8 @@
    "correct": 1
   },
   {
-   "id": 441,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 421,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -4833,8 +5685,8 @@
    "correct": 1
   },
   {
-   "id": 451,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 431,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "QUBT",
    "horizon": "1d",
@@ -4846,8 +5698,8 @@
    "correct": 1
   },
   {
-   "id": 447,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 427,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -4859,8 +5711,8 @@
    "correct": 1
   },
   {
-   "id": 376,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 356,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "RUN",
    "horizon": "1w",
@@ -4872,8 +5724,8 @@
    "correct": 1
   },
   {
-   "id": 443,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 423,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "SENS",
    "horizon": "1d",
@@ -4885,8 +5737,8 @@
    "correct": 1
   },
   {
-   "id": 372,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 352,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "SIRI",
    "horizon": "1w",
@@ -4898,8 +5750,8 @@
    "correct": 1
   },
   {
-   "id": 366,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 346,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "SNDL",
    "horizon": "1w",
@@ -4911,8 +5763,8 @@
    "correct": 1
   },
   {
-   "id": 455,
-   "created_at": "2026-11-26T07:51:16+00:00",
+   "id": 435,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-09",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -4924,8 +5776,8 @@
    "correct": 0
   },
   {
-   "id": 374,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 354,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "WULF",
    "horizon": "1w",
@@ -4937,8 +5789,8 @@
    "correct": 0
   },
   {
-   "id": 346,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 326,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "AEHR",
    "horizon": "1w",
@@ -4950,8 +5802,8 @@
    "correct": 0
   },
   {
-   "id": 352,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 332,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "AMC",
    "horizon": "1w",
@@ -4963,8 +5815,8 @@
    "correct": 1
   },
   {
-   "id": 348,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 328,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "BLNK",
    "horizon": "1w",
@@ -4976,8 +5828,8 @@
    "correct": 0
   },
   {
-   "id": 421,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 401,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "BLNK",
    "horizon": "1d",
@@ -4989,8 +5841,8 @@
    "correct": 0
   },
   {
-   "id": 350,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 330,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "CHPT",
    "horizon": "1w",
@@ -5002,8 +5854,8 @@
    "correct": 1
   },
   {
-   "id": 433,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 413,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "CIFR",
    "horizon": "1d",
@@ -5015,8 +5867,8 @@
    "correct": 0
   },
   {
-   "id": 439,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 419,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "CLOV",
    "horizon": "1d",
@@ -5028,8 +5880,8 @@
    "correct": 1
   },
   {
-   "id": 358,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 338,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "DNA",
    "horizon": "1w",
@@ -5041,8 +5893,8 @@
    "correct": 0
   },
   {
-   "id": 354,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 334,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "GPRO",
    "horizon": "1w",
@@ -5054,8 +5906,8 @@
    "correct": 1
   },
   {
-   "id": 360,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 340,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "HIVE",
    "horizon": "1w",
@@ -5067,8 +5919,8 @@
    "correct": 0
   },
   {
-   "id": 437,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 417,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "JOBY",
    "horizon": "1d",
@@ -5080,8 +5932,8 @@
    "correct": 1
   },
   {
-   "id": 342,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 322,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "KOSS",
    "horizon": "1w",
@@ -5093,8 +5945,8 @@
    "correct": 0
   },
   {
-   "id": 431,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 411,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -5106,8 +5958,8 @@
    "correct": 0
   },
   {
-   "id": 423,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 403,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "OPEN",
    "horizon": "1d",
@@ -5119,8 +5971,8 @@
    "correct": 0
   },
   {
-   "id": 435,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 415,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "QUBT",
    "horizon": "1d",
@@ -5132,8 +5984,8 @@
    "correct": 0
   },
   {
-   "id": 425,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 405,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -5145,8 +5997,8 @@
    "correct": 0
   },
   {
-   "id": 356,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 336,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "RIG",
    "horizon": "1w",
@@ -5158,8 +6010,8 @@
    "correct": 0
   },
   {
-   "id": 344,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 324,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-11-02",
    "ticker": "RUN",
    "horizon": "1w",
@@ -5171,8 +6023,8 @@
    "correct": 1
   },
   {
-   "id": 427,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 407,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "SPCE",
    "horizon": "1d",
@@ -5184,8 +6036,8 @@
    "correct": 0
   },
   {
-   "id": 429,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 409,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-06",
    "ticker": "WULF",
    "horizon": "1d",
@@ -5197,8 +6049,8 @@
    "correct": 0
   },
   {
-   "id": 409,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 389,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "AEHR",
    "horizon": "1d",
@@ -5210,8 +6062,8 @@
    "correct": 0
   },
   {
-   "id": 411,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 391,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "AMC",
    "horizon": "1d",
@@ -5223,8 +6075,8 @@
    "correct": 1
   },
   {
-   "id": 419,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 399,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "BB",
    "horizon": "1d",
@@ -5236,8 +6088,8 @@
    "correct": 0
   },
   {
-   "id": 405,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 385,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "BYND",
    "horizon": "1d",
@@ -5249,8 +6101,8 @@
    "correct": 1
   },
   {
-   "id": 332,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 312,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -5262,8 +6114,8 @@
    "correct": 1
   },
   {
-   "id": 340,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 320,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "DNA",
    "horizon": "1w",
@@ -5275,8 +6127,8 @@
    "correct": 0
   },
   {
-   "id": 326,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 306,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "GPRO",
    "horizon": "1w",
@@ -5288,8 +6140,8 @@
    "correct": 1
   },
   {
-   "id": 324,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 304,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "HIVE",
    "horizon": "1w",
@@ -5301,8 +6153,8 @@
    "correct": 1
   },
   {
-   "id": 415,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 395,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "JOBY",
    "horizon": "1d",
@@ -5314,8 +6166,8 @@
    "correct": 0
   },
   {
-   "id": 338,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 318,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "KOSS",
    "horizon": "1w",
@@ -5327,8 +6179,8 @@
    "correct": 1
   },
   {
-   "id": 334,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 314,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "LCID",
    "horizon": "1w",
@@ -5340,8 +6192,8 @@
    "correct": 0
   },
   {
-   "id": 413,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 393,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "LUNR",
    "horizon": "1d",
@@ -5353,8 +6205,8 @@
    "correct": 1
   },
   {
-   "id": 403,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 383,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "QUBT",
    "horizon": "1d",
@@ -5366,8 +6218,8 @@
    "correct": 0
   },
   {
-   "id": 417,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 397,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "RGTI",
    "horizon": "1d",
@@ -5379,8 +6231,8 @@
    "correct": 0
   },
   {
-   "id": 401,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 381,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "RUN",
    "horizon": "1d",
@@ -5392,8 +6244,8 @@
    "correct": 0
   },
   {
-   "id": 328,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 308,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "SENS",
    "horizon": "1w",
@@ -5405,8 +6257,8 @@
    "correct": 1
   },
   {
-   "id": 330,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 310,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "SIRI",
    "horizon": "1w",
@@ -5418,8 +6270,8 @@
    "correct": 1
   },
   {
-   "id": 322,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 302,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "WKHS",
    "horizon": "1w",
@@ -5431,8 +6283,8 @@
    "correct": 0
   },
   {
-   "id": 336,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 316,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-30",
    "ticker": "WULF",
    "horizon": "1w",
@@ -5444,8 +6296,8 @@
    "correct": 1
   },
   {
-   "id": 407,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 387,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-05",
    "ticker": "WULF",
    "horizon": "1d",
@@ -5457,8 +6309,8 @@
    "correct": 0
   },
   {
-   "id": 316,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 296,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "AEHR",
    "horizon": "1w",
@@ -5470,8 +6322,8 @@
    "correct": 1
   },
   {
-   "id": 393,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 373,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "AMC",
    "horizon": "1d",
@@ -5483,8 +6335,8 @@
    "correct": 0
   },
   {
-   "id": 308,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 288,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "BBAI",
    "horizon": "1w",
@@ -5496,8 +6348,8 @@
    "correct": 1
   },
   {
-   "id": 391,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 371,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "BLNK",
    "horizon": "1d",
@@ -5509,8 +6361,8 @@
    "correct": 1
   },
   {
-   "id": 312,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 292,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "BYND",
    "horizon": "1w",
@@ -5522,8 +6374,8 @@
    "correct": 1
   },
   {
-   "id": 310,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 290,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -5535,8 +6387,8 @@
    "correct": 1
   },
   {
-   "id": 383,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 363,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "CIFR",
    "horizon": "1d",
@@ -5548,8 +6400,8 @@
    "correct": 1
   },
   {
-   "id": 320,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 300,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "CLOV",
    "horizon": "1w",
@@ -5561,8 +6413,8 @@
    "correct": 1
   },
   {
-   "id": 389,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 369,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "KOSS",
    "horizon": "1d",
@@ -5574,8 +6426,8 @@
    "correct": 1
   },
   {
-   "id": 314,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 294,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "LCID",
    "horizon": "1w",
@@ -5587,8 +6439,8 @@
    "correct": 1
   },
   {
-   "id": 397,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 377,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "LCID",
    "horizon": "1d",
@@ -5600,8 +6452,8 @@
    "correct": 1
   },
   {
-   "id": 304,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 284,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "MVIS",
    "horizon": "1w",
@@ -5613,8 +6465,8 @@
    "correct": 1
   },
   {
-   "id": 399,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 379,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "OPEN",
    "horizon": "1d",
@@ -5626,8 +6478,8 @@
    "correct": 1
   },
   {
-   "id": 395,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 375,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "PLUG",
    "horizon": "1d",
@@ -5639,8 +6491,8 @@
    "correct": 1
   },
   {
-   "id": 385,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 365,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "RUN",
    "horizon": "1d",
@@ -5652,8 +6504,8 @@
    "correct": 1
   },
   {
-   "id": 306,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 286,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "SIRI",
    "horizon": "1w",
@@ -5665,8 +6517,8 @@
    "correct": 1
   },
   {
-   "id": 387,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 367,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "SIRI",
    "horizon": "1d",
@@ -5678,8 +6530,8 @@
    "correct": 0
   },
   {
-   "id": 381,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 361,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-04",
    "ticker": "TLRY",
    "horizon": "1d",
@@ -5691,8 +6543,8 @@
    "correct": 1
   },
   {
-   "id": 302,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 282,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "WKHS",
    "horizon": "1w",
@@ -5704,8 +6556,8 @@
    "correct": 0
   },
   {
-   "id": 318,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 298,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-29",
    "ticker": "WULF",
    "horizon": "1w",
@@ -5717,8 +6569,8 @@
    "correct": 1
   },
   {
-   "id": 361,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 341,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "AEHR",
    "horizon": "1d",
@@ -5730,8 +6582,8 @@
    "correct": 1
   },
   {
-   "id": 379,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 359,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "AMC",
    "horizon": "1d",
@@ -5743,8 +6595,8 @@
    "correct": 1
   },
   {
-   "id": 284,
-   "created_at": "2026-11-26T07:51:14+00:00",
+   "id": 264,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "BBAI",
    "horizon": "1w",
@@ -5756,8 +6608,8 @@
    "correct": 0
   },
   {
-   "id": 367,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 347,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "CHPT",
    "horizon": "1d",
@@ -5769,8 +6621,8 @@
    "correct": 1
   },
   {
-   "id": 300,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 280,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "CIFR",
    "horizon": "1w",
@@ -5782,8 +6634,8 @@
    "correct": 1
   },
   {
-   "id": 363,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 343,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "CIFR",
    "horizon": "1d",
@@ -5795,8 +6647,8 @@
    "correct": 1
   },
   {
-   "id": 286,
-   "created_at": "2026-11-26T07:51:14+00:00",
+   "id": 266,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "DNA",
    "horizon": "1w",
@@ -5808,8 +6660,8 @@
    "correct": 1
   },
   {
-   "id": 377,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 357,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "GPRO",
    "horizon": "1d",
@@ -5821,8 +6673,8 @@
    "correct": 1
   },
   {
-   "id": 288,
-   "created_at": "2026-11-26T07:51:14+00:00",
+   "id": 268,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "HIVE",
    "horizon": "1w",
@@ -5834,8 +6686,8 @@
    "correct": 1
   },
   {
-   "id": 369,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 349,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "KOSS",
    "horizon": "1d",
@@ -5847,8 +6699,8 @@
    "correct": 0
   },
   {
-   "id": 294,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 274,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "OCGN",
    "horizon": "1w",
@@ -5860,8 +6712,8 @@
    "correct": 0
   },
   {
-   "id": 296,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 276,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "RUN",
    "horizon": "1w",
@@ -5873,8 +6725,8 @@
    "correct": 0
   },
   {
-   "id": 375,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 355,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "RUN",
    "horizon": "1d",
@@ -5886,8 +6738,8 @@
    "correct": 1
   },
   {
-   "id": 282,
-   "created_at": "2026-11-26T07:51:14+00:00",
+   "id": 262,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "SENS",
    "horizon": "1w",
@@ -5899,8 +6751,8 @@
    "correct": 1
   },
   {
-   "id": 298,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 278,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "SIRI",
    "horizon": "1w",
@@ -5912,8 +6764,8 @@
    "correct": 1
   },
   {
-   "id": 371,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 351,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "SIRI",
    "horizon": "1d",
@@ -5925,8 +6777,8 @@
    "correct": 1
   },
   {
-   "id": 365,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 345,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "SNDL",
    "horizon": "1d",
@@ -5938,8 +6790,8 @@
    "correct": 1
   },
   {
-   "id": 290,
-   "created_at": "2026-11-26T07:51:14+00:00",
+   "id": 270,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "TLRY",
    "horizon": "1w",
@@ -5951,8 +6803,8 @@
    "correct": 0
   },
   {
-   "id": 292,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 272,
+   "created_at": "2026-11-28T09:17:13+00:00",
    "as_of": "2026-10-28",
    "ticker": "WULF",
    "horizon": "1w",
@@ -5964,8 +6816,8 @@
    "correct": 1
   },
   {
-   "id": 373,
-   "created_at": "2026-11-26T07:51:15+00:00",
+   "id": 353,
+   "created_at": "2026-11-28T09:17:14+00:00",
    "as_of": "2026-11-03",
    "ticker": "WULF",
    "horizon": "1d",
@@ -5974,266 +6826,6 @@
    "pump_flag": 0,
    "target_date": "2026-11-04",
    "actual_return": -0.06624103677053972,
-   "correct": 1
-  },
-  {
-   "id": 274,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "ACHR",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.023640634883943856,
-   "correct": 1
-  },
-  {
-   "id": 272,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "AEHR",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.018139164850858425,
-   "correct": 0
-  },
-  {
-   "id": 345,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "AEHR",
-   "horizon": "1d",
-   "direction": "down",
-   "confidence": 0.0997,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.2650087302378634,
-   "correct": 0
-  },
-  {
-   "id": 351,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "AMC",
-   "horizon": "1d",
-   "direction": "up",
-   "confidence": 0.05,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.028213157175476677,
-   "correct": 1
-  },
-  {
-   "id": 262,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "BBAI",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.07659573250628537,
-   "correct": 0
-  },
-  {
-   "id": 347,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "BLNK",
-   "horizon": "1d",
-   "direction": "down",
-   "confidence": 0.2449,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.002347389856974247,
-   "correct": 1
-  },
-  {
-   "id": 349,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "CHPT",
-   "horizon": "1d",
-   "direction": "up",
-   "confidence": 0.05,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.09210525929686497,
-   "correct": 1
-  },
-  {
-   "id": 276,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "DNA",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.04525286345325319,
-   "correct": 1
-  },
-  {
-   "id": 357,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "DNA",
-   "horizon": "1d",
-   "direction": "down",
-   "confidence": 0.0997,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.09238581003876511,
-   "correct": 0
-  },
-  {
-   "id": 353,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "GPRO",
-   "horizon": "1d",
-   "direction": "down",
-   "confidence": 0.0997,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.009424069789067735,
-   "correct": 0
-  },
-  {
-   "id": 359,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "HIVE",
-   "horizon": "1d",
-   "direction": "down",
-   "confidence": 0.0997,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.058479498701486055,
-   "correct": 0
-  },
-  {
-   "id": 341,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "KOSS",
-   "horizon": "1d",
-   "direction": "down",
-   "confidence": 0.0997,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 3.6562593619393624e-08,
-   "correct": 0
-  },
-  {
-   "id": 278,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "LUNR",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.09342564513526574,
-   "correct": 1
-  },
-  {
-   "id": 270,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "OCGN",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.015852041257104932,
-   "correct": 1
-  },
-  {
-   "id": 280,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "QS",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.01435409436385593,
-   "correct": 1
-  },
-  {
-   "id": 355,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "RIG",
-   "horizon": "1d",
-   "direction": "up",
-   "confidence": 0.05,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.05296948709993077,
-   "correct": 0
-  },
-  {
-   "id": 343,
-   "created_at": "2026-11-26T07:51:15+00:00",
-   "as_of": "2026-11-02",
-   "ticker": "RUN",
-   "horizon": "1d",
-   "direction": "up",
-   "confidence": 0.05,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.05212124911221583,
-   "correct": 1
-  },
-  {
-   "id": 264,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "SENS",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.06362540896485536,
-   "correct": 0
-  },
-  {
-   "id": 268,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "SIRI",
-   "horizon": "1w",
-   "direction": "up",
-   "confidence": 0.0749,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": 0.13027520136002013,
-   "correct": 1
-  },
-  {
-   "id": 266,
-   "created_at": "2026-11-26T07:51:14+00:00",
-   "as_of": "2026-10-27",
-   "ticker": "SPCE",
-   "horizon": "1w",
-   "direction": "down",
-   "confidence": 0.1244,
-   "pump_flag": 0,
-   "target_date": "2026-11-03",
-   "actual_return": -0.07063197026022305,
    "correct": 1
   }
  ],
@@ -6318,31 +6910,31 @@
   }
  ],
  "backtest": {
-  "created_at": "2026-11-26T07:51:20+00:00",
+  "created_at": "2026-11-28T09:17:20+00:00",
   "tickers": [
-   "BBAI",
-   "BLNK",
-   "CIFR",
-   "FCEL",
-   "MVIS",
-   "NIO",
-   "OCGN",
-   "QS",
-   "TLRY",
-   "WULF",
    "ACHR",
+   "BLNK",
    "CLOV",
    "DNA",
    "JOBY",
+   "MVIS",
+   "NIO",
+   "OCGN",
    "SIRI",
+   "TLRY",
    "AEHR",
    "CHPT",
+   "FCEL",
    "LCID",
+   "QS",
    "SNDL",
    "SOUN",
    "SPCE",
+   "BBAI",
+   "CIFR",
    "FUBO",
    "PLUG",
+   "WULF",
    "LUNR",
    "OPEN",
    "RGTI",
@@ -6359,17 +6951,17 @@
    "KOSS",
    "AMC"
   ],
-  "start": "2025-02-26",
-  "end": "2026-11-24",
+  "start": "2025-02-28",
+  "end": "2026-11-25",
   "horizons": {
    "1d": {
-    "n": 16252,
-    "hit_rate": 0.5193822298793994,
-    "always_up": 0.46129707112970714,
-    "always_down": 0.5387029288702929,
-    "follow_market": 0.4832020674378538,
-    "strategy_avg_return": 0.0007906981328872086,
-    "buy_hold_avg_return": 0.00046812162849662947,
+    "n": 16215,
+    "hit_rate": 0.5181621954979957,
+    "always_up": 0.462904717853839,
+    "always_down": 0.537095282146161,
+    "follow_market": 0.48325624421831637,
+    "strategy_avg_return": 0.0006815237662661248,
+    "buy_hold_avg_return": 0.0006054891280867855,
     "pump_flags": 98,
     "pump_then_down": 0.5306122448979592,
     "rules": [
@@ -6379,7 +6971,7 @@
       "fired": 98,
       "says": "down",
       "hit_rate": 0.5306122448979592,
-      "avg_return": 0.014485700082220526
+      "avg_return": 0.014485700082220521
      },
      {
       "rule": "overextended",
@@ -6387,23 +6979,23 @@
       "fired": 455,
       "says": "down",
       "hit_rate": 0.5406593406593406,
-      "avg_return": 0.006288854344129358
+      "avg_return": 0.0062888543441293595
      },
      {
       "rule": "capitulation",
       "why": "Down more than 25% in 5 days on heavy volume",
-      "fired": 109,
+      "fired": 104,
       "says": "up",
-      "hit_rate": 0.5137614678899083,
-      "avg_return": 0.01548183675359963
+      "hit_rate": 0.5192307692307693,
+      "avg_return": 0.01648195262236823
      },
      {
       "rule": "dilution",
       "why": "Offering or share-sale filing in the last 30 days",
-      "fired": 3171,
+      "fired": 3152,
       "says": "down",
-      "hit_rate": 0.5654367707347839,
-      "avg_return": -0.0011802486990182774
+      "hit_rate": 0.5640862944162437,
+      "avg_return": -0.0011044621659127265
      },
      {
       "rule": "reverse_split",
@@ -6416,10 +7008,10 @@
      {
       "rule": "insider_buying",
       "why": "Insiders bought more shares than they sold in the last 30 days",
-      "fired": 132,
+      "fired": 137,
       "says": "up",
-      "hit_rate": 0.44696969696969696,
-      "avg_return": -0.003739729431128973
+      "hit_rate": 0.46715328467153283,
+      "avg_return": -0.002674179963944241
      },
      {
       "rule": "uptrend",
@@ -6427,23 +7019,23 @@
       "fired": 5453,
       "says": "up",
       "hit_rate": 0.4588300018338529,
-      "avg_return": 0.0020582523952505636
+      "avg_return": 0.0020603244856396653
      },
      {
       "rule": "downtrend",
       "why": "Below its 20-day average and down over 20 days",
-      "fired": 8117,
+      "fired": 8085,
       "says": "down",
-      "hit_rate": 0.5410866083528397,
-      "avg_return": -0.00048743521130667424
+      "hit_rate": 0.5380333951762524,
+      "avg_return": -0.0002431971899243656
      },
      {
       "rule": "oversold",
       "why": "RSI below 25",
-      "fired": 304,
+      "fired": 310,
       "says": "up",
-      "hit_rate": 0.4967105263157895,
-      "avg_return": 0.0058733902384249595
+      "hit_rate": 0.4967741935483871,
+      "avg_return": 0.005763974777449406
      },
      {
       "rule": "overbought",
@@ -6467,13 +7059,13 @@
     "confidence": [
      {
       "range": "0.00-0.10",
-      "n": 13470,
-      "hit_rate": 0.5097995545657016
+      "n": 13447,
+      "hit_rate": 0.5086636424481297
      },
      {
       "range": "0.10-0.25",
-      "n": 2608,
-      "hit_rate": 0.5632668711656442
+      "n": 2594,
+      "hit_rate": 0.561680801850424
      },
      {
       "range": "0.25-0.50",
@@ -6488,13 +7080,13 @@
     ]
    },
    "1w": {
-    "n": 16357,
-    "hit_rate": 0.5299260255548084,
-    "always_up": 0.4501436693770251,
-    "always_down": 0.5498563306229749,
-    "follow_market": 0.48340160176071406,
-    "strategy_avg_return": 0.00038067862461926225,
-    "buy_hold_avg_return": 0.003265535332976048,
+    "n": 16319,
+    "hit_rate": 0.528647588700288,
+    "always_up": 0.45155953183405845,
+    "always_down": 0.5484404681659415,
+    "follow_market": 0.48183099454623446,
+    "strategy_avg_return": 0.00010483901546363661,
+    "buy_hold_avg_return": 0.003597730941821492,
     "pump_flags": 99,
     "pump_then_down": 0.5252525252525253,
     "rules": [
@@ -6512,23 +7104,23 @@
       "fired": 459,
       "says": "down",
       "hit_rate": 0.579520697167756,
-      "avg_return": 0.008155937793793321
+      "avg_return": 0.008155937793793318
      },
      {
       "rule": "capitulation",
       "why": "Down more than 25% in 5 days on heavy volume",
-      "fired": 102,
+      "fired": 97,
       "says": "up",
-      "hit_rate": 0.5294117647058824,
-      "avg_return": 0.15438896658366727
+      "hit_rate": 0.5567010309278351,
+      "avg_return": 0.1670574930239749
      },
      {
       "rule": "dilution",
       "why": "Offering or share-sale filing in the last 30 days",
-      "fired": 3205,
+      "fired": 3184,
       "says": "down",
-      "hit_rate": 0.5859594383775351,
-      "avg_return": -0.0027238355504496706
+      "hit_rate": 0.5841708542713567,
+      "avg_return": -0.002131105553975757
      },
      {
       "rule": "reverse_split",
@@ -6541,34 +7133,34 @@
      {
       "rule": "insider_buying",
       "why": "Insiders bought more shares than they sold in the last 30 days",
-      "fired": 117,
+      "fired": 120,
       "says": "up",
       "hit_rate": 0.3333333333333333,
-      "avg_return": -0.029928896265272113
+      "avg_return": -0.029991143479343736
      },
      {
       "rule": "uptrend",
       "why": "Above its 20-day average and up over 20 days",
-      "fired": 5509,
+      "fired": 5507,
       "says": "up",
-      "hit_rate": 0.45579960065347613,
-      "avg_return": 0.007800866093444362
+      "hit_rate": 0.45614672235336845,
+      "avg_return": 0.007881185757658683
      },
      {
       "rule": "downtrend",
       "why": "Below its 20-day average and down over 20 days",
-      "fired": 8143,
+      "fired": 8111,
       "says": "down",
-      "hit_rate": 0.5521306643743092,
-      "avg_return": 0.0015354034430136371
+      "hit_rate": 0.5497472568117372,
+      "avg_return": 0.0020863356487563225
      },
      {
       "rule": "oversold",
       "why": "RSI below 25",
-      "fired": 284,
+      "fired": 291,
       "says": "up",
-      "hit_rate": 0.4471830985915493,
-      "avg_return": 0.0400101905744928
+      "hit_rate": 0.44673539518900346,
+      "avg_return": 0.03726281810763447
      },
      {
       "rule": "overbought",
@@ -6576,7 +7168,7 @@
       "fired": 166,
       "says": "down",
       "hit_rate": 0.5662650602409639,
-      "avg_return": -0.008591754159834852
+      "avg_return": -0.00859175415983485
      },
      {
       "rule": "buzz_with_news",
@@ -6592,18 +7184,18 @@
     "confidence": [
      {
       "range": "0.00-0.10",
-      "n": 6447,
-      "hit_rate": 0.49247712114161624
+      "n": 6445,
+      "hit_rate": 0.4924747866563227
      },
      {
       "range": "0.10-0.25",
-      "n": 7136,
-      "hit_rate": 0.5396580717488789
+      "n": 7116,
+      "hit_rate": 0.537380550871276
      },
      {
       "range": "0.25-0.50",
-      "n": 2630,
-      "hit_rate": 0.5904942965779467
+      "n": 2614,
+      "hit_rate": 0.5891354246365723
      },
      {
       "range": "0.50-1.00",
@@ -6621,11 +7213,11 @@
  },
  "runs": [
   {
-   "started_at": "2026-11-26T07:51:20+00:00",
+   "started_at": "2026-11-28T09:17:20+00:00",
    "step": "replay",
    "status": "ok",
    "detail": "30 trading days replayed"
   }
  ],
- "simulation": "These calls were not made live. We replayed the tracker over 30 trading days starting Oct 8, picking each day from a pool of 38 small stocks by unusual trading, using only data available each morning."
+ "simulation": "These calls were not made live. We replayed the tracker over 30 trading days starting Oct 9, picking each day from a pool of 38 small stocks by unusual trading, using only data available each morning."
 }
