@@ -134,6 +134,10 @@ def build(conn):
     for r in today:
         for k in ("picked_why", "picked_detail"):
             r[k] = json.loads(r[k]) if r.get(k) else None
+    for r in today:  # last ~30 closes for the card sparkline
+        r["spark"] = [round(x[0], 4) for x in conn.execute(
+            "SELECT close FROM (SELECT date, close FROM prices WHERE ticker=? AND date<=? "
+            "ORDER BY date DESC LIMIT 30) ORDER BY date", (r["ticker"], r["as_of"]))]
     scan_run = conn.execute("SELECT detail FROM runs WHERE step='scan' AND status='ok' "
                             "ORDER BY id DESC LIMIT 1").fetchone()
     recent = _rows(conn, "SELECT p.id, p.created_at, p.as_of, p.ticker, p.horizon, p.direction, "
